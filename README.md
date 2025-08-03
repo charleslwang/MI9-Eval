@@ -1,4 +1,4 @@
-# MI9: Agentic AI Governance & Evaluation Framework
+# MI9: Agentic AI Governance Framework & Synthetic Evaluation
 
 MI9 is a framework for the synthetic generation, governance, and evaluation of agentic AI scenarios. It provides a suite of tools to automate the creation of complex scenarios, apply governance policies, and evaluate the outcomes using large language models.
 
