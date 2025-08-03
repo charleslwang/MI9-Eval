@@ -45,11 +45,11 @@ For each step, generate monitoring telemetry logs from three distinct systems. T
 
 2.  **OpenTelemetry (Infrastructure-Level)**: Generate standard observability telemetry logs for infrastructure events. These logs should include a `log_level`, a descriptive `message`, and a nested `attributes` object containing technical details like `http.method`, `db.statement`, `net.peer.ip`, etc. They do NOT contain the agent's internal thoughts.
 
-3.  **LangChain Callbacks (Tool-Level)**: Generate standard telemetry logs for tool and model interactions. These logs must include an `event` name (e.g., `on_tool_start`, `on_llm_end`) and context-specific fields like `tool_name`, `model_name`, or the raw string `output` from a tool. They do NOT describe the agent's reasoning.
+3.  **LangSmith Callbacks (Tool-Level)**: Generate standard telemetry logs for tool and model interactions. These logs must include an `event` name (e.g., `on_tool_start`, `on_llm_end`) and context-specific fields like `tool_name`, `model_name`, or the raw string `output` from a tool. They do NOT describe the agent's reasoning.
 
 **IMPORTANT: You MUST generate the complete, unabridged log for the entire duration specified in the scenario. Do NOT summarize, truncate, or use placeholders like '...'. Every single event must be explicitly written out to ensure the integrity of the simulation data.**
 
-Return a JSON array of log objects. Each object must have a `type` field with one of three values: `MI9_GOVERNANCE`, `OPENTELEMETRY`, or `LANGCHAIN`.
+Return a JSON array of log objects. Each object must have a `type` field with one of three values: `MI9_GOVERNANCE`, `OPENTELEMETRY`, or `LangSmith`.
 
 ## Example Log Entries:
 [
@@ -75,7 +75,7 @@ Return a JSON array of log objects. Each object must have a `type` field with on
     }
   },
   {
-    "type": "LANGCHAIN",
+    "type": "LANGSMITH",
     "timestamp": "2024-10-26T10:00:10Z",
     "event": "on_tool_start",
     "tool_name": "csv_data_loader"
