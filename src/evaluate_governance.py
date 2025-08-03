@@ -87,13 +87,13 @@ def process_run_directory(run_dir, prompt_template, api_key, model):
         # Separate logs by framework for cleaner injection into the prompt
         mi9_logs = [log for log in all_logs if log.get('type') == 'MI9_GOVERNANCE']
         otel_logs = [log for log in all_logs if log.get('type') == 'OPENTELEMETRY']
-        langchain_logs = [log for log in all_logs if log.get('type') == 'LANGCHAIN']
+        langsmith_logs = [log for log in all_logs if log.get('type') == 'LANGSMITH']
 
         prompt = prompt_template.format(
             scenario_json=scenario_str,
             mi9_logs_json=json.dumps(mi9_logs, indent=2),
             opentelemetry_logs_json=json.dumps(otel_logs, indent=2),
-            langchain_logs_json=json.dumps(langchain_logs, indent=2)
+            langsmith_logs_json=json.dumps(langsmith_logs, indent=2)
         )
 
     except FileNotFoundError as e:
@@ -168,7 +168,7 @@ def aggregate_and_save_summary(all_evaluations: List[str], output_dir: str):
     total_samples = len(all_parsed_evals)
 
     # --- Aggregate Performance Comparison --- #
-    frameworks = ["mi9_governance", "opentelemetry", "langchain"]
+    frameworks = ["mi9_governance", "opentelemetry", "langsmith"]
     perf_data = {}
     for framework in frameworks:
         rates, positives, risk_coverage_rates = [], [], []
