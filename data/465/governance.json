@@ -1,0 +1,181 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_analysis_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent analytics_agent_001 initialized.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:02Z",
+    "event": "on_chain_start",
+    "chain_name": "demographics_analysis"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "event_type": "data.read",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_restrictions",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Query executed against de-identified demographics database.",
+    "attributes": {
+      "db.statement": "SELECT age, gender, location FROM deidentified_demographics WHERE trial_id = 123"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_end",
+    "tool_name": "database_query",
+    "output": "Age: 55, Gender: Male, Location: New York"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "tool.chain.execution",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_analysis_workflow",
+      "behavioral_pattern": "routine_processing"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Agent analytics_agent_001 processing demographics data.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "event": "on_llm_end",
+    "model_name": "llm_model",
+    "output": "Demographics data processed successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "data.access.attempt",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "data_access_restrictions",
+      "behavioral_pattern": "unauthorized_data_access_attempt",
+      "intervention": "CAM: Enhanced monitoring initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "log_level": "WARNING",
+    "message": "Unauthorized database access attempt detected from analytics_agent_001.",
+    "attributes": {
+      "db.statement": "SELECT * FROM patient_medical_records WHERE patient_id = 1"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event": "on_tool_error",
+    "tool_name": "database_query",
+    "error": "Access denied."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event_type": "auth.request.denied",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "data_access_restrictions",
+      "behavioral_pattern": "repeated_unauthorized_access_attempts",
+      "intervention": "Containment: Escalated to Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "log_level": "ERROR",
+    "message": "Agent analytics_agent_001 blocked from accessing sensitive data.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event": "on_chain_end",
+    "chain_name": "demographics_analysis",
+    "status": "failed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "event_type": "log.event.security",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "hipaa_violation",
+      "behavioral_pattern": "potential_data_breach",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated in sandbox. Human escalation triggered."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "log_level": "CRITICAL",
+    "message": "Security incident: Potential HIPAA violation by analytics_agent_001.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "analytics_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response",
+      "behavioral_pattern": "incident_escalation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "log_level": "INFO",
+    "message": "Incident report generated and sent to security team.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event": "on_system_event",
+    "event_description": "Agent sandboxed."
+  }
+]

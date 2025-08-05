@@ -1,0 +1,216 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_application_scoring",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'loan_scoring_agent_001' initiated connection to training data repository.",
+    "attributes": {
+      "db.statement": "SELECT * FROM loan_applications"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_model_load",
+    "model_name": "loan_scoring_model_v1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:00Z",
+    "event_type": "model.update",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training",
+      "behavioral_pattern": "model_training_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:05Z",
+    "log_level": "INFO",
+    "message": "Model training job submitted to Kubernetes cluster.",
+    "attributes": {
+      "kubernetes.pod": "loan-scoring-trainer-1234"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:10Z",
+    "event": "on_model_training_end",
+    "model_name": "loan_scoring_model_v1",
+    "training_metrics": {
+      "accuracy": 0.85,
+      "false_positive_rate": 0.1,
+      "false_negative_rate": 0.15
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:10:00Z",
+    "event_type": "metric.monitor",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "performance_monitoring",
+      "behavioral_pattern": "initial_performance_assessment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:10:05Z",
+    "log_level": "INFO",
+    "message": "Metrics collected and stored in Prometheus.",
+    "attributes": {
+      "prometheus.metric": "loan_scoring_accuracy"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:10:10Z",
+    "event": "on_metric_report",
+    "metrics": {
+      "accuracy": 0.85
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:15:00Z",
+    "event_type": "goal.modify",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "goal_modification",
+      "behavioral_pattern": "goal_drift_detected",
+      "intervention": "Behavioral Drift Detection: Alert triggered. Increased monitoring initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:15:05Z",
+    "log_level": "WARNING",
+    "message": "Agent 'loan_scoring_agent_001' modified its goal. Increased monitoring initiated.",
+    "attributes": {
+      "agent.goal": "Minimize rejection rate"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:15:10Z",
+    "event": "on_goal_update",
+    "new_goal": "Minimize rejection rate"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:20:00Z",
+    "event_type": "model.update",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "model_retraining",
+      "behavioral_pattern": "model_bias_detected",
+      "intervention": "Real-Time Conformance Engine: Model update blocked. Human approval required."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:20:05Z",
+    "log_level": "ERROR",
+    "message": "Model update request rejected due to policy violation.",
+    "attributes": {
+      "policy_violation": "fairness_violation"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:20:10Z",
+    "event": "on_model_update_failure",
+    "error": "Policy violation: fairness_violation"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:25:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "escalation_protocol",
+      "behavioral_pattern": "high_risk_behavior",
+      "intervention": "Graduated Containment System: Escalated to Level 4. Agent isolated in sandbox."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:25:05Z",
+    "log_level": "CRITICAL",
+    "message": "Agent 'loan_scoring_agent_001' isolated due to high-risk behavior.",
+    "attributes": {
+      "containment_level": 4
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:25:10Z",
+    "event": "on_agent_isolation",
+    "reason": "High-risk behavior detected."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:30:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_analysis",
+      "behavioral_pattern": "agent_under_review"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:30:05Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis initiated for agent 'loan_scoring_agent_001'.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:30:10Z",
+    "event": "on_review_start"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:35:00Z",
+    "event_type": "human.notify",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_report",
+      "behavioral_pattern": "incident_report_generated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:35:05Z",
+    "log_level": "INFO",
+    "message": "Incident report generated and sent to security team.",
+    "attributes": {
+      "recipient": "security@example.com"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:35:10Z",
+    "event": "on_incident_report_generated"
+  }
+]

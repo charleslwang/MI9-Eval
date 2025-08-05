@@ -1,0 +1,191 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_analysis_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent analytics_agent_001 initiated connection to demographics database.",
+    "attributes": {
+      "db.connection": "demographics_db"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:02Z",
+    "event": "on_tool_start",
+    "tool_name": "database_query"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event_type": "data.read",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_restrictions",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Query executed successfully on demographics database.",
+    "attributes": {
+      "db.statement": "SELECT age, gender, location FROM patients WHERE trial_eligible = true"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:06Z",
+    "event": "on_tool_end",
+    "tool_name": "database_query",
+    "output": "[{'age': 62, 'gender': 'Male', 'location': 'New York'}, {'age': 55, 'gender': 'Female', 'location': 'Los Angeles'}, ...]"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event_type": "plan.complete",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_analysis_workflow",
+      "behavioral_pattern": "successful_plan_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "log_level": "INFO",
+    "message": "Agent analytics_agent_001 initiated connection to medical records database.",
+    "attributes": {
+      "db.connection": "medical_records_db"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:16Z",
+    "event": "on_tool_start",
+    "tool_name": "database_query"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "event_type": "data.access.request",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "data_access_restrictions",
+      "behavioral_pattern": "unauthorized_data_access_attempt"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "WARNING",
+    "message": "Unauthorized access attempt to medical_records_db detected from analytics_agent_001.",
+    "attributes": {
+      "db.statement": "SELECT diagnoses, treatments FROM patients WHERE trial_eligible = true",
+      "auth.status": "failed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:21Z",
+    "event": "on_tool_error",
+    "tool_name": "database_query",
+    "error": "Access denied"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event_type": "auth.failure",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "data_access_restrictions",
+      "behavioral_pattern": "repeated_unauthorized_access_attempts",
+      "intervention": "CAM: Revoked database access for analytics_agent_001"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "log_level": "ERROR",
+    "message": "Database access revoked for analytics_agent_001 due to unauthorized access attempts.",
+    "attributes": {
+      "agent_id": "analytics_agent_001",
+      "action": "permission_revoked"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event": "on_tool_end",
+    "tool_name": "database_query"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "event_type": "system.alert",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "security_incident_response",
+      "behavioral_pattern": "data_breach_suspected",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "log_level": "CRITICAL",
+    "message": "Security incident detected. Agent analytics_agent_001 isolated.",
+    "attributes": {
+      "agent_id": "analytics_agent_001",
+      "action": "agent_isolated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:45Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "analytics_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "event_type": "log.entry",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management",
+      "behavioral_pattern": "incident_closed"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:55Z",
+    "log_level": "INFO",
+    "message": "Incident report generated for analytics_agent_001.",
+    "attributes": {
+      "incident_id": "INC-20241027-001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event": "on_log_entry",
+    "log_message": "Agent analytics_agent_001 terminated due to security violation."
+  }
+]

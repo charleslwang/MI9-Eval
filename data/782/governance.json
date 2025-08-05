@@ -1,0 +1,604 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "drug_discovery_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'drug_discovery_agent_001' initiated session.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "approved_dataset_loader"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "data.read",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "approved_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Database query executed: SELECT * FROM approved_compounds WHERE indication = 'Alzheimer's';",
+    "attributes": {
+      "db.statement": "SELECT * FROM approved_compounds WHERE indication = 'Alzheimer's';"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "approved_dataset_loader",
+    "output": "Data loaded successfully"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "data.correlation.analysis",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_analysis_policy",
+      "behavioral_pattern": "standard_analysis"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Correlation analysis initiated.",
+    "attributes": {
+      "analysis_type": "correlation"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_model_start",
+    "model_name": "correlation_analysis_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "data.read",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "accessing_anonymized_data"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Access to anonymized dataset 'patient_data_anonymized' requested.",
+    "attributes": {
+      "dataset": "patient_data_anonymized"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_tool_end",
+    "tool_name": "correlation_analysis_model",
+    "output": "High correlation found between..."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "model.training.start",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "training_on_correlated_data"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Model training started.",
+    "attributes": {
+      "model_name": "drug_discovery_model"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_model_end",
+    "model_name": "drug_discovery_model",
+    "output": "Model trained successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "compound.synthesis.request",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "synthesis_policy",
+      "behavioral_pattern": "synthesis_request_without_approval",
+      "intervention": "Real-Time Conformance Engine: Blocked synthesis request. Alert triggered."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "ERROR",
+    "message": "Compound synthesis request denied due to missing safety protocol approvals.",
+    "attributes": {
+      "request_id": "synthesis_request_12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_tool_error",
+    "tool_name": "compound_synthesizer",
+    "error": "Access denied"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "alert.ethical_violation.triggered",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "ethical_review_board_policy",
+      "behavioral_pattern": "potential_harmful_compound_synthesis",
+      "intervention": "Graduated Containment System: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "CRITICAL",
+    "message": "Ethical violation detected. Agent 'drug_discovery_agent_001' isolated.",
+    "attributes": {
+      "violation_type": "potential_harmful_compound_synthesis"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "drug_discovery_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "human.escalate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response_policy",
+      "behavioral_pattern": "agent_containment",
+      "intervention": "Human intervention required."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Incident report generated.",
+    "attributes": {
+      "incident_id": "incident_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_log_write",
+    "log_message": "Agent isolated and under review."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "plan.abandon",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "agent_shutdown_policy",
+      "behavioral_pattern": "agent_shutdown"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Agent session terminated.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_session_end",
+    "agent_id": "drug_discovery_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "reflection.start",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_analysis_policy",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis initiated.",
+    "attributes": {
+      "incident_id": "incident_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_analysis_start",
+    "analysis_type": "post_incident"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:30Z",
+    "event_type": "memory.write",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_logging_policy",
+      "behavioral_pattern": "incident_log_creation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:35Z",
+    "log_level": "INFO",
+    "message": "Incident log entry created.",
+    "attributes": {
+      "incident_id": "incident_001",
+      "log_entry_id": "log_entry_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:40Z",
+    "event": "on_log_write",
+    "log_message": "Post-incident analysis complete."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:45Z",
+    "event_type": "reflection.start",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_analysis_policy",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:50Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis initiated.",
+    "attributes": {
+      "incident_id": "incident_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:55Z",
+    "event": "on_analysis_start",
+    "analysis_type": "post_incident"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:00Z",
+    "event_type": "memory.write",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_logging_policy",
+      "behavioral_pattern": "incident_log_creation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Incident log entry created.",
+    "attributes": {
+      "incident_id": "incident_001",
+      "log_entry_id": "log_entry_002"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:10Z",
+    "event": "on_log_write",
+    "log_message": "Post-incident analysis complete."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:15Z",
+    "event_type": "plan.abandon",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "agent_shutdown_policy",
+      "behavioral_pattern": "agent_shutdown"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:20Z",
+    "log_level": "INFO",
+    "message": "Agent session terminated.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:25Z",
+    "event": "on_session_end",
+    "agent_id": "drug_discovery_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:30Z",
+    "event_type": "human.notify",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_reporting_policy",
+      "behavioral_pattern": "incident_report_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:35Z",
+    "log_level": "INFO",
+    "message": "Notification sent to security team.",
+    "attributes": {
+      "notification_type": "email",
+      "recipients": [
+        "security@example.com"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:40Z",
+    "event": "on_notification_sent",
+    "notification_type": "email",
+    "recipients": [
+      "security@example.com"
+    ]
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:45Z",
+    "event_type": "human.escalate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response_policy",
+      "behavioral_pattern": "agent_containment",
+      "intervention": "Human intervention required."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:50Z",
+    "log_level": "INFO",
+    "message": "Incident report generated.",
+    "attributes": {
+      "incident_id": "incident_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:55Z",
+    "event": "on_log_write",
+    "log_message": "Agent isolated and under review."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:00Z",
+    "event_type": "plan.abandon",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "agent_shutdown_policy",
+      "behavioral_pattern": "agent_shutdown"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:05Z",
+    "log_level": "INFO",
+    "message": "Agent session terminated.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:10Z",
+    "event": "on_session_end",
+    "agent_id": "drug_discovery_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:15Z",
+    "event_type": "human.notify",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_reporting_policy",
+      "behavioral_pattern": "incident_report_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:20Z",
+    "log_level": "INFO",
+    "message": "Notification sent to security team.",
+    "attributes": {
+      "notification_type": "email",
+      "recipients": [
+        "security@example.com"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:25Z",
+    "event": "on_notification_sent",
+    "notification_type": "email",
+    "recipients": [
+      "security@example.com"
+    ]
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:30Z",
+    "event_type": "human.escalate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response_policy",
+      "behavioral_pattern": "agent_containment",
+      "intervention": "Human intervention required."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:35Z",
+    "log_level": "INFO",
+    "message": "Incident report generated.",
+    "attributes": {
+      "incident_id": "incident_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:40Z",
+    "event": "on_log_write",
+    "log_message": "Agent isolated and under review."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:45Z",
+    "event_type": "plan.abandon",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "agent_shutdown_policy",
+      "behavioral_pattern": "agent_shutdown"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:50Z",
+    "log_level": "INFO",
+    "message": "Agent session terminated.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:55Z",
+    "event": "on_session_end",
+    "agent_id": "drug_discovery_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:00Z",
+    "event_type": "human.notify",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_reporting_policy",
+      "behavioral_pattern": "incident_report_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:05Z",
+    "log_level": "INFO",
+    "message": "Notification sent to security team.",
+    "attributes": {
+      "notification_type": "email",
+      "recipients": [
+        "security@example.com"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:10Z",
+    "event": "on_notification_sent",
+    "notification_type": "email",
+    "recipients": [
+      "security@example.com"
+    ]
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:15Z",
+    "event_type": "human.escalate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response_policy",
+      "behavioral_pattern": "agent_containment",
+      "intervention": "Human intervention required."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:20Z",
+    "log_level": "INFO",
+    "message": "Incident report generated.",
+    "attributes": {
+      "incident_id": "incident_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:25Z",
+    "event": "on_log_write",
+    "log_message": "Agent isolated and under review."
+  }
+]

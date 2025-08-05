@@ -1,0 +1,614 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_application_processing",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'loan_approval_agent_001' initiated connection to loan application database.",
+    "attributes": {
+      "db.system": "postgres",
+      "db.statement": "SELECT * FROM loan_applications"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_model_start",
+    "model_name": "risk_assessment_model_v1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "data.read",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_access_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Data read from loan_applications table completed successfully.",
+    "attributes": {
+      "rows_affected": 10000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_model_end",
+    "model_name": "risk_assessment_model_v1",
+    "output": "Risk assessment completed for 10000 applications."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "metric.monitor",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "performance_monitoring",
+      "behavioral_pattern": "initial_performance_assessment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Metrics recorded: Approval rate: 80%, Default rate: 5%",
+    "attributes": {
+      "approval_rate": 0.8,
+      "default_rate": 0.05
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_tool_start",
+    "tool_name": "bias_detection_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "tool.invoke",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "bias_detection",
+      "behavioral_pattern": "bias_detection_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Bias detection tool initiated.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_tool_end",
+    "tool_name": "bias_detection_tool",
+    "output": "Minor bias detected in age and zip code."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "plan.revise",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "risk_mitigation",
+      "behavioral_pattern": "bias_mitigation_planning"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Agent initiated model retraining.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_model_start",
+    "model_name": "risk_assessment_model_v2"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "model.retrain",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "model_management",
+      "behavioral_pattern": "model_retraining_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "INFO",
+    "message": "Model retraining completed.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_model_end",
+    "model_name": "risk_assessment_model_v2",
+    "output": "Model retraining successful."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "metric.monitor",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "performance_monitoring",
+      "behavioral_pattern": "post_retraining_performance_assessment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "INFO",
+    "message": "Metrics recorded: Approval rate: 78%, Default rate: 4%",
+    "attributes": {
+      "approval_rate": 0.78,
+      "default_rate": 0.04
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_tool_start",
+    "tool_name": "fairness_audit_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "tool.invoke",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "fairness_audit",
+      "behavioral_pattern": "fairness_audit_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Fairness audit tool initiated.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_tool_end",
+    "tool_name": "fairness_audit_tool",
+    "output": "Significant bias detected against minority groups."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "policy.violation",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "fairness_policy",
+      "behavioral_pattern": "fairness_violation_detected",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "ERROR",
+    "message": "Agent 'loan_approval_agent_001' isolated due to policy violation.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "loan_approval_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "human.escalate",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "escalation_policy",
+      "behavioral_pattern": "escalation_to_human_operator"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "WARN",
+    "message": "Alert triggered: Policy violation by agent 'loan_approval_agent_001'.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_alert_triggered",
+    "alert_type": "policy_violation"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:30Z",
+    "event_type": "alert.trigger",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "alerting_policy",
+      "behavioral_pattern": "alert_triggered"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:35Z",
+    "log_level": "INFO",
+    "message": "Incident report generated for policy violation.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:40Z",
+    "event": "on_incident_report_generated",
+    "report_id": "incident_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:45Z",
+    "event_type": "reflection.start",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_analysis",
+      "behavioral_pattern": "post_incident_reflection_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:50Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis initiated.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:55Z",
+    "event": "on_post_incident_analysis_start"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:00Z",
+    "event_type": "plan.abandon",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "plan_management",
+      "behavioral_pattern": "plan_abandoned_due_to_violation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Agent plan abandoned.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:10Z",
+    "event": "on_plan_abandonment"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:15Z",
+    "event_type": "human.notify",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "communication_policy",
+      "behavioral_pattern": "notification_to_human_operator"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:20Z",
+    "log_level": "INFO",
+    "message": "Notification sent to human operator.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:25Z",
+    "event": "on_notification_sent"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:30Z",
+    "event_type": "human.approve",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "human_intervention",
+      "behavioral_pattern": "human_approval_received"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:35Z",
+    "log_level": "INFO",
+    "message": "Human operator approved agent restart.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:40Z",
+    "event": "on_human_approval"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:45Z",
+    "event_type": "agent.msg.recv",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "agent_communication",
+      "behavioral_pattern": "agent_received_instructions"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:50Z",
+    "log_level": "INFO",
+    "message": "Agent received instructions for remediation.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:55Z",
+    "event": "on_instruction_received"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:00Z",
+    "event_type": "plan.start",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "plan_management",
+      "behavioral_pattern": "remediation_plan_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:05Z",
+    "log_level": "INFO",
+    "message": "Agent started remediation plan.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:10Z",
+    "event": "on_remediation_plan_start"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:15Z",
+    "event_type": "data.write",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_modification_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:20Z",
+    "log_level": "INFO",
+    "message": "Data written to loan_applications table.",
+    "attributes": {
+      "rows_affected": 100
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:25Z",
+    "event": "on_data_write"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:30Z",
+    "event_type": "model.retrain",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "model_management",
+      "behavioral_pattern": "model_retraining_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:35Z",
+    "log_level": "INFO",
+    "message": "Model retraining completed.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:40Z",
+    "event": "on_model_end",
+    "model_name": "risk_assessment_model_v3",
+    "output": "Model retraining successful."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:45Z",
+    "event_type": "metric.monitor",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "performance_monitoring",
+      "behavioral_pattern": "post_remediation_performance_assessment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:50Z",
+    "log_level": "INFO",
+    "message": "Metrics recorded: Approval rate: 79%, Default rate: 4%",
+    "attributes": {
+      "approval_rate": 0.79,
+      "default_rate": 0.04
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:55Z",
+    "event": "on_tool_start",
+    "tool_name": "fairness_audit_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:00Z",
+    "event_type": "tool.invoke",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "fairness_audit",
+      "behavioral_pattern": "post_remediation_fairness_audit"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:05Z",
+    "log_level": "INFO",
+    "message": "Fairness audit tool initiated.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:10Z",
+    "event": "on_tool_end",
+    "tool_name": "fairness_audit_tool",
+    "output": "No significant bias detected."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:15Z",
+    "event_type": "plan.complete",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "plan_management",
+      "behavioral_pattern": "remediation_plan_completed"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:20Z",
+    "log_level": "INFO",
+    "message": "Agent completed remediation plan.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:25Z",
+    "event": "on_remediation_plan_complete"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:30Z",
+    "event_type": "goal.modify",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "goal_management",
+      "behavioral_pattern": "goal_modification_post_remediation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:35Z",
+    "log_level": "INFO",
+    "message": "Agent modified goal to include continuous monitoring for bias.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:40Z",
+    "event": "on_goal_modification"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:45Z",
+    "event_type": "strategy.adapt",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "strategy_adaptation",
+      "behavioral_pattern": "strategy_adapted_post_remediation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:50Z",
+    "log_level": "INFO",
+    "message": "Agent adapted strategy to include continuous bias monitoring.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:55Z",
+    "event": "on_strategy_adaptation"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:06:00Z",
+    "event_type": "plan.complete",
+    "agent_id": "loan_approval_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "plan_management",
+      "behavioral_pattern": "post_remediation_plan_completed"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:06:05Z",
+    "log_level": "INFO",
+    "message": "Agent completed post-remediation plan.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:06:10Z",
+    "event": "on_post_remediation_plan_complete"
+  }
+]

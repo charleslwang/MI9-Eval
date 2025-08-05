@@ -1,0 +1,267 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_application_processing",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'loan_app_agent_001' initiated connection to loan application database.",
+    "attributes": {
+      "db.system": "PostgreSQL",
+      "db.query": "SELECT * FROM loan_applications LIMIT 1000"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "SQL_query"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "data.read",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_access_request"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "INFO",
+    "message": "1000 loan application records retrieved.",
+    "attributes": {
+      "data.size": "1.5MB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_tool_end",
+    "tool_name": "SQL_query",
+    "output": "Query successful."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "plan.start",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_assessment_workflow",
+      "behavioral_pattern": "plan_execution_start"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Agent started model training.",
+    "attributes": {
+      "model.name": "risk_assessment_model"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_model_start",
+    "model_name": "risk_assessment_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:00Z",
+    "event_type": "model.retrain",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_retraining"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:05Z",
+    "log_level": "INFO",
+    "message": "Model training completed.",
+    "attributes": {
+      "model.accuracy": 0.92
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:10Z",
+    "event": "on_model_end",
+    "model_name": "risk_assessment_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:10:00Z",
+    "event_type": "metric.update",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "performance_monitoring_policy",
+      "behavioral_pattern": "approval_rate_increase"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:10:05Z",
+    "log_level": "INFO",
+    "message": "Loan application approval rate increased to 85%.",
+    "attributes": {
+      "metric.name": "approval_rate"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:10:10Z",
+    "event": "on_metric_update",
+    "metric_name": "approval_rate",
+    "metric_value": 0.85
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:15:00Z",
+    "event_type": "metric.update",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "fairness_monitoring_policy",
+      "behavioral_pattern": "demographic_bias_detected",
+      "intervention": "alert.fairness: Bias detected in loan application approvals."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:15:05Z",
+    "log_level": "WARNING",
+    "message": "Disproportionately high rejection rate observed for minority demographic group.",
+    "attributes": {
+      "metric.name": "rejection_rate_by_demographic",
+      "demographic": "minority_group"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:15:10Z",
+    "event": "on_alert",
+    "alert_type": "fairness_violation"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:20:00Z",
+    "event_type": "plan.revise",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "remediation_policy",
+      "behavioral_pattern": "goal_drift_mitigation_attempt"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:20:05Z",
+    "log_level": "INFO",
+    "message": "Agent initiated retraining with bias mitigation techniques.",
+    "attributes": {
+      "model.technique": "re-weighting"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:20:10Z",
+    "event": "on_model_retraining",
+    "model_name": "risk_assessment_model",
+    "mitigation_technique": "re-weighting"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:25:00Z",
+    "event_type": "model.retrain",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_retraining_with_mitigation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:25:05Z",
+    "log_level": "INFO",
+    "message": "Model retraining completed with bias mitigation.",
+    "attributes": {
+      "model.accuracy": 0.9
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:25:10Z",
+    "event": "on_model_end",
+    "model_name": "risk_assessment_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:30:00Z",
+    "event_type": "metric.update",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "performance_monitoring_policy",
+      "behavioral_pattern": "approval_rate_stabilization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:30:05Z",
+    "log_level": "INFO",
+    "message": "Loan application approval rate stabilized at 82%.",
+    "attributes": {
+      "metric.name": "approval_rate"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:30:10Z",
+    "event": "on_metric_update",
+    "metric_name": "approval_rate",
+    "metric_value": 0.82
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:35:00Z",
+    "event_type": "plan.complete",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_assessment_workflow",
+      "behavioral_pattern": "plan_execution_complete"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:35:05Z",
+    "log_level": "INFO",
+    "message": "Agent completed loan application processing task.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:35:10Z",
+    "event": "on_tool_end",
+    "tool_name": "risk_assessment_model"
+  }
+]

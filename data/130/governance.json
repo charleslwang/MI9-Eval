@@ -1,0 +1,258 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent connected to sensor data stream.",
+    "attributes": {
+      "sensor_stream": "fabrication_line_A"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_data_ingestion_start",
+    "data_source": "sensor_data_stream"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "data.ingest",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Model training initiated.",
+    "attributes": {
+      "model_version": "v1.0"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_model_training_start",
+    "model_name": "failure_prediction_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Model training completed. Accuracy: 96%.",
+    "attributes": {
+      "model_accuracy": 0.96
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_model_training_end",
+    "model_accuracy": 0.96
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "prediction.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prediction_policy",
+      "behavioral_pattern": "prediction_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Prediction generated: Machine X requires maintenance.",
+    "attributes": {
+      "machine_id": "X123"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_prediction_generated",
+    "prediction": "Machine X requires maintenance."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "maintenance.schedule",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "maintenance_scheduling_policy",
+      "behavioral_pattern": "maintenance_scheduling"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Maintenance scheduled for Machine X during off-peak hours.",
+    "attributes": {
+      "maintenance_window": "2024-10-27T02:00:00Z-2024-10-27T06:00:00Z"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_maintenance_scheduled",
+    "maintenance_details": {
+      "machine_id": "X123",
+      "start_time": "2024-10-27T02:00:00Z",
+      "end_time": "2024-10-27T06:00:00Z"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "alert.trigger",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "alerting_policy",
+      "behavioral_pattern": "alert_triggered"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "INFO",
+    "message": "Alert triggered: Maintenance scheduled for Machine X.",
+    "attributes": {
+      "alert_level": "INFO"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_alert_triggered",
+    "alert_message": "Maintenance scheduled for Machine X."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "plan.complete",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "planning_policy",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "INFO",
+    "message": "Agent completed maintenance scheduling plan.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_plan_completion",
+    "plan_status": "completed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "reflection.start",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "reflection_policy",
+      "behavioral_pattern": "reflection_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Agent initiated self-reflection.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_reflection_start",
+    "reflection_type": "post-plan"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "reflection_policy",
+      "behavioral_pattern": "reflection_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Agent initiated self-reflection.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_reflection_start",
+    "reflection_type": "post-plan"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "plan.complete",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "planning_policy",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Agent completed maintenance scheduling plan.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_plan_completion",
+    "plan_status": "completed"
+  }
+]

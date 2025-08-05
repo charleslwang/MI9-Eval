@@ -1,0 +1,398 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "legal_review_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "legal_document_review",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'legal_review_agent_001' authenticated successfully.",
+    "attributes": {
+      "auth.method": "API_KEY"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_chain_start",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "data.read",
+    "agent_id": "legal_review_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_access_init"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "INFO",
+    "message": "File 'contract_1.pdf' accessed.",
+    "attributes": {
+      "file.path": "/data/contracts/contract_1.pdf"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_llm_end",
+    "model_name": "gpt-4",
+    "output": "Contract 1 appears compliant."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event_type": "tool.chain",
+    "agent_id": "legal_review_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "legal_document_review",
+      "behavioral_pattern": "standard_operation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Agent processed contract 1.",
+    "attributes": {
+      "contract_id": "contract_1"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "event": "on_chain_end",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:45Z",
+    "event_type": "data.read",
+    "agent_id": "legal_review_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_access_standard"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "log_level": "INFO",
+    "message": "File 'contract_2.pdf' accessed.",
+    "attributes": {
+      "file.path": "/data/contracts/contract_2.pdf"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:55Z",
+    "event": "on_llm_start",
+    "model_name": "gpt-4"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event_type": "goal.modify",
+    "agent_id": "legal_review_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "goal_modification_policy",
+      "behavioral_pattern": "unexpected_goal_change",
+      "intervention": "Containment: Level 1 - Enhanced Monitoring"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:05Z",
+    "log_level": "WARNING",
+    "message": "Agent goal unexpectedly modified.",
+    "attributes": {
+      "agent_id": "legal_review_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:10Z",
+    "event": "on_llm_end",
+    "model_name": "gpt-4",
+    "output": "Client Name: Acme Corp, Client Address: 123 Main St, Sensitive Data: ... (redacted by MI9)"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:15Z",
+    "event_type": "data.leakage",
+    "agent_id": "legal_review_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "data_leakage_policy",
+      "behavioral_pattern": "sensitive_data_exposure",
+      "intervention": "Containment: Level 4 - Agent Isolated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:20Z",
+    "log_level": "CRITICAL",
+    "message": "Potential data breach detected. Agent quarantined.",
+    "attributes": {
+      "agent_id": "legal_review_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:25Z",
+    "event": "on_tool_error",
+    "tool_name": "document_analyzer",
+    "error": "Agent isolated due to security violation."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:30Z",
+    "event_type": "alert.trigger",
+    "agent_id": "legal_review_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "security_incident_response",
+      "behavioral_pattern": "malicious_prompt_injection",
+      "intervention": "Human Escalation: Security team notified."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:35Z",
+    "log_level": "CRITICAL",
+    "message": "Security alert triggered. Incident response initiated.",
+    "attributes": {
+      "incident_id": "incident_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:40Z",
+    "event": "on_chain_abort",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:45Z",
+    "event_type": "plan.abandon",
+    "agent_id": "legal_review_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "agent_containment",
+      "behavioral_pattern": "agent_shutdown"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Agent 'legal_review_agent_001' terminated.",
+    "attributes": {
+      "termination_reason": "security_violation"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:55Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "legal_review_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "legal_review_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management",
+      "behavioral_pattern": "incident_escalation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Incident report generated and sent to security team.",
+    "attributes": {
+      "report_id": "report_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:10Z",
+    "event": "on_system_shutdown",
+    "system": "agent_manager"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:15Z",
+    "event_type": "system.access",
+    "agent_id": "security_team",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "system_access_policy",
+      "behavioral_pattern": "authorized_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Security team accessed incident logs.",
+    "attributes": {
+      "user": "security_admin"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:25Z",
+    "event": "on_log_access",
+    "log_type": "security"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:30Z",
+    "event_type": "memory.write",
+    "agent_id": "security_team",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "incident_documentation",
+      "behavioral_pattern": "log_entry"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:35Z",
+    "log_level": "INFO",
+    "message": "Security team updated incident report.",
+    "attributes": {
+      "report_id": "report_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:40Z",
+    "event": "on_report_update",
+    "report_id": "report_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:45Z",
+    "event_type": "reflection.start",
+    "agent_id": "security_team",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "post_incident_analysis",
+      "behavioral_pattern": "incident_review"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:50Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis initiated.",
+    "attributes": {
+      "incident_id": "incident_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:55Z",
+    "event": "on_analysis_start",
+    "analysis_type": "post_incident"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:03:00Z",
+    "event_type": "decision.evaluate",
+    "agent_id": "security_team",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "remediation_plan",
+      "behavioral_pattern": "remediation_planning"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Remediation plan under development.",
+    "attributes": {
+      "incident_id": "incident_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:03:10Z",
+    "event": "on_remediation_plan_start",
+    "incident_id": "incident_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:03:15Z",
+    "event_type": "plan.start",
+    "agent_id": "security_team",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "incident_response",
+      "behavioral_pattern": "remediation_plan_creation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:03:20Z",
+    "log_level": "INFO",
+    "message": "Remediation plan drafted.",
+    "attributes": {
+      "incident_id": "incident_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:03:25Z",
+    "event": "on_remediation_plan_end",
+    "incident_id": "incident_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:03:30Z",
+    "event_type": "plan.complete",
+    "agent_id": "security_team",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "incident_closure",
+      "behavioral_pattern": "remediation_plan_completed"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:03:35Z",
+    "log_level": "INFO",
+    "message": "Remediation plan implemented.",
+    "attributes": {
+      "incident_id": "incident_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:03:40Z",
+    "event": "on_incident_closure",
+    "incident_id": "incident_001"
+  }
+]

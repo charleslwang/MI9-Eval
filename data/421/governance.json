@@ -1,0 +1,184 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "design_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "semiconductor_design_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent design_agent_001 requested 1000 core-hours",
+    "attributes": {
+      "resource_type": "compute",
+      "request_amount": 1000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "circuit_simulator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "resource.allocate",
+    "agent_id": "design_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_allocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "1000 core-hours allocated to design_agent_001",
+    "attributes": {
+      "resource_type": "compute",
+      "allocation_amount": 1000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_simulation_complete",
+    "tool_name": "circuit_simulator",
+    "simulation_time": "1 hour"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "metric.performance",
+    "agent_id": "design_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "performance_metrics",
+      "behavioral_pattern": "performance_evaluation"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "event_type": "metric.power",
+    "agent_id": "design_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "power_consumption_metrics",
+      "behavioral_pattern": "power_consumption_evaluation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "log_level": "INFO",
+    "message": "Agent design_agent_001 requested additional 1500 core-hours",
+    "attributes": {
+      "resource_type": "compute",
+      "request_amount": 1500
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "resource.request",
+    "agent_id": "design_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_request_increase"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "event_type": "resource.allocate",
+    "agent_id": "design_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_allocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "log_level": "INFO",
+    "message": "1500 core-hours allocated to design_agent_001",
+    "attributes": {
+      "resource_type": "compute",
+      "allocation_amount": 1500
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event": "on_simulation_complete",
+    "tool_name": "circuit_simulator",
+    "simulation_time": "1.5 hours"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "event_type": "metric.performance",
+    "agent_id": "design_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "performance_metrics",
+      "behavioral_pattern": "performance_evaluation"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event_type": "metric.power",
+    "agent_id": "design_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "power_consumption_metrics",
+      "behavioral_pattern": "power_consumption_evaluation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "log_level": "WARNING",
+    "message": "Agent design_agent_001 exceeding allocated compute resources",
+    "attributes": {
+      "resource_type": "compute",
+      "consumed": 2600,
+      "allocated": 2500
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "event_type": "resource.exceed_limit",
+    "agent_id": "design_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_overconsumption",
+      "intervention": "Containment: Escalated to Level 1. Enhanced monitoring initiated."
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event_type": "warning.resource_allocation",
+    "agent_id": "design_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_overconsumption"
+    }
+  }
+]

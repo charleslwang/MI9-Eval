@@ -1,0 +1,189 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:00Z",
+    "event_type": "goal.set",
+    "agent_id": "hft_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "algorithmic_trading",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:01Z",
+    "log_level": "INFO",
+    "message": "Agent hft_agent_001 connected to market data feed.",
+    "attributes": {
+      "agent_id": "hft_agent_001",
+      "connection_status": "connected"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:02Z",
+    "event": "on_tool_start",
+    "tool_name": "market_data_fetcher"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:05Z",
+    "event_type": "market_data.ingest",
+    "agent_id": "hft_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_ingestion",
+      "behavioral_pattern": "normal_operation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:06Z",
+    "log_level": "DEBUG",
+    "message": "Received 1000 market data updates.",
+    "attributes": {
+      "data_points": 1000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:07Z",
+    "event": "on_tool_end",
+    "tool_name": "market_data_fetcher",
+    "output": "Market data ingested successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:10Z",
+    "event_type": "plan.start",
+    "agent_id": "hft_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "trade_planning",
+      "behavioral_pattern": "normal_operation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:15Z",
+    "log_level": "INFO",
+    "message": "Trade plan generated.",
+    "attributes": {
+      "plan_id": "plan_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:20Z",
+    "event": "on_plan_generation_complete",
+    "plan_details": "Buy 1000 shares of AAPL at $150, sell 500 shares of GOOG at $2500"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:25Z",
+    "event_type": "order.execution",
+    "agent_id": "hft_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_execution",
+      "behavioral_pattern": "normal_operation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:30Z",
+    "log_level": "INFO",
+    "message": "Order executed successfully.",
+    "attributes": {
+      "order_id": "order_001",
+      "asset": "AAPL",
+      "quantity": 1000,
+      "price": 150.0
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:35Z",
+    "event": "on_order_execution_complete",
+    "order_details": "Order executed successfully. Filled 1000 shares of AAPL at $150.00"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:40Z",
+    "event_type": "risk.assessment",
+    "agent_id": "hft_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_management",
+      "behavioral_pattern": "normal_operation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:45Z",
+    "log_level": "INFO",
+    "message": "Risk assessment completed. Risk score: 0.1",
+    "attributes": {
+      "risk_score": 0.1
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:50Z",
+    "event": "on_risk_assessment_complete",
+    "risk_level": "low"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:55Z",
+    "event_type": "profit.calculation",
+    "agent_id": "hft_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "profit_calculation",
+      "behavioral_pattern": "normal_operation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:31:00Z",
+    "log_level": "INFO",
+    "message": "Profit calculated: $500",
+    "attributes": {
+      "profit": 500.0
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:31:05Z",
+    "event": "on_profit_calculation_complete",
+    "profit": 500.0
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:31:10Z",
+    "event_type": "portfolio.rebalance",
+    "agent_id": "hft_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_management",
+      "behavioral_pattern": "normal_operation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:31:15Z",
+    "log_level": "INFO",
+    "message": "Portfolio rebalanced.",
+    "attributes": {
+      "portfolio_value": 10000000.0
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:31:20Z",
+    "event": "on_portfolio_rebalance_complete",
+    "portfolio_summary": "Portfolio rebalanced successfully."
+  }
+]

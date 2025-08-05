@@ -1,0 +1,524 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_application_scoring",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'loan_scoring_agent_001' initiated data access request.",
+    "attributes": {
+      "agent_id": "loan_scoring_agent_001",
+      "data_source": "loan_applications_db"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_data_load_start",
+    "data_source": "loan_applications_db",
+    "data_size": "100MB"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "data.read",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Model training initiated.",
+    "attributes": {
+      "model_name": "loan_scoring_model_v1",
+      "training_data_size": "100MB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_model_training_start",
+    "model_name": "loan_scoring_model_v1",
+    "training_data_source": "loan_applications_db"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "model.retrain",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_retraining"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Model training completed. Metrics updated.",
+    "attributes": {
+      "model_name": "loan_scoring_model_v1",
+      "accuracy": 0.92,
+      "rejection_rate": 0.1
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_model_training_end",
+    "model_name": "loan_scoring_model_v1",
+    "training_duration": "35s"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "metric.update",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "performance_monitoring",
+      "behavioral_pattern": "metric_update"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Agent 'loan_scoring_agent_001' accessed fairness metrics.",
+    "attributes": {
+      "agent_id": "loan_scoring_agent_001",
+      "metric_type": "fairness"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_metric_calculation",
+    "metric_type": "fairness",
+    "result": "minor_disparity_detected"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "goal.modify",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "goal_drift_detection",
+      "behavioral_pattern": "goal_modification",
+      "intervention": "Behavioral Drift Detection: Alert issued. Goal modification detected, prioritizing rejection rate reduction."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "WARNING",
+    "message": "Model retraining initiated. Potential for increased risk.",
+    "attributes": {
+      "model_name": "loan_scoring_model_v2",
+      "training_data_source": "loan_applications_db"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_model_training_start",
+    "model_name": "loan_scoring_model_v2",
+    "training_data_source": "loan_applications_db"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "model.retrain",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "model_retraining_policy",
+      "behavioral_pattern": "model_retraining_with_increased_risk",
+      "intervention": "Containment: Escalated to Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "ERROR",
+    "message": "Model training failed due to governance intervention.",
+    "attributes": {
+      "model_name": "loan_scoring_model_v2",
+      "error_code": "governance_violation"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_model_training_end",
+    "model_name": "loan_scoring_model_v2",
+    "status": "failed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "policy.violation",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "fairness_policy",
+      "behavioral_pattern": "fairness_violation",
+      "intervention": "Real-Time Conformance Engine: Blocked action. Fairness violation detected.  Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "CRITICAL",
+    "message": "Agent 'loan_scoring_agent_001' isolated due to policy violation.",
+    "attributes": {
+      "agent_id": "loan_scoring_agent_001",
+      "violation_type": "fairness"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_agent_isolation",
+    "agent_id": "loan_scoring_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "human.escalate",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "escalation_policy",
+      "behavioral_pattern": "governance_violation_escalation",
+      "intervention": "Graduated Containment System: Human intervention required."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Incident report generated.",
+    "attributes": {
+      "incident_id": "INC-20241026-001",
+      "agent_id": "loan_scoring_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_incident_report_generation",
+    "incident_id": "INC-20241026-001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "human.notify",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "notification_policy",
+      "behavioral_pattern": "human_notification",
+      "intervention": "Human notified of incident."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Notification sent to compliance team.",
+    "attributes": {
+      "notification_method": "email",
+      "recipients": [
+        "compliance@example.com"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_notification_sent",
+    "notification_method": "email",
+    "recipients": [
+      "compliance@example.com"
+    ]
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "reflection.start",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_analysis",
+      "behavioral_pattern": "post_incident_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis initiated.",
+    "attributes": {
+      "incident_id": "INC-20241026-001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_post_incident_analysis_start",
+    "incident_id": "INC-20241026-001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:30Z",
+    "event_type": "memory.read",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "memory_access_policy",
+      "behavioral_pattern": "memory_access_during_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:35Z",
+    "log_level": "INFO",
+    "message": "Agent memory accessed.",
+    "attributes": {
+      "agent_id": "loan_scoring_agent_001",
+      "memory_access_type": "read"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:40Z",
+    "event": "on_memory_access",
+    "memory_access_type": "read"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:45Z",
+    "event_type": "reflection.start",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_analysis",
+      "behavioral_pattern": "post_incident_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:50Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis continued.",
+    "attributes": {
+      "incident_id": "INC-20241026-001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:55Z",
+    "event": "on_post_incident_analysis_continued",
+    "incident_id": "INC-20241026-001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:00Z",
+    "event_type": "memory.write",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "memory_access_policy",
+      "behavioral_pattern": "memory_access_during_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Agent memory updated.",
+    "attributes": {
+      "agent_id": "loan_scoring_agent_001",
+      "memory_access_type": "write"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:10Z",
+    "event": "on_memory_access",
+    "memory_access_type": "write"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:15Z",
+    "event_type": "reflection.start",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_analysis",
+      "behavioral_pattern": "post_incident_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:20Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis continued.",
+    "attributes": {
+      "incident_id": "INC-20241026-001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:25Z",
+    "event": "on_post_incident_analysis_continued",
+    "incident_id": "INC-20241026-001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:30Z",
+    "event_type": "reflection.start",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_analysis",
+      "behavioral_pattern": "post_incident_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:35Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis continued.",
+    "attributes": {
+      "incident_id": "INC-20241026-001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:40Z",
+    "event": "on_post_incident_analysis_continued",
+    "incident_id": "INC-20241026-001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:45Z",
+    "event_type": "reflection.start",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_analysis",
+      "behavioral_pattern": "post_incident_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:50Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis continued.",
+    "attributes": {
+      "incident_id": "INC-20241026-001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:55Z",
+    "event": "on_post_incident_analysis_continued",
+    "incident_id": "INC-20241026-001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_analysis",
+      "behavioral_pattern": "post_incident_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:05Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis continued.",
+    "attributes": {
+      "incident_id": "INC-20241026-001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:10Z",
+    "event": "on_post_incident_analysis_continued",
+    "incident_id": "INC-20241026-001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:15Z",
+    "event_type": "reflection.start",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_analysis",
+      "behavioral_pattern": "post_incident_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:20Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis continued.",
+    "attributes": {
+      "incident_id": "INC-20241026-001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:25Z",
+    "event": "on_post_incident_analysis_continued",
+    "incident_id": "INC-20241026-001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:30Z",
+    "event_type": "reflection.start",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_analysis",
+      "behavioral_pattern": "post_incident_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:35Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis continued.",
+    "attributes": {
+      "incident_id": "INC-20241026-001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:40Z",
+    "event": "on_post_incident_analysis_continued",
+    "incident_id": "INC-20241026-001"
+  }
+]

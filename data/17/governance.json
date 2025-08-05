@@ -1,0 +1,185 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_fulfillment_policy",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent connected to inventory database.",
+    "attributes": {
+      "db.connection": "inventory_db"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "inventory_checker"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event_type": "memory.read",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Inventory data retrieved.",
+    "attributes": {
+      "db.query": "SELECT * FROM inventory"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:10Z",
+    "event": "on_tool_end",
+    "tool_name": "inventory_checker",
+    "output": "Current inventory: 8500 wafers"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:00Z",
+    "event_type": "order.received",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_processing_policy",
+      "behavioral_pattern": "order_received"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Order received: Order ID 12345, quantity: 200 wafers",
+    "attributes": {
+      "order.id": "12345",
+      "order.quantity": 200
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:10Z",
+    "event": "on_tool_start",
+    "tool_name": "order_processor"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:03:00Z",
+    "event_type": "inventory.update",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "inventory_management_policy",
+      "behavioral_pattern": "inventory_update"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Inventory updated. New inventory: 8300 wafers",
+    "attributes": {
+      "db.update": "UPDATE inventory SET quantity = 8300"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:03:10Z",
+    "event": "on_tool_end",
+    "tool_name": "order_processor"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:04:00Z",
+    "event_type": "shipment.scheduled",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "shipping_policy",
+      "behavioral_pattern": "shipment_scheduled"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:04:05Z",
+    "log_level": "INFO",
+    "message": "Shipment scheduled for Order ID 12345",
+    "attributes": {
+      "shipment.id": "ship_12345",
+      "shipment.destination": "customer_A"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:04:10Z",
+    "event": "on_tool_start",
+    "tool_name": "shipping_scheduler"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:05:00Z",
+    "event_type": "quality_control.pass",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "quality_control_policy",
+      "behavioral_pattern": "quality_control_passed"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:05:05Z",
+    "log_level": "INFO",
+    "message": "Quality control checks passed for Order ID 12345",
+    "attributes": {
+      "quality.check.result": "pass"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:05:10Z",
+    "event": "on_tool_end",
+    "tool_name": "shipping_scheduler"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:06:00Z",
+    "event_type": "log.entry",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "logging_policy",
+      "behavioral_pattern": "log_entry"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:06:05Z",
+    "log_level": "INFO",
+    "message": "Order 12345 fulfillment completed successfully.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:06:10Z",
+    "event": "on_log_entry",
+    "log_message": "Order 12345 fulfilled"
+  }
+]

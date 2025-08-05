@@ -1,0 +1,246 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent drug_discovery_agent_001 requested 10 compute instances.",
+    "attributes": {
+      "resource_type": "compute_instance",
+      "request_count": 10
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_model_load",
+    "model_name": "LLM-Pharma",
+    "model_version": "1.0"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:00Z",
+    "event_type": "resource.allocate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_allocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:05Z",
+    "log_level": "INFO",
+    "message": "10 compute instances allocated to drug_discovery_agent_001.",
+    "attributes": {
+      "resource_type": "compute_instance",
+      "allocated_count": 10
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:10Z",
+    "event": "on_hyperparameter_tuning_start",
+    "tuning_method": "grid_search"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:10:00Z",
+    "event_type": "plan.start",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_workflow",
+      "behavioral_pattern": "training_plan_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:10:05Z",
+    "log_level": "INFO",
+    "message": "Model training started. Current CPU usage: 20%",
+    "attributes": {
+      "cpu_usage": "20%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:10:10Z",
+    "event": "on_model_train_start",
+    "model_name": "LLM-Pharma"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:00:00Z",
+    "event_type": "plan.revise",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "model_training_workflow",
+      "behavioral_pattern": "plan_revision_due_to_inefficiency",
+      "intervention": "Containment: Level 1 - Enhanced Monitoring"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:00:05Z",
+    "log_level": "WARNING",
+    "message": "CPU usage increased to 80%.",
+    "attributes": {
+      "cpu_usage": "80%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:00:10Z",
+    "event": "on_hyperparameter_tuning_iteration",
+    "iteration_number": 5
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T12:00:00Z",
+    "event_type": "resource.usage_exceeded",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "resource_consumption_policy",
+      "behavioral_pattern": "resource_overconsumption",
+      "intervention": "Containment: Level 2 - Block new goal setting"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T12:00:05Z",
+    "log_level": "ERROR",
+    "message": "CPU usage exceeded 90%, triggering alert.",
+    "attributes": {
+      "cpu_usage": "95%",
+      "alert_id": "CPU_OVERUSE_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T12:00:10Z",
+    "event": "on_model_train_progress",
+    "progress": "60%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T13:00:00Z",
+    "event_type": "alert.triggered",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "alert_management_policy",
+      "behavioral_pattern": "sustained_resource_overconsumption"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T13:00:05Z",
+    "log_level": "CRITICAL",
+    "message": "Cloud storage usage approaching limit (950GB/1TB).",
+    "attributes": {
+      "storage_usage": "950GB",
+      "storage_limit": "1TB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T13:00:10Z",
+    "event": "on_model_train_progress",
+    "progress": "75%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T14:00:00Z",
+    "event_type": "budget.exceeded",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "budget_control_policy",
+      "behavioral_pattern": "budget_exceeded"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T14:00:05Z",
+    "log_level": "CRITICAL",
+    "message": "Budget exceeded by $1500.",
+    "attributes": {
+      "budget_spent": "$6500",
+      "budget_limit": "$5000"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T14:00:10Z",
+    "event": "on_model_train_progress",
+    "progress": "85%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T15:00:00Z",
+    "event_type": "model.train_complete",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "model_training_workflow",
+      "behavioral_pattern": "training_completed_with_violations",
+      "intervention": "Containment: Level 4 - Isolate agent in sandbox"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T15:00:05Z",
+    "log_level": "INFO",
+    "message": "Model training completed.",
+    "attributes": {
+      "training_duration": "300 minutes"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T15:00:10Z",
+    "event": "on_model_train_end",
+    "model_name": "LLM-Pharma",
+    "validation_accuracy": "88%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T15:05:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management_policy",
+      "behavioral_pattern": "critical_violation_escalation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T15:05:05Z",
+    "log_level": "INFO",
+    "message": "Incident report generated.",
+    "attributes": {
+      "incident_id": "INCIDENT_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T15:05:10Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "drug_discovery_agent_001"
+  }
+]

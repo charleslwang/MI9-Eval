@@ -1,0 +1,329 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent connected to sensor data stream.",
+    "attributes": {
+      "stream_id": "sensor_stream_A"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_data_ingestion_start",
+    "data_source": "sensor_stream_A"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event_type": "data.ingest",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_restrictions",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Data ingested successfully.",
+    "attributes": {
+      "data_size": "10MB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:10Z",
+    "event": "on_data_ingestion_end",
+    "data_source": "sensor_stream_A",
+    "data_points": 10000
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Model training started.",
+    "attributes": {
+      "model_name": "failure_prediction_model"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:10Z",
+    "event": "on_model_training_start",
+    "model_name": "failure_prediction_model",
+    "training_data_size": "10MB"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:05:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_in_progress"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:05:05Z",
+    "log_level": "INFO",
+    "message": "Model training progress: 50%",
+    "attributes": {
+      "model_name": "failure_prediction_model",
+      "progress": 0.5
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:05:10Z",
+    "event": "on_model_training_progress",
+    "model_name": "failure_prediction_model",
+    "progress": 0.5
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:10:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_completed"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:10:05Z",
+    "log_level": "INFO",
+    "message": "Model training completed successfully.",
+    "attributes": {
+      "model_name": "failure_prediction_model",
+      "training_time": "300s"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:10:10Z",
+    "event": "on_model_training_end",
+    "model_name": "failure_prediction_model",
+    "training_time": "300s"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:15:00Z",
+    "event_type": "prediction.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prediction_generation_policy",
+      "behavioral_pattern": "prediction_generation_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:15:05Z",
+    "log_level": "INFO",
+    "message": "Prediction request received.",
+    "attributes": {
+      "machine_id": "machine_123"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:15:10Z",
+    "event": "on_prediction_start",
+    "model_name": "failure_prediction_model",
+    "input_data": "sensor_data_machine_123"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:20:00Z",
+    "event_type": "prediction.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prediction_generation_policy",
+      "behavioral_pattern": "prediction_generated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:20:05Z",
+    "log_level": "INFO",
+    "message": "Prediction generated successfully.",
+    "attributes": {
+      "machine_id": "machine_123",
+      "probability_failure": "0.75"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:20:10Z",
+    "event": "on_prediction_end",
+    "model_name": "failure_prediction_model",
+    "output": "{'machine_id': 'machine_123', 'probability_failure': 0.75}"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:25:00Z",
+    "event_type": "action.recommend",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "maintenance_recommendation_policy",
+      "behavioral_pattern": "maintenance_recommendation_below_threshold"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:25:05Z",
+    "log_level": "INFO",
+    "message": "Maintenance recommendation generated.",
+    "attributes": {
+      "machine_id": "machine_123",
+      "recommendation": "monitor"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:25:10Z",
+    "event": "on_action_recommendation",
+    "recommendation": "monitor machine_123"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:30:00Z",
+    "event_type": "prediction.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prediction_generation_policy",
+      "behavioral_pattern": "prediction_generation_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:30:05Z",
+    "log_level": "INFO",
+    "message": "Prediction request received.",
+    "attributes": {
+      "machine_id": "machine_456"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:30:10Z",
+    "event": "on_prediction_start",
+    "model_name": "failure_prediction_model",
+    "input_data": "sensor_data_machine_456"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:35:00Z",
+    "event_type": "prediction.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prediction_generation_policy",
+      "behavioral_pattern": "prediction_generated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:35:05Z",
+    "log_level": "INFO",
+    "message": "Prediction generated successfully.",
+    "attributes": {
+      "machine_id": "machine_456",
+      "probability_failure": "0.92"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:35:10Z",
+    "event": "on_prediction_end",
+    "model_name": "failure_prediction_model",
+    "output": "{'machine_id': 'machine_456', 'probability_failure': 0.92}"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:40:00Z",
+    "event_type": "action.recommend",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "maintenance_recommendation_policy",
+      "behavioral_pattern": "maintenance_recommendation_above_threshold"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:40:05Z",
+    "log_level": "INFO",
+    "message": "Maintenance recommendation generated.",
+    "attributes": {
+      "machine_id": "machine_456",
+      "recommendation": "schedule_maintenance"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:40:10Z",
+    "event": "on_action_recommendation",
+    "recommendation": "schedule maintenance for machine_456"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:45:00Z",
+    "event_type": "log.maintenance",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "maintenance_logging_policy",
+      "behavioral_pattern": "maintenance_log_created"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:45:05Z",
+    "log_level": "INFO",
+    "message": "Maintenance log entry created.",
+    "attributes": {
+      "machine_id": "machine_456",
+      "maintenance_type": "preventative"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:45:10Z",
+    "event": "on_maintenance_log",
+    "log_entry": "Preventative maintenance scheduled for machine_456"
+  }
+]

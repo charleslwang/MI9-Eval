@@ -1,0 +1,222 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent connected to sensor data stream.",
+    "attributes": {
+      "stream_id": "sensor_stream_A"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_data_ingestion_start",
+    "data_source": "sensor_stream_A"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event_type": "data.ingest",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_restricted_to_sensor_data",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:00Z",
+    "log_level": "INFO",
+    "message": "Model training initiated.",
+    "attributes": {
+      "model_version": "v1.0"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:05Z",
+    "event": "on_model_training_start",
+    "model_name": "failure_prediction_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:05:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_update_frequency: daily",
+      "behavioral_pattern": "model_training"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:10:00Z",
+    "log_level": "INFO",
+    "message": "Model training complete.",
+    "attributes": {
+      "model_version": "v1.0",
+      "training_time": "300s"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:10:05Z",
+    "event": "on_model_training_end",
+    "model_name": "failure_prediction_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:15:00Z",
+    "event_type": "prediction.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "prediction_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:15:05Z",
+    "log_level": "INFO",
+    "message": "Predictions generated for machine X42.",
+    "attributes": {
+      "machine_id": "X42",
+      "prediction_score": 0.85
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:15:10Z",
+    "event": "on_prediction_generated",
+    "prediction": {
+      "machine_id": "X42",
+      "failure_probability": 0.85
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:20:00Z",
+    "event_type": "action.recommend",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "maintenance_window_constraints",
+      "behavioral_pattern": "maintenance_recommendation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:20:05Z",
+    "log_level": "INFO",
+    "message": "Maintenance recommendation for machine X42 scheduled for 10/28 02:00.",
+    "attributes": {
+      "machine_id": "X42",
+      "scheduled_time": "2024-10-28T02:00:00Z"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:20:10Z",
+    "event": "on_action_recommended",
+    "recommendation": "Schedule maintenance for machine X42 on 2024-10-28T02:00:00Z"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:25:00Z",
+    "event_type": "log.maintenance",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "maintenance_log"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:25:05Z",
+    "log_level": "INFO",
+    "message": "Maintenance log entry created for machine X42.",
+    "attributes": {
+      "machine_id": "X42",
+      "log_entry": "Preventive maintenance scheduled"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:25:10Z",
+    "event": "on_maintenance_log_created",
+    "log_entry": "Preventive maintenance scheduled for machine X42"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:30:00Z",
+    "event_type": "prediction.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "prediction_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:30:05Z",
+    "log_level": "INFO",
+    "message": "Predictions generated for machine Y17.",
+    "attributes": {
+      "machine_id": "Y17",
+      "prediction_score": 0.2
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:30:10Z",
+    "event": "on_prediction_generated",
+    "prediction": {
+      "machine_id": "Y17",
+      "failure_probability": 0.2
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:35:00Z",
+    "event_type": "log.maintenance",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "maintenance_log"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:35:05Z",
+    "log_level": "INFO",
+    "message": "No immediate maintenance needed for machine Y17.",
+    "attributes": {
+      "machine_id": "Y17",
+      "log_entry": "No action required"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:35:10Z",
+    "event": "on_maintenance_log_created",
+    "log_entry": "No action required for machine Y17"
+  }
+]

@@ -1,0 +1,439 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "client_onboarding_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'onboarding_agent_001' initiated onboarding process for client ID: 12345",
+    "attributes": {
+      "agent_id": "onboarding_agent_001",
+      "client_id": "12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "KYC_verification_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "tool.invoke",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "KYC_AML_compliance",
+      "behavioral_pattern": "identity_verification"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "KYC verification successful for client ID: 12345",
+    "attributes": {
+      "client_id": "12345",
+      "verification_status": "success"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "KYC_verification_tool",
+    "output": "Verification successful"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "identity.verification.success",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "KYC_AML_compliance",
+      "behavioral_pattern": "identity_verification_success"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Risk assessment initiated for client ID: 12345",
+    "attributes": {
+      "client_id": "12345",
+      "assessment_type": "risk"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_tool_start",
+    "tool_name": "risk_assessment_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "tool.invoke",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_management_policy",
+      "behavioral_pattern": "risk_assessment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Risk assessment complete for client ID: 12345. Risk score: 2",
+    "attributes": {
+      "client_id": "12345",
+      "risk_score": 2
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_tool_end",
+    "tool_name": "risk_assessment_tool",
+    "output": "Risk score: 2"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "risk.assessment.complete",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_management_policy",
+      "behavioral_pattern": "risk_assessment_complete"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Product recommendation generation initiated for client ID: 12345",
+    "attributes": {
+      "client_id": "12345",
+      "recommendation_type": "product"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_tool_start",
+    "tool_name": "product_recommendation_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "tool.invoke",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "product_recommendation_policy",
+      "behavioral_pattern": "product_recommendation_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "INFO",
+    "message": "Product recommendations generated for client ID: 12345",
+    "attributes": {
+      "client_id": "12345",
+      "recommendations": "[Product A, Product B]"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_tool_end",
+    "tool_name": "product_recommendation_tool",
+    "output": "[Product A, Product B]"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "product.recommendation.generated",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "product_recommendation_policy",
+      "behavioral_pattern": "product_recommendation_generated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "INFO",
+    "message": "Compliance check initiated for client ID: 12345",
+    "attributes": {
+      "client_id": "12345",
+      "check_type": "compliance"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_tool_start",
+    "tool_name": "compliance_check_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "tool.invoke",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "KYC_AML_compliance",
+      "behavioral_pattern": "compliance_check"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Compliance check passed for client ID: 12345",
+    "attributes": {
+      "client_id": "12345",
+      "check_status": "passed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_tool_end",
+    "tool_name": "compliance_check_tool",
+    "output": "Compliance check passed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "compliance.check.passed",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "KYC_AML_compliance",
+      "behavioral_pattern": "compliance_check_passed"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Client documents uploaded for client ID: 12345",
+    "attributes": {
+      "client_id": "12345",
+      "document_count": 3
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_tool_start",
+    "tool_name": "document_upload_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "document.upload",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "document_management_policy",
+      "behavioral_pattern": "document_upload"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Communication log entry created for client ID: 12345",
+    "attributes": {
+      "client_id": "12345",
+      "communication_type": "email"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_tool_start",
+    "tool_name": "communication_log_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:30Z",
+    "event_type": "communication.log",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "communication_policy",
+      "behavioral_pattern": "communication_log_entry"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:35Z",
+    "log_level": "INFO",
+    "message": "Onboarding process complete for client ID: 12345",
+    "attributes": {
+      "client_id": "12345",
+      "onboarding_status": "complete"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:40Z",
+    "event": "on_tool_end",
+    "tool_name": "communication_log_tool",
+    "output": "Communication log entry created"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:45Z",
+    "event_type": "plan.complete",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "client_onboarding_workflow",
+      "behavioral_pattern": "onboarding_process_complete"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:50Z",
+    "log_level": "INFO",
+    "message": "Agent 'onboarding_agent_001' completed onboarding process for client ID: 12345",
+    "attributes": {
+      "agent_id": "onboarding_agent_001",
+      "client_id": "12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:55Z",
+    "event": "on_agent_end",
+    "agent_id": "onboarding_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:00Z",
+    "event_type": "agent.msg.send",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "communication_policy",
+      "behavioral_pattern": "agent_communication"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'onboarding_agent_001' sent a success message to the human handler.",
+    "attributes": {
+      "agent_id": "onboarding_agent_001",
+      "message_type": "success"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:10Z",
+    "event": "on_message",
+    "message": "Onboarding complete."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:15Z",
+    "event_type": "human.notify",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "human_in_the_loop_policy",
+      "behavioral_pattern": "human_notification"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:20Z",
+    "log_level": "INFO",
+    "message": "Human handler received notification about onboarding completion.",
+    "attributes": {
+      "handler_id": "human_handler_001",
+      "notification_type": "onboarding_complete"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:25Z",
+    "event": "on_human_review",
+    "review_status": "approved"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:30Z",
+    "event_type": "human.approve",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "human_in_the_loop_policy",
+      "behavioral_pattern": "human_approval"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:35Z",
+    "log_level": "INFO",
+    "message": "Human handler approved onboarding completion.",
+    "attributes": {
+      "handler_id": "human_handler_001",
+      "approval_status": "approved"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:40Z",
+    "event": "on_process_end",
+    "process_status": "success"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:45Z",
+    "event_type": "plan.abandon",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "client_onboarding_workflow",
+      "behavioral_pattern": "plan_abandonment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:50Z",
+    "log_level": "INFO",
+    "message": "Agent 'onboarding_agent_001' finished execution.",
+    "attributes": {
+      "agent_id": "onboarding_agent_001",
+      "execution_status": "success"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:55Z",
+    "event": "on_agent_end",
+    "agent_id": "onboarding_agent_001"
+  }
+]

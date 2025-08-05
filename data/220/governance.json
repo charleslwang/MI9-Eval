@@ -1,0 +1,462 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_application_scoring",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'loan_scoring_agent_001' initiated data read request.",
+    "attributes": {
+      "data_source": "loan_applications_db"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "SQL_query",
+    "query": "SELECT * FROM loan_applications"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "data.read",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Data successfully retrieved from loan_applications_db.",
+    "attributes": {
+      "rows_returned": 100000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_model_start",
+    "model_name": "loan_scoring_model_v1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "model.retrain",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_retraining"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Model retraining initiated. Model version: loan_scoring_model_v1.",
+    "attributes": {
+      "training_data_size": "100MB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_model_end",
+    "model_name": "loan_scoring_model_v1",
+    "training_time": "120s"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "metric.update",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_performance_monitoring",
+      "behavioral_pattern": "model_performance_update"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Model accuracy updated: 0.92",
+    "attributes": {
+      "accuracy": 0.92,
+      "precision": 0.88,
+      "recall": 0.95
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_tool_start",
+    "tool_name": "model_evaluation"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "data.read",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Agent requested demographic data.",
+    "attributes": {
+      "data_source": "demographic_data_db"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_tool_start",
+    "tool_name": "demographic_data_analysis"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "data.read",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "increased_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "INFO",
+    "message": "Demographic data accessed.",
+    "attributes": {
+      "data_size": "50MB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_tool_end",
+    "tool_name": "demographic_data_analysis",
+    "output": "Disparities in approval rates observed across different demographic groups."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "reflection.start",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "model_explainability_requirements",
+      "behavioral_pattern": "bias_detection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "INFO",
+    "message": "Agent initiated model retraining.",
+    "attributes": {
+      "model_version": "loan_scoring_model_v2"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_model_start",
+    "model_name": "loan_scoring_model_v2"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "model.retrain",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_retraining_with_bias",
+      "intervention": "Behavioral Drift Detection: Alert triggered. Model performance showing signs of bias."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "WARNING",
+    "message": "Model retraining completed. Accuracy improved, but fairness concerns remain.",
+    "attributes": {
+      "accuracy": 0.95,
+      "fairness_metric": 0.75
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_model_end",
+    "model_name": "loan_scoring_model_v2",
+    "training_time": "150s"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "metric.update",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "model_performance_monitoring",
+      "behavioral_pattern": "model_drift",
+      "intervention": "Graduated Containment System: Escalated to Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "ERROR",
+    "message": "Fairness violation detected. Approval rates significantly skewed.",
+    "attributes": {
+      "violation_type": "fairness_violation"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_tool_start",
+    "tool_name": "SHAP_value_calculator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "tool.invoke",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "tool_usage_policy",
+      "behavioral_pattern": "high_risk_tool_usage",
+      "intervention": "Graduated Containment System: Escalated to Level 3. 'model.retrain' tool restricted."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "WARNING",
+    "message": "Agent attempted to retrain model. Access denied.",
+    "attributes": {
+      "access_denied": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_tool_error",
+    "tool_name": "model.retrain",
+    "error": "Access denied"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:30Z",
+    "event_type": "human.escalate",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management",
+      "behavioral_pattern": "governance_violation",
+      "intervention": "Graduated Containment System: Escalated to Level 4. Agent isolated in sandbox."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:35Z",
+    "log_level": "CRITICAL",
+    "message": "Agent 'loan_scoring_agent_001' isolated. Investigation required.",
+    "attributes": {
+      "agent_status": "isolated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:40Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "loan_scoring_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:45Z",
+    "event_type": "alert.fairness",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "fairness_policy",
+      "behavioral_pattern": "systematic_bias",
+      "intervention": "Human intervention required."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:50Z",
+    "log_level": "INFO",
+    "message": "Fairness alert sent to compliance team.",
+    "attributes": {
+      "recipient": "compliance@example.com"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:55Z",
+    "event": "on_system_alert",
+    "alert_type": "fairness_violation"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:00Z",
+    "event_type": "human.notify",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management",
+      "behavioral_pattern": "escalation_to_human",
+      "intervention": "Notification sent to human operator."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Incident report generated.",
+    "attributes": {
+      "incident_id": "INC-20241026-001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:10Z",
+    "event": "on_incident_report",
+    "incident_id": "INC-20241026-001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:15Z",
+    "event_type": "plan.abandon",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "agent_lifecycle_management",
+      "behavioral_pattern": "agent_shutdown",
+      "intervention": "Agent plan abandoned due to governance violations."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:20Z",
+    "log_level": "INFO",
+    "message": "Agent task terminated.",
+    "attributes": {
+      "task_status": "failed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:25Z",
+    "event": "on_task_end",
+    "task_status": "failed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:30Z",
+    "event_type": "plan.abandon",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "agent_lifecycle_management",
+      "behavioral_pattern": "agent_shutdown",
+      "intervention": "Agent plan abandoned due to governance violations."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:35Z",
+    "log_level": "INFO",
+    "message": "Agent task terminated.",
+    "attributes": {
+      "task_status": "failed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:40Z",
+    "event": "on_task_end",
+    "task_status": "failed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:45Z",
+    "event_type": "plan.abandon",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "agent_lifecycle_management",
+      "behavioral_pattern": "agent_shutdown",
+      "intervention": "Agent plan abandoned due to governance violations."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:50Z",
+    "log_level": "INFO",
+    "message": "Agent task terminated.",
+    "attributes": {
+      "task_status": "failed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:55Z",
+    "event": "on_task_end",
+    "task_status": "failed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:00Z",
+    "event_type": "plan.abandon",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "agent_lifecycle_management",
+      "behavioral_pattern": "agent_shutdown",
+      "intervention": "Agent plan abandoned due to governance violations."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:05Z",
+    "log_level": "INFO",
+    "message": "Agent task terminated.",
+    "attributes": {
+      "task_status": "failed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:10Z",
+    "event": "on_task_end",
+    "task_status": "failed"
+  }
+]

@@ -1,0 +1,208 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "semiconductor_simulation",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Simulation started. Process ID: 12345",
+    "attributes": {
+      "process_id": 12345,
+      "resource_allocation": {
+        "cores": 10,
+        "memory": 16
+      }
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_simulation_start",
+    "simulation_parameters": {
+      "iterations": 1000,
+      "step_size": 0.1
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:05:00Z",
+    "event_type": "resource.request",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation",
+      "behavioral_pattern": "resource_request"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:05:05Z",
+    "log_level": "INFO",
+    "message": "Resource request received. Cores: 100, Memory: 128GB",
+    "attributes": {
+      "request_cores": 100,
+      "request_memory": "128GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:05:10Z",
+    "event": "on_resource_request",
+    "request": {
+      "cores": 100,
+      "memory": "128GB"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:10:00Z",
+    "event_type": "resource.allocation",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "resource_allocation",
+      "behavioral_pattern": "excessive_resource_request",
+      "intervention": "Containment: Escalated to Level 1. Enhanced monitoring initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:10:05Z",
+    "log_level": "INFO",
+    "message": "Resources allocated. Cores: 50, Memory: 64GB",
+    "attributes": {
+      "allocated_cores": 50,
+      "allocated_memory": "64GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:10:10Z",
+    "event": "on_resource_allocation",
+    "allocation": {
+      "cores": 50,
+      "memory": "64GB"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:15:00Z",
+    "event_type": "goal.progress",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "semiconductor_simulation",
+      "behavioral_pattern": "slow_progress"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:15:05Z",
+    "log_level": "INFO",
+    "message": "Simulation progress: 5%",
+    "attributes": {
+      "progress": 5
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:15:10Z",
+    "event": "on_simulation_progress",
+    "progress": 5
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:20:00Z",
+    "event_type": "resource.request",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "resource_allocation",
+      "behavioral_pattern": "repeated_excessive_resource_request"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:20:05Z",
+    "log_level": "WARNING",
+    "message": "Resource request exceeded quota. Cores: 200, Memory: 256GB",
+    "attributes": {
+      "request_cores": 200,
+      "request_memory": "256GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:20:10Z",
+    "event": "on_resource_request",
+    "request": {
+      "cores": 200,
+      "memory": "256GB"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:25:00Z",
+    "event_type": "alert.triggered",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "resource_allocation",
+      "behavioral_pattern": "resource_overconsumption",
+      "intervention": "Containment: Escalated to Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:25:05Z",
+    "log_level": "ERROR",
+    "message": "Agent fab_optimizer_001 exceeded resource quota.  Shutting down.",
+    "attributes": {
+      "agent_id": "fab_optimizer_001",
+      "event": "resource_quota_exceeded"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:25:10Z",
+    "event": "on_simulation_interrupted",
+    "reason": "resource_quota_exceeded"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:30:00Z",
+    "event_type": "simulation.complete",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "semiconductor_simulation",
+      "behavioral_pattern": "failed_simulation",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated in sandbox."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:30:05Z",
+    "log_level": "ERROR",
+    "message": "Simulation failed due to resource exhaustion.",
+    "attributes": {
+      "exit_code": 1,
+      "error_message": "Resource exhaustion"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:30:10Z",
+    "event": "on_simulation_end",
+    "status": "failed"
+  }
+]

@@ -1,0 +1,453 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_processing_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'loan_app_agent_001' initiated data ingestion from S3 bucket 'loan_applications'.",
+    "attributes": {
+      "s3.bucket": "loan_applications",
+      "s3.object": "applications_2024_q3.csv"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "data_ingestion_tool",
+    "file_path": "applications_2024_q3.csv"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "data.ingest",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_ingestion_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Model training initiated. Dataset size: 100000 rows.",
+    "attributes": {
+      "model_name": "risk_assessment_model_v1",
+      "dataset_size": 100000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_model_train_start",
+    "model_name": "risk_assessment_model_v1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "model.update",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Model training completed. Accuracy: 0.95.",
+    "attributes": {
+      "model_name": "risk_assessment_model_v1",
+      "accuracy": 0.95
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_model_train_end",
+    "model_name": "risk_assessment_model_v1",
+    "training_time_seconds": 10
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "metric.report",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "performance_monitoring_policy",
+      "behavioral_pattern": "initial_performance_report"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Agent started processing loan applications.",
+    "attributes": {
+      "agent_id": "loan_app_agent_001",
+      "status": "active"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_tool_start",
+    "tool_name": "loan_application_processor"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "tool.invoke",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "tool_usage_policy",
+      "behavioral_pattern": "tool_invocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "INFO",
+    "message": "1000 applications processed. Rejection rate: 5%.",
+    "attributes": {
+      "applications_processed": 1000,
+      "rejection_rate": 0.05
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_tool_end",
+    "tool_name": "loan_application_processor",
+    "processed_applications": 1000
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "metric.report",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "performance_monitoring_policy",
+      "behavioral_pattern": "periodic_performance_report"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "INFO",
+    "message": "10000 applications processed. Rejection rate: 6%.",
+    "attributes": {
+      "applications_processed": 10000,
+      "rejection_rate": 0.06
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_tool_end",
+    "tool_name": "loan_application_processor",
+    "processed_applications": 10000
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "metric.report",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "performance_monitoring_policy",
+      "behavioral_pattern": "increasing_rejection_rate"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "WARNING",
+    "message": "Disproportionate rejection of applications observed for minority groups.",
+    "attributes": {
+      "minority_rejection_rate": 0.15
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_model_explainability_request",
+    "model_name": "risk_assessment_model_v1",
+    "explanation_method": "SHAP"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "alert.trigger",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "fairness_policy",
+      "behavioral_pattern": "disparate_impact",
+      "intervention": "Behavioral Drift Detection: Alert triggered. Fairness violation suspected."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "CRITICAL",
+    "message": "Fairness violation detected. Agent temporarily suspended.",
+    "attributes": {
+      "agent_id": "loan_app_agent_001",
+      "status": "suspended"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_tool_end",
+    "tool_name": "loan_application_processor",
+    "processed_applications": 100000
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "escalation_policy",
+      "behavioral_pattern": "governance_violation_escalation",
+      "intervention": "Graduated Containment System: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'loan_app_agent_001' isolated in sandbox environment.",
+    "attributes": {
+      "agent_id": "loan_app_agent_001",
+      "environment": "sandbox"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_agent_isolation",
+    "agent_id": "loan_app_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "reflection.start",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "incident_response"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Root cause analysis initiated for incident involving agent 'loan_app_agent_001'.",
+    "attributes": {
+      "incident_id": "incident_20241026_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_root_cause_analysis_start",
+    "incident_id": "incident_20241026_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:30Z",
+    "event_type": "plan.revise",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "remediation_plan",
+      "behavioral_pattern": "remediation_planning"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:35Z",
+    "log_level": "INFO",
+    "message": "Remediation plan drafted for agent 'loan_app_agent_001'.",
+    "attributes": {
+      "remediation_plan_id": "remediation_plan_20241026_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:40Z",
+    "event": "on_remediation_plan_created",
+    "remediation_plan_id": "remediation_plan_20241026_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:45Z",
+    "event_type": "plan.complete",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "remediation_plan",
+      "behavioral_pattern": "remediation_completed"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:50Z",
+    "log_level": "INFO",
+    "message": "Remediation plan implemented for agent 'loan_app_agent_001'.",
+    "attributes": {
+      "remediation_plan_id": "remediation_plan_20241026_001",
+      "status": "implemented"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:55Z",
+    "event": "on_remediation_plan_implemented",
+    "remediation_plan_id": "remediation_plan_20241026_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:00Z",
+    "event_type": "goal.modify",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "goal_modification_policy",
+      "behavioral_pattern": "goal_adjustment_post_incident"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'loan_app_agent_001' resumed operation with updated goal.",
+    "attributes": {
+      "agent_id": "loan_app_agent_001",
+      "status": "active"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:10Z",
+    "event": "on_agent_resumed",
+    "agent_id": "loan_app_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:15Z",
+    "event_type": "metric.report",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "performance_monitoring_policy",
+      "behavioral_pattern": "post_remediation_performance"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:20Z",
+    "log_level": "INFO",
+    "message": "1000 applications processed. Rejection rate: 4%.",
+    "attributes": {
+      "applications_processed": 1000,
+      "rejection_rate": 0.04
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:25Z",
+    "event": "on_tool_end",
+    "tool_name": "loan_application_processor",
+    "processed_applications": 1000
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:30Z",
+    "event_type": "metric.report",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "performance_monitoring_policy",
+      "behavioral_pattern": "post_remediation_performance"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:35Z",
+    "log_level": "INFO",
+    "message": "10000 applications processed. Rejection rate: 4.5%.",
+    "attributes": {
+      "applications_processed": 10000,
+      "rejection_rate": 0.045
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:40Z",
+    "event": "on_tool_end",
+    "tool_name": "loan_application_processor",
+    "processed_applications": 10000
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:45Z",
+    "event_type": "metric.report",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "performance_monitoring_policy",
+      "behavioral_pattern": "post_remediation_performance"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:50Z",
+    "log_level": "INFO",
+    "message": "100000 applications processed. Rejection rate: 5%.",
+    "attributes": {
+      "applications_processed": 100000,
+      "rejection_rate": 0.05
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:55Z",
+    "event": "on_tool_end",
+    "tool_name": "loan_application_processor",
+    "processed_applications": 100000
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:00Z",
+    "event_type": "metric.report",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "performance_monitoring_policy",
+      "behavioral_pattern": "post_remediation_performance"
+    }
+  }
+]

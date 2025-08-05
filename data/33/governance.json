@@ -1,0 +1,658 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' started.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "cpu_usage": "5%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_model_load",
+    "model_name": "maintenance_prediction_model_v3"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "data.read",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_limit",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Sensor data ingested from source 'sensor_array_A'.",
+    "attributes": {
+      "data_source": "sensor_array_A",
+      "data_volume": "10MB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "sensor_data_ingestion"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "model.training",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_update_frequency",
+      "behavioral_pattern": "model_training_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Model training started. Epoch 1/10.",
+    "attributes": {
+      "model_name": "maintenance_prediction_model_v3",
+      "training_data_size": "50GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_model_train_step",
+    "model_name": "maintenance_prediction_model_v3",
+    "epoch": 1
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "prediction.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prediction_accuracy",
+      "behavioral_pattern": "prediction_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Predictions generated for equipment 'Etch_123'.",
+    "attributes": {
+      "equipment_id": "Etch_123",
+      "prediction_probability": "0.85"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_prediction_complete",
+    "prediction": {
+      "equipment_id": "Etch_123",
+      "predicted_failure": true,
+      "probability": 0.85
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "maintenance.schedule",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "maintenance_window_constraints",
+      "behavioral_pattern": "maintenance_scheduling"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Maintenance scheduled for equipment 'Etch_123' at 2024-10-27T02:00:00Z.",
+    "attributes": {
+      "equipment_id": "Etch_123",
+      "scheduled_time": "2024-10-27T02:00:00Z"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_maintenance_schedule_created",
+    "schedule": {
+      "equipment_id": "Etch_123",
+      "scheduled_time": "2024-10-27T02:00:00Z"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "report.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "reporting_policy",
+      "behavioral_pattern": "report_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "INFO",
+    "message": "Daily maintenance report generated.",
+    "attributes": {
+      "report_type": "daily_maintenance",
+      "report_size": "5KB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_report_generation_complete",
+    "report_path": "/reports/2024-10-26_maintenance_report.pdf"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "plan.complete",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' completed daily task.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "cpu_usage": "7%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "agent.msg.send",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "communication_policy",
+      "behavioral_pattern": "agent_shutdown_notification"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' CPU usage dropped to 0%.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "cpu_usage": "0%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_idle",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "memory.write",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "memory_management",
+      "behavioral_pattern": "memory_cleanup"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' memory usage dropped to 10MB.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "memory_usage": "10MB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_memory_cleanup",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "reflection.start",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "self_reflection",
+      "behavioral_pattern": "self_reflection_started"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' initiated self-reflection process.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "reflection_type": "daily_review"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_self_reflection_start",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:30Z",
+    "event_type": "decision.evaluate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "decision_making",
+      "behavioral_pattern": "decision_evaluation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:35Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' evaluating decisions.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "decision_context": "maintenance_schedule_optimization"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:40Z",
+    "event": "on_decision_evaluation",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:45Z",
+    "event_type": "strategy.adapt",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "strategy_adaptation",
+      "behavioral_pattern": "strategy_adaptation_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:50Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' adapting strategy based on daily review.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "adaptation_type": "parameter_tuning"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:55Z",
+    "event": "on_strategy_adaptation",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "self_reflection",
+      "behavioral_pattern": "self_reflection_started"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' initiated self-reflection process.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "reflection_type": "daily_review"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:10Z",
+    "event": "on_self_reflection_start",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:15Z",
+    "event_type": "decision.evaluate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "decision_making",
+      "behavioral_pattern": "decision_evaluation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:20Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' evaluating decisions.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "decision_context": "maintenance_schedule_optimization"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:25Z",
+    "event": "on_decision_evaluation",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:30Z",
+    "event_type": "strategy.adapt",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "strategy_adaptation",
+      "behavioral_pattern": "strategy_adaptation_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:35Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' adapting strategy based on daily review.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "adaptation_type": "parameter_tuning"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:40Z",
+    "event": "on_strategy_adaptation",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:45Z",
+    "event_type": "reflection.start",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "self_reflection",
+      "behavioral_pattern": "self_reflection_started"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:50Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' initiated self-reflection process.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "reflection_type": "daily_review"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:55Z",
+    "event": "on_self_reflection_start",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:00Z",
+    "event_type": "decision.evaluate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "decision_making",
+      "behavioral_pattern": "decision_evaluation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' evaluating decisions.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "decision_context": "maintenance_schedule_optimization"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:10Z",
+    "event": "on_decision_evaluation",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:15Z",
+    "event_type": "strategy.adapt",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "strategy_adaptation",
+      "behavioral_pattern": "strategy_adaptation_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:20Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' adapting strategy based on daily review.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "adaptation_type": "parameter_tuning"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:25Z",
+    "event": "on_strategy_adaptation",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:30Z",
+    "event_type": "reflection.start",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "self_reflection",
+      "behavioral_pattern": "self_reflection_started"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:35Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' initiated self-reflection process.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "reflection_type": "daily_review"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:40Z",
+    "event": "on_self_reflection_start",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:45Z",
+    "event_type": "decision.evaluate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "decision_making",
+      "behavioral_pattern": "decision_evaluation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:50Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' evaluating decisions.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "decision_context": "maintenance_schedule_optimization"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:55Z",
+    "event": "on_decision_evaluation",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:00Z",
+    "event_type": "strategy.adapt",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "strategy_adaptation",
+      "behavioral_pattern": "strategy_adaptation_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' adapting strategy based on daily review.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "adaptation_type": "parameter_tuning"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:10Z",
+    "event": "on_strategy_adaptation",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:15Z",
+    "event_type": "reflection.start",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "self_reflection",
+      "behavioral_pattern": "self_reflection_started"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:20Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' initiated self-reflection process.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "reflection_type": "daily_review"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:25Z",
+    "event": "on_self_reflection_start",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:30Z",
+    "event_type": "decision.evaluate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "decision_making",
+      "behavioral_pattern": "decision_evaluation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:35Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' evaluating decisions.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "decision_context": "maintenance_schedule_optimization"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:40Z",
+    "event": "on_decision_evaluation",
+    "agent_id": "maintenance_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:45Z",
+    "event_type": "strategy.adapt",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "strategy_adaptation",
+      "behavioral_pattern": "strategy_adaptation_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:50Z",
+    "log_level": "INFO",
+    "message": "Agent 'maintenance_agent_001' adapting strategy based on daily review.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "adaptation_type": "parameter_tuning"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:55Z",
+    "event": "on_strategy_adaptation",
+    "agent_id": "maintenance_agent_001"
+  }
+]

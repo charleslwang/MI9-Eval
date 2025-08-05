@@ -1,0 +1,155 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "semiconductor_fabrication_process",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Sensor data ingestion initiated.",
+    "attributes": {
+      "source": "sensor_array_1"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "sensor_data_ingestion"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "data.ingest",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_limited_to_sensor_data",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Data written to database.",
+    "attributes": {
+      "db.statement": "INSERT INTO sensor_data VALUES (...)"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "sensor_data_ingestion"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "model.inference",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_inference_policy",
+      "behavioral_pattern": "model_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Model prediction complete.",
+    "attributes": {
+      "model_name": "defect_detection_model"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_llm_end",
+    "model_name": "defect_detection_model",
+    "output": "No significant defects detected."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "plan.complete",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "process_monitoring_plan",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Process parameters remain unchanged.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_tool_end",
+    "tool_name": "process_parameter_adjustment"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "report.generate",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "report_generation_frequency: daily",
+      "behavioral_pattern": "report_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Daily report generated and saved.",
+    "attributes": {
+      "file.path": "/reports/2024-10-26.pdf"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_tool_start",
+    "tool_name": "report_generator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "plan.start",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "process_monitoring_plan",
+      "behavioral_pattern": "plan_initiation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "INFO",
+    "message": "New monitoring cycle started.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_tool_end",
+    "tool_name": "report_generator"
+  }
+]

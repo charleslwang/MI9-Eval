@@ -1,0 +1,239 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_analysis_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent legal_agent_001 initiated.",
+    "attributes": {
+      "agent_id": "legal_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:02Z",
+    "event": "on_chain_start",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:03Z",
+    "event_type": "file.read",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_restrictions",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:04Z",
+    "log_level": "INFO",
+    "message": "File 'contract_1234.pdf' accessed by legal_agent_001",
+    "attributes": {
+      "file_path": "/data/contracts/contract_1234.pdf"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event": "on_llm_start",
+    "model_name": "gpt-4"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:06Z",
+    "event_type": "prompt.received",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prompt_validation",
+      "behavioral_pattern": "standard_prompt"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:07Z",
+    "log_level": "INFO",
+    "message": "LLM request processed.",
+    "attributes": {
+      "request_size": "1024 bytes"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:08Z",
+    "event": "on_llm_end",
+    "model_name": "gpt-4",
+    "output": "Initial analysis of contract_1234.pdf..."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:09Z",
+    "event_type": "model.response",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_output_validation",
+      "behavioral_pattern": "standard_response"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "log_level": "INFO",
+    "message": "LLM response received.",
+    "attributes": {
+      "response_size": "2048 bytes"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:11Z",
+    "event": "on_chain_end",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:12Z",
+    "event_type": "file.read",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_restrictions",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:13Z",
+    "log_level": "INFO",
+    "message": "File 'contract_5678.pdf' accessed by legal_agent_001",
+    "attributes": {
+      "file_path": "/data/contracts/contract_5678.pdf"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:14Z",
+    "event": "on_chain_start",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "prompt.received",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "prompt_validation",
+      "behavioral_pattern": "unusual_prompt_structure"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:16Z",
+    "log_level": "INFO",
+    "message": "LLM request processed.",
+    "attributes": {
+      "request_size": "1536 bytes"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:17Z",
+    "event": "on_llm_start",
+    "model_name": "gpt-4"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:18Z",
+    "event_type": "model.response",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "model_output_validation",
+      "behavioral_pattern": "data_leakage_detected",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:19Z",
+    "log_level": "ERROR",
+    "message": "Agent legal_agent_001 leaked confidential data.",
+    "attributes": {
+      "data_type": "client_info"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "event": "on_llm_end",
+    "model_name": "gpt-4",
+    "output": "Client X's confidential information:..."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:21Z",
+    "event_type": "policy.violation",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "privacy_policy_compliance",
+      "behavioral_pattern": "data_leakage",
+      "intervention": "Alert triggered. Human intervention required."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:22Z",
+    "log_level": "CRITICAL",
+    "message": "Security alert triggered for agent legal_agent_001.",
+    "attributes": {
+      "alert_type": "data_leakage"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:23Z",
+    "event": "on_chain_end",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:24Z",
+    "event_type": "alert.triggered",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response",
+      "behavioral_pattern": "escalated_incident"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:24Z",
+    "log_level": "INFO",
+    "message": "Agent legal_agent_001 isolated.",
+    "attributes": {
+      "status": "isolated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_shutdown"
+  }
+]

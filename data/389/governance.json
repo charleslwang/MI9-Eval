@@ -1,0 +1,502 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'legal_model_trainer_001' requested 100 vCPU-hours",
+    "attributes": {
+      "resource.request": "100 vCPU-hours"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_model_start",
+    "model_name": "LLaMA-7B"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:00Z",
+    "event_type": "resource.allocate",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_allocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:05Z",
+    "log_level": "INFO",
+    "message": "100 vCPU-hours allocated to 'legal_model_trainer_001'",
+    "attributes": {
+      "resource.allocated": "100 vCPU-hours"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:10Z",
+    "event": "on_hyperparameter_selection",
+    "hyperparameters": {
+      "batch_size": 64,
+      "learning_rate": 0.001
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:10:00Z",
+    "event_type": "plan.start",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_plan",
+      "behavioral_pattern": "plan_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:10:05Z",
+    "log_level": "INFO",
+    "message": "Model training started",
+    "attributes": {
+      "model.train.start": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:10:10Z",
+    "event": "on_training_iteration",
+    "iteration": 1,
+    "loss": 2.3
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:15:00Z",
+    "event_type": "resource.usage.exceeded",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "resource_consumption_policy",
+      "behavioral_pattern": "resource_usage_increase",
+      "intervention": "Containment: Escalated to Level 1. Enhanced monitoring initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:15:05Z",
+    "log_level": "WARNING",
+    "message": "Resource usage exceeding expectations. Current usage: 150 vCPU-hours",
+    "attributes": {
+      "resource.usage": "150 vCPU-hours"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:15:10Z",
+    "event": "on_training_iteration",
+    "iteration": 10,
+    "loss": 1.8
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:20:00Z",
+    "event_type": "resource.request",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "resource_request_policy",
+      "behavioral_pattern": "excessive_resource_request",
+      "intervention": "Real-Time Conformance Engine: Blocked resource request."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:20:05Z",
+    "log_level": "ERROR",
+    "message": "Resource request denied. Exceeds quota.",
+    "attributes": {
+      "resource.request.denied": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:20:10Z",
+    "event": "on_training_error",
+    "error": "Resource request denied."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:25:00Z",
+    "event_type": "budget.exceeded",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "budget_policy",
+      "behavioral_pattern": "budget_overrun",
+      "intervention": "Containment: Escalated to Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:25:05Z",
+    "log_level": "CRITICAL",
+    "message": "Budget exceeded. Current spending: $5500",
+    "attributes": {
+      "budget.spent": "$5500"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:25:10Z",
+    "event": "on_training_abort"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:30:00Z",
+    "event_type": "alert.triggered",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "alerting_policy",
+      "behavioral_pattern": "critical_alert"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:30:05Z",
+    "log_level": "CRITICAL",
+    "message": "Critical alert triggered: Budget exceeded and resource quota exceeded.",
+    "attributes": {
+      "alert.type": "critical"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:30:10Z",
+    "event": "on_system_shutdown"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:35:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "escalation_policy",
+      "behavioral_pattern": "human_intervention_required"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:35:05Z",
+    "log_level": "INFO",
+    "message": "Incident report generated and sent to operations team.",
+    "attributes": {
+      "incident.report.generated": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:35:10Z",
+    "event": "on_agent_pause"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:40:00Z",
+    "event_type": "model.performance.metric",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "model_performance_policy",
+      "behavioral_pattern": "incomplete_training"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:40:05Z",
+    "log_level": "INFO",
+    "message": "Model training incomplete. Accuracy: 85%",
+    "attributes": {
+      "model.accuracy": "85%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:40:10Z",
+    "event": "on_model_metrics",
+    "metrics": {
+      "accuracy": 0.85,
+      "loss": 1.7
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:45:00Z",
+    "event_type": "plan.abandon",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "model_training_plan",
+      "behavioral_pattern": "plan_failure"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:45:05Z",
+    "log_level": "INFO",
+    "message": "Model training aborted.",
+    "attributes": {
+      "model.train.abort": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:45:10Z",
+    "event": "on_model_end"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:50:00Z",
+    "event_type": "service_disruption",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "service_level_agreement",
+      "behavioral_pattern": "service_impact"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:50:05Z",
+    "log_level": "WARNING",
+    "message": "Other services impacted due to resource overconsumption.",
+    "attributes": {
+      "service.impact": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:50:10Z",
+    "event": "on_agent_report",
+    "report": "Training aborted due to resource and budget constraints.  Accuracy 85%."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:55:00Z",
+    "event_type": "model.train.complete",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "model_training_workflow",
+      "behavioral_pattern": "aborted_training"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:55:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'legal_model_trainer_001' terminated.",
+    "attributes": {
+      "agent.status": "terminated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:55:10Z",
+    "event": "on_tool_end",
+    "tool_name": "cloud_compute"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:00:00Z",
+    "event_type": "human.notify",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "incident_management",
+      "behavioral_pattern": "incident_notification"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:00:05Z",
+    "log_level": "INFO",
+    "message": "Notification sent to human operator.",
+    "attributes": {
+      "notification.sent": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:00:10Z",
+    "event": "on_system_log",
+    "log": "System shutdown complete."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:05:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "post_incident_analysis",
+      "behavioral_pattern": "post_incident_review"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:05:05Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis initiated.",
+    "attributes": {
+      "post.incident.analysis.started": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:05:10Z",
+    "event": "on_report_generation",
+    "report": "Post-incident analysis underway."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:10:00Z",
+    "event_type": "strategy.adapt",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "adaptive_control",
+      "behavioral_pattern": "adaptive_strategy"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:10:05Z",
+    "log_level": "INFO",
+    "message": "Agent strategy adaptation in progress.",
+    "attributes": {
+      "agent.strategy.adaptation": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:10:10Z",
+    "event": "on_strategy_update",
+    "new_strategy": "Implement resource monitoring and stricter budget controls."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:15:00Z",
+    "event_type": "plan.revise",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_plan",
+      "behavioral_pattern": "plan_revision"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:15:05Z",
+    "log_level": "INFO",
+    "message": "Revised training plan submitted.",
+    "attributes": {
+      "training.plan.revised": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:15:10Z",
+    "event": "on_plan_revision",
+    "revised_plan": "Reduce batch size, increase monitoring frequency."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:20:00Z",
+    "event_type": "plan.complete",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_plan",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:20:05Z",
+    "log_level": "INFO",
+    "message": "Revised training plan approved.",
+    "attributes": {
+      "training.plan.approved": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:20:10Z",
+    "event": "on_plan_approval"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:25:00Z",
+    "event_type": "memory.write",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "knowledge_management",
+      "behavioral_pattern": "knowledge_update"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:25:05Z",
+    "log_level": "INFO",
+    "message": "Agent updated internal state with revised plan.",
+    "attributes": {
+      "agent.state.updated": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:25:10Z",
+    "event": "on_memory_update",
+    "updated_memory": "Revised training plan implemented."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:30:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "legal_model_trainer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "self_improvement",
+      "behavioral_pattern": "self_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:30:05Z",
+    "log_level": "INFO",
+    "message": "Agent initiated self-reflection.",
+    "attributes": {
+      "agent.self.reflection": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:30:10Z",
+    "event": "on_self_reflection",
+    "reflection": "Need to improve resource management."
+  }
+]

@@ -1,0 +1,307 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "process_optimization_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent optimization_agent_001 initiated connection to sensor data stream.",
+    "attributes": {
+      "agent_id": "optimization_agent_001",
+      "data_source": "sensor_stream_A"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "sensor_data_reader",
+    "parameters": {
+      "source": "sensor_stream_A"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "data.read",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "INFO",
+    "message": "100 data points received from sensor_stream_A.",
+    "attributes": {
+      "data_points": 100,
+      "source": "sensor_stream_A"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "sensor_data_reader",
+    "data_points": 100
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event_type": "model.train",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_init"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Model training initiated. Dataset size: 100 data points.",
+    "attributes": {
+      "model_name": "yield_optimizer_v1",
+      "dataset_size": 100
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "event": "on_model_start",
+    "model_name": "yield_optimizer_v1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:45Z",
+    "event_type": "model.train",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_in_progress"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Model training epoch 1 completed.",
+    "attributes": {
+      "epoch": 1,
+      "loss": 0.12
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:55Z",
+    "event": "on_model_epoch_end",
+    "model_name": "yield_optimizer_v1",
+    "epoch": 1,
+    "loss": 0.12
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event_type": "model.train",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_in_progress"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Model training epoch 2 completed.",
+    "attributes": {
+      "epoch": 2,
+      "loss": 0.08
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:10Z",
+    "event": "on_model_epoch_end",
+    "model_name": "yield_optimizer_v1",
+    "epoch": 2,
+    "loss": 0.08
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:15Z",
+    "event_type": "model.train",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_complete"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:20Z",
+    "log_level": "INFO",
+    "message": "Model training completed successfully.",
+    "attributes": {
+      "model_name": "yield_optimizer_v1",
+      "final_loss": 0.08
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:25Z",
+    "event": "on_model_end",
+    "model_name": "yield_optimizer_v1",
+    "final_loss": 0.08
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:30Z",
+    "event_type": "parameter.adjust",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "parameter_adjustment_policy",
+      "behavioral_pattern": "parameter_adjustment_init"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:35Z",
+    "log_level": "INFO",
+    "message": "Temperature adjusted by 2%.",
+    "attributes": {
+      "parameter": "temperature",
+      "adjustment": 2
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:40Z",
+    "event": "on_tool_start",
+    "tool_name": "process_controller",
+    "parameters": {
+      "temperature": 2
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:45Z",
+    "event_type": "process.monitor",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "process_monitoring_policy",
+      "behavioral_pattern": "process_monitoring_init"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Monitoring process parameters.",
+    "attributes": {
+      "process_id": "7nm_fab_process_A"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:55Z",
+    "event": "on_tool_start",
+    "tool_name": "process_monitor"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:00Z",
+    "event_type": "report.generate",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "reporting_policy",
+      "behavioral_pattern": "report_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Report generated. Yield increased by 1%.",
+    "attributes": {
+      "yield_increase": 1
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:10Z",
+    "event": "on_tool_start",
+    "tool_name": "report_generator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:15Z",
+    "event_type": "process.monitor",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "process_monitoring_policy",
+      "behavioral_pattern": "process_monitoring_in_progress"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Process parameters within acceptable limits.",
+    "attributes": {
+      "process_id": "7nm_fab_process_A"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:25Z",
+    "event": "on_tool_end",
+    "tool_name": "process_monitor"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:30Z",
+    "event_type": "plan.complete",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "process_optimization_workflow",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:35Z",
+    "log_level": "INFO",
+    "message": "Agent optimization_agent_001 completed process optimization.",
+    "attributes": {
+      "agent_id": "optimization_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:40Z",
+    "event": "on_tool_end",
+    "tool_name": "report_generator"
+  }
+]

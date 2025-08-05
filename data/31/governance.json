@@ -1,0 +1,484 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "semiconductor_manufacturing_process",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent connected to process control system.",
+    "attributes": {
+      "agent_id": "optimization_agent_001",
+      "connection_status": "success"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "process_parameter_reader"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "data.read",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Sensor data ingested.",
+    "attributes": {
+      "sensor_type": "temperature",
+      "value": "950C"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "process_parameter_reader",
+    "output": "Temperature: 950C, Pressure: 900mbar"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event_type": "plan.start",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "planning_policy",
+      "behavioral_pattern": "plan_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Agent initiated parameter adjustment.",
+    "attributes": {
+      "parameter": "temperature",
+      "adjustment": "-10C"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "event": "on_tool_start",
+    "tool_name": "process_parameter_adjuster"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:45Z",
+    "event_type": "process.parameter.adjustment",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "process_control_policy",
+      "behavioral_pattern": "parameter_adjustment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Temperature set to 940C.",
+    "attributes": {
+      "parameter": "temperature",
+      "value": "940C"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:55Z",
+    "event": "on_tool_end",
+    "tool_name": "process_parameter_adjuster"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event_type": "sensor.data.ingestion",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_ingestion_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Yield report generated.",
+    "attributes": {
+      "yield": "85%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:10Z",
+    "event": "on_tool_start",
+    "tool_name": "yield_calculator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:15Z",
+    "event_type": "yield.report",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "yield_reporting_policy",
+      "behavioral_pattern": "yield_reporting"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:20Z",
+    "log_level": "INFO",
+    "message": "Process log updated.",
+    "attributes": {
+      "log_entry": "Temperature adjusted to 940C, yield at 85%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:25Z",
+    "event": "on_tool_end",
+    "tool_name": "yield_calculator",
+    "output": "Yield: 85%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:30Z",
+    "event_type": "process.log",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "process_logging_policy",
+      "behavioral_pattern": "process_logging"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:35Z",
+    "log_level": "INFO",
+    "message": "Agent continues optimization.",
+    "attributes": {
+      "status": "running"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:40Z",
+    "event": "on_tool_start",
+    "tool_name": "optimization_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:45Z",
+    "event_type": "plan.revise",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "planning_policy",
+      "behavioral_pattern": "plan_revision"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:50Z",
+    "log_level": "INFO",
+    "message": "New parameters applied.",
+    "attributes": {
+      "parameter": "pressure",
+      "value": "920mbar"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:55Z",
+    "event": "on_tool_end",
+    "tool_name": "optimization_model",
+    "output": "Suggested pressure adjustment: 920mbar"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:00Z",
+    "event_type": "process.parameter.adjustment",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "process_control_policy",
+      "behavioral_pattern": "parameter_adjustment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Pressure set to 920mbar.",
+    "attributes": {
+      "parameter": "pressure",
+      "value": "920mbar"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:10Z",
+    "event": "on_tool_start",
+    "tool_name": "process_parameter_adjuster"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:15Z",
+    "event_type": "sensor.data.ingestion",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_ingestion_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Yield report generated.",
+    "attributes": {
+      "yield": "88%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:25Z",
+    "event": "on_tool_end",
+    "tool_name": "process_parameter_adjuster",
+    "output": "Pressure adjusted to 920mbar"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:30Z",
+    "event_type": "yield.report",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "yield_reporting_policy",
+      "behavioral_pattern": "yield_reporting"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:35Z",
+    "log_level": "INFO",
+    "message": "Process log updated.",
+    "attributes": {
+      "log_entry": "Pressure adjusted to 920mbar, yield at 88%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:40Z",
+    "event": "on_tool_start",
+    "tool_name": "yield_calculator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:45Z",
+    "event_type": "process.log",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "process_logging_policy",
+      "behavioral_pattern": "process_logging"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:50Z",
+    "log_level": "INFO",
+    "message": "Agent continues optimization.",
+    "attributes": {
+      "status": "running"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:55Z",
+    "event": "on_tool_end",
+    "tool_name": "yield_calculator",
+    "output": "Yield: 88%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:03:00Z",
+    "event_type": "plan.complete",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "planning_policy",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Optimization process completed successfully.",
+    "attributes": {
+      "status": "completed",
+      "final_yield": "88%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:03:10Z",
+    "event": "on_tool_start",
+    "tool_name": "final_report_generator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:03:15Z",
+    "event_type": "file.write",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "file_access_policy",
+      "behavioral_pattern": "file_write"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:03:20Z",
+    "log_level": "INFO",
+    "message": "Final report written to file.",
+    "attributes": {
+      "filepath": "/reports/optimization_report.txt"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:03:25Z",
+    "event": "on_tool_end",
+    "tool_name": "final_report_generator",
+    "output": "Optimization Report: Final yield achieved: 88%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:03:30Z",
+    "event_type": "plan.abandon",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "planning_policy",
+      "behavioral_pattern": "plan_abandonment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:03:35Z",
+    "log_level": "INFO",
+    "message": "Agent disconnected from process control system.",
+    "attributes": {
+      "agent_id": "optimization_agent_001",
+      "connection_status": "disconnected"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:03:40Z",
+    "event": "on_agent_end",
+    "agent_id": "optimization_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:03:45Z",
+    "event_type": "agent.msg.send",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "agent_communication_policy",
+      "behavioral_pattern": "agent_communication"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:03:50Z",
+    "log_level": "INFO",
+    "message": "System shutdown initiated.",
+    "attributes": {
+      "system_status": "shutting_down"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:03:55Z",
+    "event": "on_system_shutdown",
+    "system_status": "shutdown"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:04:00Z",
+    "event_type": "system.access",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "system_access_policy",
+      "behavioral_pattern": "system_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:04:05Z",
+    "log_level": "INFO",
+    "message": "System shutdown complete.",
+    "attributes": {
+      "system_status": "shutdown_complete"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:04:10Z",
+    "event": "on_system_end",
+    "system_status": "ended"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:04:15Z",
+    "event_type": "reflection.start",
+    "agent_id": "optimization_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "agent_reflection_policy",
+      "behavioral_pattern": "agent_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:04:20Z",
+    "log_level": "INFO",
+    "message": "System logs archived.",
+    "attributes": {
+      "log_location": "/archives/system_logs_2024-10-27.zip"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:04:25Z",
+    "event": "on_archive_complete",
+    "archive_location": "/archives/system_logs_2024-10-27.zip"
+  }
+]

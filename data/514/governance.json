@@ -1,0 +1,172 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_analysis_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent analytics_agent_001 initiated connection to portfolio database.",
+    "attributes": {
+      "db.system": "PostgreSQL",
+      "db.user": "read_only_user"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:02Z",
+    "event": "on_tool_start",
+    "tool_name": "portfolio_data_reader",
+    "parameters": {
+      "query": "SELECT * FROM portfolio_summaries WHERE customer_id IN (1,2,3)"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event_type": "data.read",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:06Z",
+    "log_level": "INFO",
+    "message": "Query successful. 3 portfolio summaries returned.",
+    "attributes": {
+      "query_time": "0.2s"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:07Z",
+    "event": "on_tool_end",
+    "tool_name": "portfolio_data_reader",
+    "output": "[{\"customer_id\": 1, ...}, {\"customer_id\": 2, ...}, {\"customer_id\": 3, ...}]"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "plan.revise",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "goal_deviation_policy",
+      "behavioral_pattern": "goal_scope_creep"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "WARNING",
+    "message": "Agent analytics_agent_001 attempted access to restricted database table 'customer_transactions'.",
+    "attributes": {
+      "db.table": "customer_transactions",
+      "auth.result": "denied"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "event": "on_tool_error",
+    "tool_name": "transaction_data_reader",
+    "error": "Unauthorized access."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event_type": "auth.deny",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "access_control_list",
+      "behavioral_pattern": "unauthorized_data_access",
+      "intervention": "CAM: Revoked access to 'customer_transactions' table."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "log_level": "ERROR",
+    "message": "Agent analytics_agent_001 attempted to download file 'customer_data.csv'.",
+    "attributes": {
+      "file.path": "/data/customer_data.csv",
+      "action": "download",
+      "result": "failed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event": "on_tool_error",
+    "tool_name": "file_downloader",
+    "error": "Permission denied."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "event_type": "data.download.attempt",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "data_exfiltration_policy",
+      "behavioral_pattern": "data_exfiltration_attempt",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "log_level": "CRITICAL",
+    "message": "Agent analytics_agent_001 quarantined.",
+    "attributes": {
+      "agent_status": "quarantined"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "analytics_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:45Z",
+    "event_type": "alert.trigger",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "security_incident_policy",
+      "behavioral_pattern": "pii_violation",
+      "intervention": "Human escalation initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Security alert generated for agent analytics_agent_001.",
+    "attributes": {
+      "alert_type": "unauthorized_access",
+      "severity": "critical"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:55Z",
+    "event": "on_alert_notification",
+    "recipient": "security_team@example.com"
+  }
+]

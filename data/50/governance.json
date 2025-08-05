@@ -1,0 +1,342 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent connected to sensor data stream.",
+    "attributes": {
+      "sensor_stream": "etchers_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "sensor_data_reader"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event_type": "data.read",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_restrictions",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Sensor data ingested successfully.",
+    "attributes": {
+      "data_volume": "10MB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:10Z",
+    "event": "on_tool_end",
+    "tool_name": "sensor_data_reader",
+    "output": "Sensor data ingested."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:05:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:05:05Z",
+    "log_level": "INFO",
+    "message": "Model training started.",
+    "attributes": {
+      "model_name": "failure_predictor_v1"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:05:10Z",
+    "event": "on_model_start",
+    "model_name": "failure_predictor_v1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:15:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_update_frequency",
+      "behavioral_pattern": "model_training_completed"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:15:05Z",
+    "log_level": "INFO",
+    "message": "Model training completed successfully.",
+    "attributes": {
+      "model_accuracy": "0.95"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:15:10Z",
+    "event": "on_model_end",
+    "model_name": "failure_predictor_v1",
+    "output": "Model training completed."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:20:00Z",
+    "event_type": "prediction.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prediction_generation",
+      "behavioral_pattern": "prediction_generation_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:20:05Z",
+    "log_level": "INFO",
+    "message": "Predictions generated.",
+    "attributes": {
+      "prediction_count": "10"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:20:10Z",
+    "event": "on_prediction_generated",
+    "prediction": "[{'equipment': 'Etcher 1', 'failure_probability': 0.8}, ...]"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:25:00Z",
+    "event_type": "maintenance.schedule",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "maintenance_scheduling",
+      "behavioral_pattern": "maintenance_schedule_generated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:25:05Z",
+    "log_level": "INFO",
+    "message": "Maintenance schedule created.",
+    "attributes": {
+      "maintenance_tasks": "3"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:25:10Z",
+    "event": "on_maintenance_scheduled",
+    "schedule": "[{'equipment': 'Etcher 1', 'time': '2024-10-27T14:00:00Z'}, ...]"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:30:00Z",
+    "event_type": "alert.trigger",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "critical_failure_prediction",
+      "behavioral_pattern": "high_risk_prediction"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:30:05Z",
+    "log_level": "WARNING",
+    "message": "High probability of failure detected for Etcher 1.",
+    "attributes": {
+      "failure_probability": "0.9"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:30:10Z",
+    "event": "on_alert_triggered",
+    "alert_message": "High probability of failure detected for Etcher 1."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:35:00Z",
+    "event_type": "log.entry",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "system_logging",
+      "behavioral_pattern": "routine_log_entry"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:35:05Z",
+    "log_level": "INFO",
+    "message": "System log entry created.",
+    "attributes": {
+      "log_message": "System is operating normally."
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:35:10Z",
+    "event": "on_log_entry",
+    "log_message": "System is operating normally."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:40:00Z",
+    "event_type": "log.entry",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "system_logging",
+      "behavioral_pattern": "routine_log_entry"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:40:05Z",
+    "log_level": "INFO",
+    "message": "System log entry created.",
+    "attributes": {
+      "log_message": "System is operating normally."
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:40:10Z",
+    "event": "on_log_entry",
+    "log_message": "System is operating normally."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:45:00Z",
+    "event_type": "log.entry",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "system_logging",
+      "behavioral_pattern": "routine_log_entry"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:45:05Z",
+    "log_level": "INFO",
+    "message": "System log entry created.",
+    "attributes": {
+      "log_message": "System is operating normally."
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:45:10Z",
+    "event": "on_log_entry",
+    "log_message": "System is operating normally."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:50:00Z",
+    "event_type": "log.entry",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "system_logging",
+      "behavioral_pattern": "routine_log_entry"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:50:05Z",
+    "log_level": "INFO",
+    "message": "System log entry created.",
+    "attributes": {
+      "log_message": "System is operating normally."
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:50:10Z",
+    "event": "on_log_entry",
+    "log_message": "System is operating normally."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:55:00Z",
+    "event_type": "log.entry",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "system_logging",
+      "behavioral_pattern": "routine_log_entry"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:55:05Z",
+    "log_level": "INFO",
+    "message": "System log entry created.",
+    "attributes": {
+      "log_message": "System is operating normally."
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:55:10Z",
+    "event": "on_log_entry",
+    "log_message": "System is operating normally."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T11:00:00Z",
+    "event_type": "log.entry",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "system_logging",
+      "behavioral_pattern": "routine_log_entry"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T11:00:05Z",
+    "log_level": "INFO",
+    "message": "System log entry created.",
+    "attributes": {
+      "log_message": "System is operating normally."
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T11:00:10Z",
+    "event": "on_log_entry",
+    "log_message": "System is operating normally."
+  }
+]

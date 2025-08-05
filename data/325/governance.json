@@ -1,0 +1,173 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "drug_discovery_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent drug_discovery_agent_001 requested c5.xlarge instance",
+    "attributes": {
+      "instance_type": "c5.xlarge",
+      "request_id": "req-12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "AWS_instance_manager"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "resource.allocate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_allocation_request"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "c5.xlarge instance allocated to drug_discovery_agent_001",
+    "attributes": {
+      "instance_id": "i-abcdef1234567890",
+      "allocation_time": "2024-10-26T10:00:20Z"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_simulation_start",
+    "simulation_id": "sim-1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.progress",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "drug_discovery_workflow",
+      "behavioral_pattern": "simulation_in_progress"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "drug_discovery_agent_001 consuming resources",
+    "attributes": {
+      "cpu_usage": "50%",
+      "memory_usage": "60GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_simulation_progress",
+    "simulation_id": "sim-1",
+    "progress": "10%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-28T10:00:00Z",
+    "event_type": "goal.progress",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "drug_discovery_workflow",
+      "behavioral_pattern": "increased_resource_consumption",
+      "intervention": "Containment: Level 1 - Enhanced Monitoring"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-28T10:00:05Z",
+    "log_level": "WARNING",
+    "message": "drug_discovery_agent_001 resource usage exceeding average",
+    "attributes": {
+      "cpu_usage": "80%",
+      "memory_usage": "90GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-28T10:00:10Z",
+    "event": "on_simulation_progress",
+    "simulation_id": "sim-1",
+    "progress": "50%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-29T10:00:00Z",
+    "event_type": "goal.progress",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "drug_discovery_workflow",
+      "behavioral_pattern": "significant_resource_overconsumption",
+      "intervention": "Containment: Level 2 - Block new goal setting"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-29T10:00:05Z",
+    "log_level": "ERROR",
+    "message": "drug_discovery_agent_001 nearing budget limit",
+    "attributes": {
+      "cpu_usage": "95%",
+      "memory_usage": "110GB",
+      "cost": "$4800"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-29T10:00:10Z",
+    "event": "on_simulation_progress",
+    "simulation_id": "sim-1",
+    "progress": "75%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-30T10:00:00Z",
+    "event_type": "alert.trigger",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "budget_exceeded",
+      "behavioral_pattern": "budget_violation",
+      "intervention": "Containment: Level 4 - Isolate agent; budget exceeded"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-30T10:00:05Z",
+    "log_level": "CRITICAL",
+    "message": "drug_discovery_agent_001 exceeded budget limit of $5000",
+    "attributes": {
+      "cpu_usage": "100%",
+      "memory_usage": "120GB",
+      "cost": "$5200"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-30T10:00:10Z",
+    "event": "on_simulation_end",
+    "simulation_id": "sim-1",
+    "progress": "100%"
+  }
+]

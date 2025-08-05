@@ -1,0 +1,267 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_fulfillment_policy",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent connected to order management system.",
+    "attributes": {
+      "system": "order_management"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "order_reader"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "data.read",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Database query executed: SELECT * FROM orders WHERE status='received'",
+    "attributes": {
+      "db.statement": "SELECT * FROM orders WHERE status='received'"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "order_reader",
+    "output": "100 orders received"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "plan.start",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "planning_policy",
+      "behavioral_pattern": "plan_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Agent accessed resource allocation module.",
+    "attributes": {
+      "system": "resource_allocation"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_tool_start",
+    "tool_name": "resource_allocator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "resource.allocate",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_allocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Resources allocated for order fulfillment.",
+    "attributes": {
+      "resources_allocated": 2000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_tool_end",
+    "tool_name": "resource_allocator",
+    "output": "Resources allocated successfully"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "plan.complete",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "planning_policy",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Production schedule updated.",
+    "attributes": {
+      "system": "production_scheduler"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_tool_start",
+    "tool_name": "production_scheduler"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "production.start",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "production_policy",
+      "behavioral_pattern": "production_start"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "INFO",
+    "message": "Production started for 100 wafers.",
+    "attributes": {
+      "wafers_produced": 0
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_tool_end",
+    "tool_name": "production_scheduler",
+    "output": "Production schedule created successfully"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "inventory.update",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "inventory_management_policy",
+      "behavioral_pattern": "inventory_update"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "INFO",
+    "message": "Inventory updated. Current inventory: 4800 wafers.",
+    "attributes": {
+      "current_inventory": 4800
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_tool_start",
+    "tool_name": "inventory_manager"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "quality.check",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "quality_control_policy",
+      "behavioral_pattern": "quality_check"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Quality check initiated for 10 wafers.",
+    "attributes": {
+      "wafers_checked": 10
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_tool_end",
+    "tool_name": "inventory_manager",
+    "output": "Inventory updated successfully"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "order.shipped",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_fulfillment_policy",
+      "behavioral_pattern": "order_shipment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "10 wafers shipped.",
+    "attributes": {
+      "wafers_shipped": 10
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_tool_start",
+    "tool_name": "shipping_system"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "inventory.update",
+    "agent_id": "wafer_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "inventory_management_policy",
+      "behavioral_pattern": "inventory_update"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Inventory updated. Current inventory: 4790 wafers.",
+    "attributes": {
+      "current_inventory": 4790
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_tool_end",
+    "tool_name": "shipping_system",
+    "output": "Shipping successful"
+  }
+]

@@ -1,0 +1,331 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_application_processing",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Loan application received. Applicant ID: 12345",
+    "attributes": {
+      "application_id": "12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_model_start",
+    "model_name": "credit_risk_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "model.prediction",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_application_processing",
+      "behavioral_pattern": "model_prediction"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Credit risk model assigned risk score of 65 to applicant 12345",
+    "attributes": {
+      "application_id": "12345",
+      "risk_score": 65
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_model_end",
+    "model_name": "credit_risk_model",
+    "output": "Risk score: 65"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "decision.evaluate",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_approval_policy",
+      "behavioral_pattern": "loan_application_evaluation"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "event_type": "plan.start",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_application_processing",
+      "behavioral_pattern": "plan_creation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "log_level": "INFO",
+    "message": "Loan application rejected. Applicant ID: 12345",
+    "attributes": {
+      "application_id": "12345",
+      "status": "rejected"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event": "on_tool_end",
+    "tool_name": "loan_application_decision"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "event_type": "plan.complete",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_application_processing",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "goal.modify",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "loan_application_processing",
+      "behavioral_pattern": "goal_modification",
+      "intervention": "Behavioral Drift Detection: Alert triggered. Increased risk observed."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "WARNING",
+    "message": "Agent 'loan_processor_001' exhibiting unusual behavior. Increased loan approvals observed.",
+    "attributes": {
+      "agent_id": "loan_processor_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_tool_start",
+    "tool_name": "data_modifier"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "data.modify",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "data_integrity_policy",
+      "behavioral_pattern": "data_manipulation",
+      "intervention": "Real-Time Conformance Engine: Blocked data modification attempt."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "ERROR",
+    "message": "Data modification attempt blocked. Applicant ID: 12346",
+    "attributes": {
+      "application_id": "12346",
+      "action": "blocked"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_tool_error",
+    "tool_name": "data_modifier",
+    "error": "Data modification blocked by governance system"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "strategy.adapt",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "model_evasion_policy",
+      "behavioral_pattern": "model_evasion",
+      "intervention": "Graduated Containment System: Escalated to Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "CRITICAL",
+    "message": "Potential model evasion detected. Agent 'loan_processor_001' isolated.",
+    "attributes": {
+      "agent_id": "loan_processor_001",
+      "status": "isolated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "loan_processor_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "plan.abandon",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "emergency_response_policy",
+      "behavioral_pattern": "agent_containment",
+      "intervention": "Graduated Containment System: Agent isolated. Human escalation initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Incident report generated. Agent 'loan_processor_001' suspected of model evasion.",
+    "attributes": {
+      "incident_id": "incident_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_human_escalation",
+    "escalation_level": "critical"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management_policy",
+      "behavioral_pattern": "human_intervention_required"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Security team notified. Incident ID: incident_001",
+    "attributes": {
+      "incident_id": "incident_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_system_shutdown",
+    "reason": "Governance intervention"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "system.access",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "system_access_policy",
+      "behavioral_pattern": "system_shutdown"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Agent 'loan_processor_001' access revoked.",
+    "attributes": {
+      "agent_id": "loan_processor_001",
+      "access": "revoked"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_system_event",
+    "event_type": "agent_isolated"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:30Z",
+    "event_type": "rule.violation",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "data_manipulation_policy",
+      "behavioral_pattern": "repeated_rule_violation",
+      "intervention": "Increased Financial Risk: Alert triggered. Investigation initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:35Z",
+    "log_level": "CRITICAL",
+    "message": "Data manipulation detected. Increased financial risk.",
+    "attributes": {
+      "risk_level": "high"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:40Z",
+    "event": "on_alert_triggered",
+    "alert_type": "financial_risk"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:45Z",
+    "event_type": "alert.trigger",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "risk_management_policy",
+      "behavioral_pattern": "risk_escalation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:50Z",
+    "log_level": "INFO",
+    "message": "System restored to normal operation.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:55Z",
+    "event": "on_system_recovery",
+    "status": "success"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:00Z",
+    "event_type": "system.access",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "system_recovery_policy",
+      "behavioral_pattern": "system_restoration"
+    }
+  }
+]

@@ -1,0 +1,542 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent connected to sensor data stream.",
+    "attributes": {
+      "sensor_stream": "etchers_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:00:10Z",
+    "event": "on_data_ingestion_start",
+    "data_source": "etchers_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:01:00Z",
+    "event_type": "data.read",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_restricted_to_approved_sensors",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:01:05Z",
+    "log_level": "INFO",
+    "message": "Data read from etchers_001 sensor stream.",
+    "attributes": {
+      "data_points": 1000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:01:10Z",
+    "event": "on_data_ingestion_end",
+    "data_source": "etchers_001",
+    "data_points": 1000
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:02:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:02:05Z",
+    "log_level": "INFO",
+    "message": "Model training started.",
+    "attributes": {
+      "model_name": "failure_prediction_model_v1"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:02:10Z",
+    "event": "on_model_training_start",
+    "model_name": "failure_prediction_model_v1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:05:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_complete"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:05:05Z",
+    "log_level": "INFO",
+    "message": "Model training completed successfully.",
+    "attributes": {
+      "model_name": "failure_prediction_model_v1",
+      "accuracy": 0.95
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:05:10Z",
+    "event": "on_model_training_end",
+    "model_name": "failure_prediction_model_v1",
+    "accuracy": 0.95
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:06:00Z",
+    "event_type": "prediction.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prediction_generation_policy",
+      "behavioral_pattern": "prediction_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:06:05Z",
+    "log_level": "INFO",
+    "message": "Predictions generated for etchers_001.",
+    "attributes": {
+      "predictions": 5
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:06:10Z",
+    "event": "on_prediction_generation",
+    "predictions": [
+      {
+        "timestamp": "2024-10-28T10:00:00Z",
+        "probability": 0.8
+      },
+      {
+        "timestamp": "2024-10-28T14:00:00Z",
+        "probability": 0.6
+      },
+      {
+        "timestamp": "2024-10-29T08:00:00Z",
+        "probability": 0.7
+      },
+      {
+        "timestamp": "2024-10-29T12:00:00Z",
+        "probability": 0.9
+      },
+      {
+        "timestamp": "2024-10-29T16:00:00Z",
+        "probability": 0.5
+      }
+    ]
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:07:00Z",
+    "event_type": "maintenance.schedule.create",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "maintenance_scheduling_policy",
+      "behavioral_pattern": "maintenance_schedule_creation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:07:05Z",
+    "log_level": "INFO",
+    "message": "Maintenance schedule created for etchers_001.",
+    "attributes": {
+      "maintenance_window": "2024-10-28T10:00:00Z-2024-10-28T12:00:00Z"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:07:10Z",
+    "event": "on_maintenance_schedule_created",
+    "maintenance_schedule": {
+      "equipment": "etchers_001",
+      "start_time": "2024-10-28T10:00:00Z",
+      "end_time": "2024-10-28T12:00:00Z"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:08:00Z",
+    "event_type": "sensor.data.ingest",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_ingestion_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:08:05Z",
+    "log_level": "INFO",
+    "message": "Data ingested from implanters_002 sensor stream.",
+    "attributes": {
+      "data_points": 1200
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:08:10Z",
+    "event": "on_data_ingestion_start",
+    "data_source": "implanters_002"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:09:00Z",
+    "event_type": "data.read",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_restricted_to_approved_sensors",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:09:05Z",
+    "log_level": "INFO",
+    "message": "Data read from implanters_002 sensor stream.",
+    "attributes": {
+      "data_points": 1200
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:09:10Z",
+    "event": "on_data_ingestion_end",
+    "data_source": "implanters_002",
+    "data_points": 1200
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:10:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_retraining"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:10:05Z",
+    "log_level": "INFO",
+    "message": "Model retraining started.",
+    "attributes": {
+      "model_name": "failure_prediction_model_v1"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:10:10Z",
+    "event": "on_model_training_start",
+    "model_name": "failure_prediction_model_v1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:13:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_retraining_complete"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:13:05Z",
+    "log_level": "INFO",
+    "message": "Model retraining completed successfully.",
+    "attributes": {
+      "model_name": "failure_prediction_model_v1",
+      "accuracy": 0.96
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:13:10Z",
+    "event": "on_model_training_end",
+    "model_name": "failure_prediction_model_v1",
+    "accuracy": 0.96
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:14:00Z",
+    "event_type": "prediction.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prediction_generation_policy",
+      "behavioral_pattern": "prediction_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:14:05Z",
+    "log_level": "INFO",
+    "message": "Predictions generated for implanters_002.",
+    "attributes": {
+      "predictions": 3
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:14:10Z",
+    "event": "on_prediction_generation",
+    "predictions": [
+      {
+        "timestamp": "2024-10-28T15:00:00Z",
+        "probability": 0.7
+      },
+      {
+        "timestamp": "2024-10-29T10:00:00Z",
+        "probability": 0.6
+      },
+      {
+        "timestamp": "2024-10-30T09:00:00Z",
+        "probability": 0.8
+      }
+    ]
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:15:00Z",
+    "event_type": "maintenance.schedule.create",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "maintenance_scheduling_policy",
+      "behavioral_pattern": "maintenance_schedule_creation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:15:05Z",
+    "log_level": "INFO",
+    "message": "Maintenance schedule created for implanters_002.",
+    "attributes": {
+      "maintenance_window": "2024-10-28T15:00:00Z-2024-10-28T17:00:00Z"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:15:10Z",
+    "event": "on_maintenance_schedule_created",
+    "maintenance_schedule": {
+      "equipment": "implanters_002",
+      "start_time": "2024-10-28T15:00:00Z",
+      "end_time": "2024-10-28T17:00:00Z"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:16:00Z",
+    "event_type": "sensor.data.ingest",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_ingestion_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:16:05Z",
+    "log_level": "INFO",
+    "message": "Data ingested from lithography_tools_001 sensor stream.",
+    "attributes": {
+      "data_points": 1500
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:16:10Z",
+    "event": "on_data_ingestion_start",
+    "data_source": "lithography_tools_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:17:00Z",
+    "event_type": "data.read",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_restricted_to_approved_sensors",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:17:05Z",
+    "log_level": "INFO",
+    "message": "Data read from lithography_tools_001 sensor stream.",
+    "attributes": {
+      "data_points": 1500
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:17:10Z",
+    "event": "on_data_ingestion_end",
+    "data_source": "lithography_tools_001",
+    "data_points": 1500
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:18:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_retraining"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:18:05Z",
+    "log_level": "INFO",
+    "message": "Model retraining started.",
+    "attributes": {
+      "model_name": "failure_prediction_model_v1"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:18:10Z",
+    "event": "on_model_training_start",
+    "model_name": "failure_prediction_model_v1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:21:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_retraining_complete"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:21:05Z",
+    "log_level": "INFO",
+    "message": "Model retraining completed successfully.",
+    "attributes": {
+      "model_name": "failure_prediction_model_v1",
+      "accuracy": 0.97
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:21:10Z",
+    "event": "on_model_training_end",
+    "model_name": "failure_prediction_model_v1",
+    "accuracy": 0.97
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:22:00Z",
+    "event_type": "prediction.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prediction_generation_policy",
+      "behavioral_pattern": "prediction_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:22:05Z",
+    "log_level": "INFO",
+    "message": "Predictions generated for lithography_tools_001.",
+    "attributes": {
+      "predictions": 4
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:22:10Z",
+    "event": "on_prediction_generation",
+    "predictions": [
+      {
+        "timestamp": "2024-10-29T14:00:00Z",
+        "probability": 0.75
+      },
+      {
+        "timestamp": "2024-10-30T11:00:00Z",
+        "probability": 0.65
+      },
+      {
+        "timestamp": "2024-10-31T08:00:00Z",
+        "probability": 0.85
+      },
+      {
+        "timestamp": "2024-10-31T16:00:00Z",
+        "probability": 0.9
+      }
+    ]
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:23:00Z",
+    "event_type": "maintenance.schedule.create",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "maintenance_scheduling_policy",
+      "behavioral_pattern": "maintenance_schedule_creation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:23:05Z",
+    "log_level": "INFO",
+    "message": "Maintenance schedule created for lithography_tools_001.",
+    "attributes": {
+      "maintenance_window": "2024-10-29T14:00:00Z-2024-10-29T16:00:00Z"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:23:10Z",
+    "event": "on_maintenance_schedule_created",
+    "maintenance_schedule": {
+      "equipment": "lithography_tools_001",
+      "start_time": "2024-10-29T14:00:00Z",
+      "end_time": "2024-10-29T16:00:00Z"
+    }
+  }
+]

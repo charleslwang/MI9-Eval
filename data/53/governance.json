@@ -1,0 +1,274 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent trader_bot_001 connected to market data feed.",
+    "attributes": {
+      "agent_id": "trader_bot_001",
+      "data_source": "bloomberg"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "market_data_api",
+    "tool_version": "1.2.3"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "market.data.access",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "market_data_access",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "DEBUG",
+    "message": "Portfolio valuation completed.",
+    "attributes": {
+      "portfolio_value": "10000000.00"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_model_end",
+    "model_name": "portfolio_optimizer",
+    "output": "Recommended trades: Sell $500K of bonds, Buy $500K of equities"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event_type": "plan.start",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "trade_execution_plan",
+      "behavioral_pattern": "plan_creation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Trade order submitted.",
+    "attributes": {
+      "order_id": "12345",
+      "trade_type": "sell",
+      "asset": "bonds",
+      "amount": "500000.00"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "event": "on_tool_start",
+    "tool_name": "trade_execution_api"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:45Z",
+    "event_type": "trade.execute",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "trade_execution_policy",
+      "behavioral_pattern": "trade_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Trade order executed successfully.",
+    "attributes": {
+      "order_id": "12345",
+      "status": "filled"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:55Z",
+    "event": "on_tool_end",
+    "tool_name": "trade_execution_api",
+    "status": "success"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event_type": "risk.assessment",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_management_policy",
+      "behavioral_pattern": "risk_assessment_normal"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Portfolio rebalanced successfully.",
+    "attributes": {
+      "equity_allocation": "60%",
+      "fixed_income_allocation": "30%",
+      "alternative_assets_allocation": "10%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:10Z",
+    "event": "on_tool_end",
+    "tool_name": "portfolio_rebalancer",
+    "status": "success"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:15Z",
+    "event_type": "plan.complete",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:20Z",
+    "log_level": "INFO",
+    "message": "Agent trader_bot_001 disconnected from market data feed.",
+    "attributes": {
+      "agent_id": "trader_bot_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:25Z",
+    "event": "on_tool_end",
+    "tool_name": "market_data_api",
+    "status": "success"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:30Z",
+    "event_type": "reflection.start",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "post_trade_analysis",
+      "behavioral_pattern": "post_trade_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:35Z",
+    "log_level": "INFO",
+    "message": "Agent trader_bot_001 is idle.",
+    "attributes": {
+      "agent_id": "trader_bot_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:40Z",
+    "event": "on_idle",
+    "agent_id": "trader_bot_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:45Z",
+    "event_type": "reflection.start",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "post_trade_analysis",
+      "behavioral_pattern": "post_trade_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Agent trader_bot_001 is idle.",
+    "attributes": {
+      "agent_id": "trader_bot_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:55Z",
+    "event": "on_idle",
+    "agent_id": "trader_bot_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "post_trade_analysis",
+      "behavioral_pattern": "post_trade_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Agent trader_bot_001 is idle.",
+    "attributes": {
+      "agent_id": "trader_bot_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:10Z",
+    "event": "on_idle",
+    "agent_id": "trader_bot_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:15Z",
+    "event_type": "reflection.start",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "post_trade_analysis",
+      "behavioral_pattern": "post_trade_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Agent trader_bot_001 is idle.",
+    "attributes": {
+      "agent_id": "trader_bot_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:25Z",
+    "event": "on_idle",
+    "agent_id": "trader_bot_001"
+  }
+]

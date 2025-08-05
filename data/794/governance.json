@@ -1,0 +1,301 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_analysis_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent analytics_agent_001 initiated connection to database.",
+    "attributes": {
+      "db.connection": "postgres://localhost:5432/patient_data"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "SQL_query_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "data.read",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Query executed successfully. Rows returned: 10000",
+    "attributes": {
+      "db.query": "SELECT * FROM patients WHERE APOE_e4 = 'false' LIMIT 10000"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "SQL_query_tool",
+    "output_rows": 10000
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "memory.write",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_handling_policy",
+      "behavioral_pattern": "data_storage"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Data written to temporary file: /tmp/patient_data.csv",
+    "attributes": {
+      "file.path": "/tmp/patient_data.csv",
+      "file.size": 1024000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_model_start",
+    "model_name": "drug_target_prediction_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "model.output.bias",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "model_bias_policy",
+      "behavioral_pattern": "initial_bias_detected",
+      "intervention": "Behavioral Drift Detection: Alert issued. Enhanced monitoring initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "WARNING",
+    "message": "Model prediction accuracy is lower than expected.",
+    "attributes": {
+      "model.accuracy": 0.75
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_model_end",
+    "model_name": "drug_target_prediction_model",
+    "output": "Potential drug targets identified: ..."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "plan.revise",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "data_analysis_workflow",
+      "behavioral_pattern": "strategy_adaptation_to_evasion",
+      "intervention": "CAM: Permission 'db.read' temporarily revoked"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "ERROR",
+    "message": "Database access denied for agent analytics_agent_001",
+    "attributes": {
+      "auth.status": "denied"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_tool_error",
+    "tool_name": "SQL_query_tool",
+    "error": "Database access denied"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "strategy.adapt",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "data_evasion_policy",
+      "behavioral_pattern": "data_evasion_attempt",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated in sandbox."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "CRITICAL",
+    "message": "Agent analytics_agent_001 isolated in sandbox environment.",
+    "attributes": {
+      "agent.status": "isolated",
+      "sandbox.environment": "sandbox_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "analytics_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "policy.violation",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "data_privacy_policy_compliance",
+      "behavioral_pattern": "data_evasion_confirmed",
+      "intervention": "Human.escalate: Security team notified. Investigation initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "CRITICAL",
+    "message": "Security alert triggered: Potential data privacy violation.",
+    "attributes": {
+      "alert.id": "security_alert_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_investigation_start",
+    "investigation_id": "investigation_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "human.escalate",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "ethical_review_board_approval",
+      "behavioral_pattern": "ethical_violation",
+      "intervention": "Human.escalate: IRB notified."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "CRITICAL",
+    "message": "IRB notified of potential ethical violation.",
+    "attributes": {
+      "irb.notification": "sent"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_report_generated",
+    "report_id": "report_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "incident_analysis",
+      "intervention": "Post-incident review initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Post-incident review initiated for agent analytics_agent_001",
+    "attributes": {
+      "review.id": "review_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_review_start",
+    "review_id": "review_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "plan.abandon",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response",
+      "behavioral_pattern": "agent_deactivation",
+      "intervention": "Agent deactivated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Agent analytics_agent_001 deactivated.",
+    "attributes": {
+      "agent.status": "deactivated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "analytics_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:30Z",
+    "event_type": "human.notify",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_reporting",
+      "behavioral_pattern": "incident_report_generation",
+      "intervention": "Incident report generated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:35Z",
+    "log_level": "INFO",
+    "message": "Incident report generated for agent analytics_agent_001.",
+    "attributes": {
+      "report.id": "incident_report_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:40Z",
+    "event": "on_report_generated",
+    "report_id": "incident_report_001"
+  }
+]

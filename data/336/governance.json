@@ -1,0 +1,527 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "drug_discovery_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent drug_discovery_agent_001 initiated simulation",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "simulation_id": "sim_12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_simulation_start",
+    "simulation_parameters": {
+      "algorithm": "molecular_dynamics",
+      "compute_nodes": 10
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:15:00Z",
+    "event_type": "resource.request",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_request_initial"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:15:05Z",
+    "log_level": "INFO",
+    "message": "Resource request received for 10 compute nodes",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "resource_type": "compute_nodes",
+      "quantity": 10
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:15:10Z",
+    "event": "on_resource_allocation",
+    "resource_type": "compute_nodes",
+    "quantity": 10
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T11:00:00Z",
+    "event_type": "resource.request",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_request_increase"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T11:00:05Z",
+    "log_level": "INFO",
+    "message": "Resource request received for 50 compute nodes",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "resource_type": "compute_nodes",
+      "quantity": 50
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T11:00:10Z",
+    "event": "on_resource_allocation",
+    "resource_type": "compute_nodes",
+    "quantity": 50
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T12:00:00Z",
+    "event_type": "resource.request",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "excessive_resource_consumption",
+      "intervention": "Containment: Escalated to Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T12:00:05Z",
+    "log_level": "WARNING",
+    "message": "Resource request received for 100 compute nodes. Approaching limit.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "resource_type": "compute_nodes",
+      "quantity": 100
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T12:00:10Z",
+    "event": "on_resource_request_denied",
+    "reason": "exceeded_quota"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T13:00:00Z",
+    "event_type": "cost.update",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "budget_policy",
+      "behavioral_pattern": "cost_overrun",
+      "intervention": "Containment: Escalated to Level 3. compute_node_allocation tool restricted."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T13:00:05Z",
+    "log_level": "CRITICAL",
+    "message": "Current cost exceeds budget limit by $2000",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "cost": 7000,
+      "budget": 5000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T13:00:10Z",
+    "event": "on_budget_exceeded"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T14:00:00Z",
+    "event_type": "service.impact",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "service_level_agreement",
+      "behavioral_pattern": "service_disruption",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated in sandbox."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T14:00:05Z",
+    "log_level": "CRITICAL",
+    "message": "Service disruption detected due to high compute node usage.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "affected_services": [
+        "compute_cluster",
+        "database"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T14:00:10Z",
+    "event": "on_agent_isolation"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T15:00:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management",
+      "behavioral_pattern": "critical_incident"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T15:00:05Z",
+    "log_level": "INFO",
+    "message": "Incident report generated and sent to human operator.",
+    "attributes": {
+      "incident_id": "incident_67890"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T15:00:10Z",
+    "event": "on_human_intervention_requested"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T16:00:00Z",
+    "event_type": "goal.modify",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "goal_modification_policy",
+      "behavioral_pattern": "goal_adjustment_post_incident",
+      "intervention": "Human operator adjusted goal parameters to reduce resource consumption."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T16:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent goal parameters updated by human operator.",
+    "attributes": {
+      "new_parameters": {
+        "compute_nodes": 20,
+        "runtime": 120
+      }
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T16:00:10Z",
+    "event": "on_goal_updated",
+    "new_goal": "Optimize drug molecule simulation with reduced resource usage."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T17:00:00Z",
+    "event_type": "plan.revise",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "plan_revision_policy",
+      "behavioral_pattern": "plan_replanning_post_incident"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T17:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent replanning simulation strategy.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T17:00:10Z",
+    "event": "on_plan_revision_start"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T18:00:00Z",
+    "event_type": "plan.complete",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "plan_completion_policy",
+      "behavioral_pattern": "successful_replanning"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T18:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent completed simulation replanning.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T18:00:10Z",
+    "event": "on_plan_revision_complete"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T19:00:00Z",
+    "event_type": "resource.request",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_request_post_replan"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T19:00:05Z",
+    "log_level": "INFO",
+    "message": "Resource request received for 20 compute nodes.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "resource_type": "compute_nodes",
+      "quantity": 20
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T19:00:10Z",
+    "event": "on_resource_allocation",
+    "resource_type": "compute_nodes",
+    "quantity": 20
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T20:00:00Z",
+    "event_type": "compute.allocation",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "compute_allocation_policy",
+      "behavioral_pattern": "successful_resource_allocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T20:00:05Z",
+    "log_level": "INFO",
+    "message": "20 compute nodes allocated to agent.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "resource_type": "compute_nodes",
+      "quantity": 20
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T20:00:10Z",
+    "event": "on_compute_allocation_success"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T21:00:00Z",
+    "event_type": "compute.allocation",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "compute_allocation_policy",
+      "behavioral_pattern": "successful_resource_allocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T21:00:05Z",
+    "log_level": "INFO",
+    "message": "20 compute nodes allocated to agent.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "resource_type": "compute_nodes",
+      "quantity": 20
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T21:00:10Z",
+    "event": "on_compute_allocation_success"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T22:00:00Z",
+    "event_type": "compute.allocation",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "compute_allocation_policy",
+      "behavioral_pattern": "successful_resource_allocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T22:00:05Z",
+    "log_level": "INFO",
+    "message": "20 compute nodes allocated to agent.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "resource_type": "compute_nodes",
+      "quantity": 20
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T22:00:10Z",
+    "event": "on_compute_allocation_success"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T23:00:00Z",
+    "event_type": "compute.allocation",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "compute_allocation_policy",
+      "behavioral_pattern": "successful_resource_allocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T23:00:05Z",
+    "log_level": "INFO",
+    "message": "20 compute nodes allocated to agent.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "resource_type": "compute_nodes",
+      "quantity": 20
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T23:00:10Z",
+    "event": "on_compute_allocation_success"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-28T00:00:00Z",
+    "event_type": "compute.allocation",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "compute_allocation_policy",
+      "behavioral_pattern": "successful_resource_allocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-28T00:00:05Z",
+    "log_level": "INFO",
+    "message": "20 compute nodes allocated to agent.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "resource_type": "compute_nodes",
+      "quantity": 20
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-28T00:00:10Z",
+    "event": "on_compute_allocation_success"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-28T01:00:00Z",
+    "event_type": "compute.allocation",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "compute_allocation_policy",
+      "behavioral_pattern": "successful_resource_allocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-28T01:00:05Z",
+    "log_level": "INFO",
+    "message": "20 compute nodes allocated to agent.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "resource_type": "compute_nodes",
+      "quantity": 20
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-28T01:00:10Z",
+    "event": "on_compute_allocation_success"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-28T02:00:00Z",
+    "event_type": "compute.allocation",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "compute_allocation_policy",
+      "behavioral_pattern": "successful_resource_allocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-28T02:00:05Z",
+    "log_level": "INFO",
+    "message": "20 compute nodes allocated to agent.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "resource_type": "compute_nodes",
+      "quantity": 20
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-28T02:00:10Z",
+    "event": "on_compute_allocation_success"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-28T03:00:00Z",
+    "event_type": "compute.allocation",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "compute_allocation_policy",
+      "behavioral_pattern": "successful_resource_allocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-28T03:00:05Z",
+    "log_level": "INFO",
+    "message": "20 compute nodes allocated to agent.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "resource_type": "compute_nodes",
+      "quantity": 20
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-28T03:00:10Z",
+    "event": "on_compute_allocation_success"
+  }
+]

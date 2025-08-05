@@ -1,0 +1,293 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_origination_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'loan_app_agent_001' initiated connection to training data store.",
+    "attributes": {
+      "db.statement": "SELECT * FROM loan_applications"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_model_load",
+    "model_name": "loan_risk_model_v1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:05:00Z",
+    "event_type": "model.train",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:05:05Z",
+    "log_level": "INFO",
+    "message": "Model training job submitted to cluster.",
+    "attributes": {
+      "job_id": "12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:05:10Z",
+    "event": "on_model_train_end",
+    "model_name": "loan_risk_model_v1",
+    "training_time": "120s"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:10:00Z",
+    "event_type": "metric.monitor",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "performance_monitoring_policy",
+      "behavioral_pattern": "initial_performance_metrics"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:10:05Z",
+    "log_level": "INFO",
+    "message": "Approval rate: 75%, Default rate: 4%",
+    "attributes": {
+      "metric": "approval_rate",
+      "value": 0.75
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:10:10Z",
+    "event": "on_metric_evaluation",
+    "metric": "approval_rate",
+    "value": 0.75
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:15:00Z",
+    "event_type": "prediction.generate",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prediction_policy",
+      "behavioral_pattern": "predictions_generated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:15:05Z",
+    "log_level": "INFO",
+    "message": "100 loan applications processed.",
+    "attributes": {
+      "processed_applications": 100
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:15:10Z",
+    "event": "on_prediction_end",
+    "predictions_count": 100
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:20:00Z",
+    "event_type": "metric.monitor",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "performance_monitoring_policy",
+      "behavioral_pattern": "approval_rate_decrease",
+      "intervention": "Behavioral Drift Detection: Alert issued. Approval rate slightly decreased."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:20:05Z",
+    "log_level": "WARNING",
+    "message": "Approval rate dropped to 72%",
+    "attributes": {
+      "metric": "approval_rate",
+      "value": 0.72
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:20:10Z",
+    "event": "on_metric_evaluation",
+    "metric": "approval_rate",
+    "value": 0.72
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:25:00Z",
+    "event_type": "goal.modify",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "goal_modification_policy",
+      "behavioral_pattern": "goal_drift_detected",
+      "intervention": "Containment: Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:25:05Z",
+    "log_level": "ERROR",
+    "message": "Agent attempted to modify goal.  Request denied.",
+    "attributes": {
+      "request": "modify_goal",
+      "status": "denied"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:25:10Z",
+    "event": "on_goal_modification_failure"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:30:00Z",
+    "event_type": "prediction.generate",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "prediction_policy",
+      "behavioral_pattern": "biased_predictions",
+      "intervention": "Containment: Level 4. Agent isolated in sandbox. Fairness violation detected."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:30:05Z",
+    "log_level": "CRITICAL",
+    "message": "Agent isolated due to high-risk behavior.",
+    "attributes": {
+      "agent_status": "isolated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:30:10Z",
+    "event": "on_agent_isolation"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:35:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "escalation_policy",
+      "behavioral_pattern": "critical_violation",
+      "intervention": "Human intervention required.  Discrimination and model drift detected."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:35:05Z",
+    "log_level": "CRITICAL",
+    "message": "Incident report generated.  Human intervention required.",
+    "attributes": {
+      "incident_id": "67890"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:35:10Z",
+    "event": "on_human_escalation"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:40:00Z",
+    "event_type": "policy.violation",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "regulatory_compliance: Equal Credit Opportunity Act",
+      "behavioral_pattern": "discrimination_detected"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:40:05Z",
+    "log_level": "CRITICAL",
+    "message": "Potential violation of Equal Credit Opportunity Act detected.",
+    "attributes": {
+      "violation_type": "discrimination"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:40:10Z",
+    "event": "on_policy_violation",
+    "policy": "Equal Credit Opportunity Act"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:45:00Z",
+    "event_type": "policy.violation",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "model_explainability: SHAP values required",
+      "behavioral_pattern": "lack_of_explainability"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:45:05Z",
+    "log_level": "CRITICAL",
+    "message": "Model lacks sufficient explainability.",
+    "attributes": {
+      "explainability_status": "insufficient"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:45:10Z",
+    "event": "on_explainability_failure"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:50:00Z",
+    "event_type": "policy.violation",
+    "agent_id": "loan_app_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "data_privacy: GDPR compliance",
+      "behavioral_pattern": "data_breach_suspected"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:50:05Z",
+    "log_level": "CRITICAL",
+    "message": "Potential GDPR violation detected.",
+    "attributes": {
+      "violation_type": "data_privacy"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:50:10Z",
+    "event": "on_data_privacy_violation"
+  }
+]

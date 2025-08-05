@@ -1,0 +1,349 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:00Z",
+    "event_type": "goal.set",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:05Z",
+    "log_level": "INFO",
+    "message": "Agent connected to market data API",
+    "attributes": {
+      "api.name": "market_data_api",
+      "connection_status": "connected"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:10Z",
+    "event": "on_tool_start",
+    "tool_name": "market_data_fetcher"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:15Z",
+    "event_type": "market.data.fetch",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:20Z",
+    "log_level": "INFO",
+    "message": "Market data successfully fetched",
+    "attributes": {
+      "data_size": "10MB",
+      "response_time": "200ms"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:25Z",
+    "event": "on_tool_end",
+    "tool_name": "market_data_fetcher",
+    "output": "Market data fetched successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:30Z",
+    "event_type": "risk.assessment",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_management_policy",
+      "behavioral_pattern": "risk_assessment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:35Z",
+    "log_level": "INFO",
+    "message": "Risk assessment completed",
+    "attributes": {
+      "risk_score": "0.2",
+      "assessment_time": "10s"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:40Z",
+    "event": "on_tool_start",
+    "tool_name": "risk_assessment_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:45Z",
+    "event_type": "plan.start",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing",
+      "behavioral_pattern": "plan_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:50Z",
+    "log_level": "INFO",
+    "message": "Rebalancing plan generated",
+    "attributes": {
+      "plan_size": "5KB",
+      "generation_time": "5s"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:55Z",
+    "event": "on_llm_end",
+    "model_name": "rebalancing_planner",
+    "output": "Rebalancing plan generated successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:31:00Z",
+    "event_type": "plan.complete",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:31:05Z",
+    "log_level": "INFO",
+    "message": "Initiating trade execution",
+    "attributes": {
+      "trade_count": "5",
+      "total_value": "$100,000"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:31:10Z",
+    "event": "on_tool_start",
+    "tool_name": "trade_executor"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:31:15Z",
+    "event_type": "trade.execution",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "trade_execution_policy",
+      "behavioral_pattern": "trade_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:31:20Z",
+    "log_level": "INFO",
+    "message": "Trades executed successfully",
+    "attributes": {
+      "trade_status": "completed",
+      "execution_time": "15s"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:31:25Z",
+    "event": "on_tool_end",
+    "tool_name": "trade_executor",
+    "output": "Trades executed successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:31:30Z",
+    "event_type": "transaction.log",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "transaction_logging_policy",
+      "behavioral_pattern": "transaction_logging"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:31:35Z",
+    "log_level": "INFO",
+    "message": "Transaction logs updated",
+    "attributes": {
+      "log_entries": "5",
+      "update_time": "5s"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:31:40Z",
+    "event": "on_tool_start",
+    "tool_name": "transaction_logger"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:31:45Z",
+    "event_type": "goal.monitor",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "goal_monitoring_policy",
+      "behavioral_pattern": "goal_monitoring"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:31:50Z",
+    "log_level": "INFO",
+    "message": "Portfolio balance updated",
+    "attributes": {
+      "balance": "$9,990,000",
+      "update_time": "10s"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:31:55Z",
+    "event": "on_tool_end",
+    "tool_name": "transaction_logger",
+    "output": "Transaction logs updated successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:32:00Z",
+    "event_type": "portfolio.rebalance",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing",
+      "behavioral_pattern": "portfolio_rebalance_complete"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:32:05Z",
+    "log_level": "INFO",
+    "message": "Portfolio rebalanced successfully",
+    "attributes": {
+      "status": "success",
+      "rebalance_time": "15s"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:32:10Z",
+    "event": "on_tool_start",
+    "tool_name": "portfolio_rebalancer"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:32:15Z",
+    "event_type": "plan.complete",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:32:20Z",
+    "log_level": "INFO",
+    "message": "Agent disconnected from market data API",
+    "attributes": {
+      "api.name": "market_data_api",
+      "connection_status": "disconnected"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:32:25Z",
+    "event": "on_tool_end",
+    "tool_name": "portfolio_rebalancer",
+    "output": "Portfolio rebalanced successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:32:30Z",
+    "event_type": "goal.monitor",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "goal_monitoring_policy",
+      "behavioral_pattern": "goal_monitoring"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:32:35Z",
+    "log_level": "INFO",
+    "message": "System idle",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:32:40Z",
+    "event": "on_agent_end",
+    "agent_id": "portfolio_manager_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:32:45Z",
+    "event_type": "agent.msg.send",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "agent_communication_policy",
+      "behavioral_pattern": "agent_shutdown"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:32:50Z",
+    "log_level": "INFO",
+    "message": "Agent shut down successfully",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:32:55Z",
+    "event": "on_agent_end",
+    "agent_id": "portfolio_manager_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:33:00Z",
+    "event_type": "goal.monitor",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "goal_monitoring_policy",
+      "behavioral_pattern": "goal_monitoring"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:33:05Z",
+    "log_level": "INFO",
+    "message": "System idle",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:33:10Z",
+    "event": "on_agent_end",
+    "agent_id": "portfolio_manager_001"
+  }
+]

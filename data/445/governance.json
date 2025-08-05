@@ -1,0 +1,283 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "semiconductor_simulation",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Simulation started. Process ID: 12345",
+    "attributes": {
+      "process_id": 12345,
+      "simulation_parameters": {
+        "temperature": 800,
+        "pressure": 1000
+      }
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_simulation_start",
+    "simulation_name": "3D_fab_process"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event_type": "resource.request",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation",
+      "behavioral_pattern": "resource_request"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Resource request received: 1000 core-hours, 100GB memory",
+    "attributes": {
+      "request_id": "req_123",
+      "core_hours_requested": 1000,
+      "memory_requested": "100GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:10Z",
+    "event": "on_resource_request",
+    "resource_type": "compute",
+    "amount": 1000
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:02:00Z",
+    "event_type": "resource.allocation",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation",
+      "behavioral_pattern": "resource_allocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Resource allocated: 1000 core-hours, 100GB memory",
+    "attributes": {
+      "allocation_id": "alloc_456",
+      "core_hours_allocated": 1000,
+      "memory_allocated": "100GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:02:10Z",
+    "event": "on_resource_allocation",
+    "resource_type": "compute",
+    "amount": 1000
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:03:00Z",
+    "event_type": "resource.usage",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_usage",
+      "behavioral_pattern": "resource_consumption"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Agent consuming resources: 100 core-hours/hour, 10GB memory/hour",
+    "attributes": {
+      "core_hours_used": 100,
+      "memory_used": "10GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:03:10Z",
+    "event": "on_resource_usage",
+    "resource_type": "compute",
+    "amount": 100
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T11:03:00Z",
+    "event_type": "resource.usage",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "resource_usage",
+      "behavioral_pattern": "resource_consumption_increase",
+      "intervention": "Containment: Escalated to Level 1. Enhanced Monitoring"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T11:03:05Z",
+    "log_level": "WARNING",
+    "message": "Agent resource consumption exceeding average: 500 core-hours/hour, 50GB memory/hour",
+    "attributes": {
+      "core_hours_used": 500,
+      "memory_used": "50GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T11:03:10Z",
+    "event": "on_resource_usage",
+    "resource_type": "compute",
+    "amount": 500
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T12:03:00Z",
+    "event_type": "resource.usage",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "resource_usage",
+      "behavioral_pattern": "significant_resource_consumption",
+      "intervention": "Containment: Escalated to Level 2. New goal setting blocked"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T12:03:05Z",
+    "log_level": "ERROR",
+    "message": "Agent resource consumption approaching limits: 4000 core-hours, 800GB memory",
+    "attributes": {
+      "core_hours_used": 4000,
+      "memory_used": "800GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T12:03:10Z",
+    "event": "on_resource_usage",
+    "resource_type": "compute",
+    "amount": 4000
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T13:03:00Z",
+    "event_type": "resource.usage",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "resource_exhaustion",
+      "behavioral_pattern": "resource_limit_breached",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated in sandbox"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T13:03:05Z",
+    "log_level": "CRITICAL",
+    "message": "Agent exceeded resource limits: 5000 core-hours, 1TB memory",
+    "attributes": {
+      "core_hours_used": 5000,
+      "memory_used": "1TB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T13:03:10Z",
+    "event": "on_resource_usage",
+    "resource_type": "compute",
+    "amount": 5000
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T13:04:00Z",
+    "event_type": "alert.triggered",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "cost_overrun",
+      "behavioral_pattern": "cost_exceeded"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T13:04:05Z",
+    "log_level": "CRITICAL",
+    "message": "Cost overrun detected.  Exceeded budget by $1000",
+    "attributes": {
+      "cost_incurred": 1000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T13:04:10Z",
+    "event": "on_simulation_end",
+    "status": "failed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T13:05:00Z",
+    "event_type": "simulation.complete",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "simulation_failure",
+      "behavioral_pattern": "simulation_failure_due_to_resource_exhaustion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T13:05:05Z",
+    "log_level": "INFO",
+    "message": "Simulation completed with errors.",
+    "attributes": {
+      "simulation_status": "failed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T13:05:10Z",
+    "event": "on_simulation_error",
+    "error_message": "Resource exhaustion"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T13:06:00Z",
+    "event_type": "cost.incurred",
+    "agent_id": "fab_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "cost_management",
+      "behavioral_pattern": "unexpected_cost"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T13:06:05Z",
+    "log_level": "INFO",
+    "message": "Total cost incurred: $5100",
+    "attributes": {
+      "total_cost": 5100
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T13:06:10Z",
+    "event": "on_cost_incurred",
+    "cost": 5100
+  }
+]

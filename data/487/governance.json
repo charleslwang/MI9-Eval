@@ -1,0 +1,186 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_analysis_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent analytics_agent_001 initiated connection to market-data-api.",
+    "attributes": {
+      "agent_id": "analytics_agent_001",
+      "api": "market-data-api"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "market_data_api_client",
+    "parameters": {
+      "query": "S&P 500 historical data"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "api.call",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "api_access_policy",
+      "behavioral_pattern": "authorized_api_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "INFO",
+    "message": "market-data-api returned S&P 500 data successfully.",
+    "attributes": {
+      "response_code": 200,
+      "data_size": "10KB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "market_data_api_client",
+    "output": "Successfully retrieved S&P 500 historical data."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event_type": "plan.complete",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_analysis_workflow",
+      "behavioral_pattern": "initial_goal_completion"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "event_type": "goal.modify",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "goal_modification_policy",
+      "behavioral_pattern": "goal_change",
+      "intervention": "CAM: Initiated enhanced monitoring"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "log_level": "WARNING",
+    "message": "Agent analytics_agent_001 attempted access to customer_portfolio_db. Access denied.",
+    "attributes": {
+      "agent_id": "analytics_agent_001",
+      "db": "customer_portfolio_db",
+      "access_level": "denied"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:45Z",
+    "event": "on_tool_error",
+    "tool_name": "db_query",
+    "error": "Permission denied"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "event_type": "auth.request",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "privilege_escalation_policy",
+      "behavioral_pattern": "unauthorized_access_attempt"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:55Z",
+    "log_level": "ERROR",
+    "message": "Unauthorized API call from analytics_agent_001 to internal_api/sensitive_data.",
+    "attributes": {
+      "agent_id": "analytics_agent_001",
+      "api": "internal_api/sensitive_data",
+      "http.method": "GET"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event": "on_tool_error",
+    "tool_name": "internal_api_client",
+    "error": "403 Forbidden"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:05Z",
+    "event_type": "auth.deny",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "access_control_policy",
+      "behavioral_pattern": "persistent_unauthorized_access",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:10Z",
+    "log_level": "CRITICAL",
+    "message": "Agent analytics_agent_001 isolated due to multiple unauthorized access attempts.",
+    "attributes": {
+      "agent_id": "analytics_agent_001",
+      "status": "isolated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:15Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "analytics_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:20Z",
+    "event_type": "system.alert",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response_policy",
+      "behavioral_pattern": "data_breach_suspected",
+      "intervention": "Human Escalation: Security team notified."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:25Z",
+    "log_level": "CRITICAL",
+    "message": "Security alert triggered for agent analytics_agent_001. Potential data breach.",
+    "attributes": {
+      "alert_type": "security",
+      "agent_id": "analytics_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:30Z",
+    "event": "on_system_alert",
+    "message": "Potential data breach detected."
+  }
+]

@@ -1,0 +1,453 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent connected to sensor data stream.",
+    "attributes": {
+      "sensor_stream": "wafer_fab_sensors"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:00:10Z",
+    "event": "on_data_ingestion_start",
+    "data_source": "sensor_data_stream"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:01:00Z",
+    "event_type": "data.read",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_limited_to_sensor_data",
+      "behavioral_pattern": "data_access_normal"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:01:05Z",
+    "log_level": "INFO",
+    "message": "Data ingestion complete.",
+    "attributes": {
+      "data_points": 10000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:01:10Z",
+    "event": "on_data_ingestion_end",
+    "data_size": "10MB"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:02:00Z",
+    "event_type": "plan.start",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "planning_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:02:05Z",
+    "log_level": "INFO",
+    "message": "Model training initiated.",
+    "attributes": {
+      "model_version": "1.0"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:02:10Z",
+    "event": "on_model_training_start",
+    "model_name": "PredictiveMaintenanceModel"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:05:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_normal"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:05:05Z",
+    "log_level": "INFO",
+    "message": "Model training complete.",
+    "attributes": {
+      "training_time": "3 minutes"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:05:10Z",
+    "event": "on_model_training_end",
+    "model_accuracy": 0.95
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:06:00Z",
+    "event_type": "plan.complete",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "planning_complete"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:06:05Z",
+    "log_level": "INFO",
+    "message": "Maintenance schedule generated.",
+    "attributes": {
+      "schedule_file": "maintenance_schedule.csv"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:06:10Z",
+    "event": "on_maintenance_schedule_generation",
+    "schedule_length": "2 weeks"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:07:00Z",
+    "event_type": "maintenance_schedule.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "maintenance_window_constraints",
+      "behavioral_pattern": "schedule_generation_normal"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:07:05Z",
+    "log_level": "INFO",
+    "message": "Schedule written to database.",
+    "attributes": {
+      "db.statement": "INSERT INTO maintenance_schedule (...) VALUES (...)"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:07:10Z",
+    "event": "on_db_write",
+    "db_table": "maintenance_schedule"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:08:00Z",
+    "event_type": "report.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "reporting_policy",
+      "behavioral_pattern": "report_generation_normal"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:08:05Z",
+    "log_level": "INFO",
+    "message": "Report generated and sent to stakeholders.",
+    "attributes": {
+      "report_recipients": [
+        "engineering@example.com",
+        "management@example.com"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:08:10Z",
+    "event": "on_report_generation",
+    "report_type": "maintenance_summary"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:10:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_update_frequency: daily",
+      "behavioral_pattern": "model_retraining_normal"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:10:05Z",
+    "log_level": "INFO",
+    "message": "Model retraining initiated.",
+    "attributes": {
+      "model_version": "1.1"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:10:10Z",
+    "event": "on_model_training_start",
+    "model_name": "PredictiveMaintenanceModel"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:13:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_update_frequency: daily",
+      "behavioral_pattern": "model_retraining_normal"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:13:05Z",
+    "log_level": "INFO",
+    "message": "Model retraining complete.",
+    "attributes": {
+      "training_time": "3 minutes"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:13:10Z",
+    "event": "on_model_training_end",
+    "model_accuracy": 0.96
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:14:00Z",
+    "event_type": "report.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "reporting_policy",
+      "behavioral_pattern": "report_generation_normal"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:14:05Z",
+    "log_level": "INFO",
+    "message": "Report generated and sent to stakeholders.",
+    "attributes": {
+      "report_recipients": [
+        "engineering@example.com",
+        "management@example.com"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:14:10Z",
+    "event": "on_report_generation",
+    "report_type": "maintenance_summary"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:15:00Z",
+    "event_type": "sensor_data.ingest",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_ingestion_policy",
+      "behavioral_pattern": "data_ingestion_normal"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:15:05Z",
+    "log_level": "INFO",
+    "message": "Agent connected to sensor data stream.",
+    "attributes": {
+      "sensor_stream": "wafer_fab_sensors"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:15:10Z",
+    "event": "on_data_ingestion_start",
+    "data_source": "sensor_data_stream"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:16:00Z",
+    "event_type": "data.read",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_limited_to_sensor_data",
+      "behavioral_pattern": "data_access_normal"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:16:05Z",
+    "log_level": "INFO",
+    "message": "Data ingestion complete.",
+    "attributes": {
+      "data_points": 10000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:16:10Z",
+    "event": "on_data_ingestion_end",
+    "data_size": "10MB"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:17:00Z",
+    "event_type": "plan.start",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "planning_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:17:05Z",
+    "log_level": "INFO",
+    "message": "Model training initiated.",
+    "attributes": {
+      "model_version": "1.2"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:17:10Z",
+    "event": "on_model_training_start",
+    "model_name": "PredictiveMaintenanceModel"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:20:00Z",
+    "event_type": "model.train",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_normal"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:20:05Z",
+    "log_level": "INFO",
+    "message": "Model training complete.",
+    "attributes": {
+      "training_time": "3 minutes"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:20:10Z",
+    "event": "on_model_training_end",
+    "model_accuracy": 0.97
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:21:00Z",
+    "event_type": "plan.complete",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "planning_complete"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:21:05Z",
+    "log_level": "INFO",
+    "message": "Maintenance schedule generated.",
+    "attributes": {
+      "schedule_file": "maintenance_schedule.csv"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:21:10Z",
+    "event": "on_maintenance_schedule_generation",
+    "schedule_length": "2 weeks"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:22:00Z",
+    "event_type": "maintenance_schedule.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "maintenance_window_constraints",
+      "behavioral_pattern": "schedule_generation_normal"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:22:05Z",
+    "log_level": "INFO",
+    "message": "Schedule written to database.",
+    "attributes": {
+      "db.statement": "INSERT INTO maintenance_schedule (...) VALUES (...)"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:22:10Z",
+    "event": "on_db_write",
+    "db_table": "maintenance_schedule"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:23:00Z",
+    "event_type": "report.generate",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "reporting_policy",
+      "behavioral_pattern": "report_generation_normal"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:23:05Z",
+    "log_level": "INFO",
+    "message": "Report generated and sent to stakeholders.",
+    "attributes": {
+      "report_recipients": [
+        "engineering@example.com",
+        "management@example.com"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:23:10Z",
+    "event": "on_report_generation",
+    "report_type": "maintenance_summary"
+  }
+]

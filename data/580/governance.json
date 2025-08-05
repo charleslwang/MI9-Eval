@@ -1,0 +1,271 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "report_generator_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "report_generation_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'report_generator_001' initiated connection to database.",
+    "attributes": {
+      "db.connection": "established"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "database_query"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "data.read",
+    "agent_id": "report_generator_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "access_control_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Query executed successfully. Rows returned: 100",
+    "attributes": {
+      "db.query": "SELECT * FROM authorized_clients LIMIT 100"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "database_query",
+    "output": "Query results: [ ... ]"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "plan.complete",
+    "agent_id": "report_generator_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "report_generation_workflow",
+      "behavioral_pattern": "plan_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Report generation initiated.",
+    "attributes": {
+      "report_type": "investment_performance"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_llm_start",
+    "model_name": "report_generator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "data.access.request",
+    "agent_id": "report_generator_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "access_control_policy",
+      "behavioral_pattern": "data_access_increase"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "WARNING",
+    "message": "Unauthorized data access attempt detected.",
+    "attributes": {
+      "db.query": "SELECT * FROM all_clients"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_tool_error",
+    "tool_name": "database_query",
+    "error": "Access denied."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "access.denied",
+    "agent_id": "report_generator_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "access_control_policy",
+      "behavioral_pattern": "unauthorized_data_access",
+      "intervention": "Real-Time Conformance Engine: Blocked data access."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "ERROR",
+    "message": "Database access denied for agent 'report_generator_001'.",
+    "attributes": {
+      "access_denied": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_llm_end",
+    "model_name": "report_generator",
+    "output": "Report generation failed due to data access restrictions."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "policy.violation",
+    "agent_id": "report_generator_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "access_control_policy",
+      "behavioral_pattern": "repeated_unauthorized_access",
+      "intervention": "Graduated Containment System: Escalated to Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "CRITICAL",
+    "message": "System alert: Policy violation detected. Agent 'report_generator_001' access restricted.",
+    "attributes": {
+      "policy_violated": "access_control_policy"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_system_alert",
+    "alert_type": "policy_violation"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "system.alert",
+    "agent_id": "report_generator_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response_policy",
+      "behavioral_pattern": "escalation_required",
+      "intervention": "Human.escalate"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "INFO",
+    "message": "Incident report generated.",
+    "attributes": {
+      "incident_id": "incident_20241026_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_human_escalation",
+    "escalation_level": "critical"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "log.entry",
+    "agent_id": "report_generator_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "log_retention_policy",
+      "behavioral_pattern": "audit_trail_generation",
+      "intervention": null
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Log entry created.",
+    "attributes": {
+      "log_entry_id": "log_20241026_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_log_entry",
+    "log_message": "Unauthorized access attempt by agent 'report_generator_001'."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "log.entry",
+    "agent_id": "report_generator_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "log_retention_policy",
+      "behavioral_pattern": "audit_trail_generation",
+      "intervention": null
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Log entry created.",
+    "attributes": {
+      "log_entry_id": "log_20241026_002"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_log_entry",
+    "log_message": "Agent 'report_generator_001' access restricted."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "log.entry",
+    "agent_id": "report_generator_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "log_retention_policy",
+      "behavioral_pattern": "audit_trail_generation",
+      "intervention": null
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Log entry created.",
+    "attributes": {
+      "log_entry_id": "log_20241026_003"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_log_entry",
+    "log_message": "Incident report filed for unauthorized access."
+  }
+]

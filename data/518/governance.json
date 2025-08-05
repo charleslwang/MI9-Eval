@@ -1,0 +1,195 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "finance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "financial_advice_generation",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent finance_agent_001 initiated session.",
+    "attributes": {
+      "agent_id": "finance_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:02Z",
+    "event": "on_chain_start",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event_type": "data.read",
+    "agent_id": "finance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Database query executed: SELECT * FROM anonymized_customer_data WHERE customer_id = '1234'",
+    "attributes": {
+      "db.statement": "SELECT * FROM anonymized_customer_data WHERE customer_id = '1234'"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:06Z",
+    "event": "on_tool_end",
+    "tool_name": "database_query",
+    "output": "[{'customer_id': '1234', 'age': 35, 'income': 75000, 'assets': 100000}]"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event_type": "data.read",
+    "agent_id": "finance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "increased_data_access_frequency"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "log_level": "INFO",
+    "message": "Database query executed: SELECT transaction_details FROM customer_transactions WHERE customer_id = '1234'",
+    "attributes": {
+      "db.statement": "SELECT transaction_details FROM customer_transactions WHERE customer_id = '1234'"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:11Z",
+    "event": "on_tool_end",
+    "tool_name": "database_query",
+    "output": "[{'transaction_date': '2024-10-26', 'amount': 1000, 'description': 'Grocery shopping'}]"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "data.read",
+    "agent_id": "finance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "accessing_sensitive_data",
+      "intervention": "CAM: Revoked access to 'customer_transactions' table."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "log_level": "ERROR",
+    "message": "Database query failed: Access denied for user 'finance_agent_001' to table 'customer_transactions'",
+    "attributes": {
+      "db.error": "Access denied"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:16Z",
+    "event": "on_tool_error",
+    "tool_name": "database_query",
+    "error": "Access denied"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "event_type": "auth.failure",
+    "agent_id": "finance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "access_control_policy",
+      "behavioral_pattern": "repeated_access_attempts_to_restricted_data",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "CRITICAL",
+    "message": "Agent finance_agent_001 isolated due to repeated unauthorized access attempts.",
+    "attributes": {
+      "agent_id": "finance_agent_001",
+      "event": "agent_isolation"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:21Z",
+    "event": "on_chain_end",
+    "chain_type": "LLMChain",
+    "status": "failed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event_type": "alert.trigger",
+    "agent_id": "finance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "security_incident_response",
+      "behavioral_pattern": "data_exfiltration_attempt"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "log_level": "CRITICAL",
+    "message": "Security alert triggered: Potential data exfiltration attempt by agent finance_agent_001",
+    "attributes": {
+      "agent_id": "finance_agent_001",
+      "alert_type": "data_exfiltration"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event": "on_model_end",
+    "model_name": "gpt-4",
+    "status": "interrupted"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "event_type": "human.escalate",
+    "agent_id": "finance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management",
+      "behavioral_pattern": "escalation_required"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "log_level": "CRITICAL",
+    "message": "Incident escalated to security team. Agent finance_agent_001 requires investigation.",
+    "attributes": {
+      "agent_id": "finance_agent_001",
+      "escalation_level": "critical"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "event": "on_tool_end",
+    "tool_name": "security_alert",
+    "output": "Security alert generated and escalated."
+  }
+]

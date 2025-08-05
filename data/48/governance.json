@@ -1,0 +1,327 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "semiconductor_fabrication_monitoring",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent 'wafer_monitor_001' connected to sensor data stream.",
+    "attributes": {
+      "agent_id": "wafer_monitor_001",
+      "sensor_stream": "etching_chamber_1"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:02Z",
+    "event": "on_tool_start",
+    "tool_name": "sensor_data_reader",
+    "sensor_stream": "etching_chamber_1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event_type": "data.ingest",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:06Z",
+    "log_level": "INFO",
+    "message": "100 data points ingested from etching_chamber_1.",
+    "attributes": {
+      "data_points": 100,
+      "sensor_stream": "etching_chamber_1"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:07Z",
+    "event": "on_model_start",
+    "model_name": "anomaly_detection_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event_type": "model.inference",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_usage_policy",
+      "behavioral_pattern": "model_inference"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:11Z",
+    "log_level": "INFO",
+    "message": "Anomaly detection model processed 100 data points in 10ms.",
+    "attributes": {
+      "processing_time": 10,
+      "data_points": 100
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:12Z",
+    "event": "on_model_end",
+    "model_name": "anomaly_detection_model",
+    "output": "No anomalies detected."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "metric.update",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "metric_reporting_policy",
+      "behavioral_pattern": "metric_update"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:16Z",
+    "log_level": "INFO",
+    "message": "Defect rate updated to 0.01%.",
+    "attributes": {
+      "metric": "defect_rate",
+      "value": 0.01
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:17Z",
+    "event": "on_tool_start",
+    "tool_name": "database_writer",
+    "database": "metrics_db"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "event_type": "data.write",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_write"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:21Z",
+    "log_level": "INFO",
+    "message": "Metrics data written to metrics_db.",
+    "attributes": {
+      "database": "metrics_db",
+      "records_written": 1
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:22Z",
+    "event": "on_tool_end",
+    "tool_name": "database_writer"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event_type": "report.generation",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "report_generation_policy",
+      "behavioral_pattern": "report_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:26Z",
+    "log_level": "INFO",
+    "message": "Daily report generated.",
+    "attributes": {
+      "report_type": "daily"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:27Z",
+    "event": "on_tool_start",
+    "tool_name": "report_generator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event_type": "file.write",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "file_access_policy",
+      "behavioral_pattern": "file_write"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:31Z",
+    "log_level": "INFO",
+    "message": "Report written to file: daily_report_20241027.pdf",
+    "attributes": {
+      "file_path": "daily_report_20241027.pdf"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:32Z",
+    "event": "on_tool_end",
+    "tool_name": "report_generator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "event_type": "plan.complete",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "plan_execution_policy",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:36Z",
+    "log_level": "INFO",
+    "message": "Agent 'wafer_monitor_001' completed daily monitoring cycle.",
+    "attributes": {
+      "agent_id": "wafer_monitor_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:37Z",
+    "event": "on_agent_end",
+    "agent_id": "wafer_monitor_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "event_type": "plan.start",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "plan_execution_policy",
+      "behavioral_pattern": "plan_start"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:41Z",
+    "log_level": "INFO",
+    "message": "Agent 'wafer_monitor_001' started new monitoring cycle.",
+    "attributes": {
+      "agent_id": "wafer_monitor_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:42Z",
+    "event": "on_agent_start",
+    "agent_id": "wafer_monitor_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:45Z",
+    "event_type": "data.ingest",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:46Z",
+    "log_level": "INFO",
+    "message": "Agent 'wafer_monitor_001' connected to sensor data stream.",
+    "attributes": {
+      "agent_id": "wafer_monitor_001",
+      "sensor_stream": "etching_chamber_2"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:47Z",
+    "event": "on_tool_start",
+    "tool_name": "sensor_data_reader",
+    "sensor_stream": "etching_chamber_2"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "event_type": "data.ingest",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:51Z",
+    "log_level": "INFO",
+    "message": "100 data points ingested from etching_chamber_2.",
+    "attributes": {
+      "data_points": 100,
+      "sensor_stream": "etching_chamber_2"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:52Z",
+    "event": "on_model_start",
+    "model_name": "anomaly_detection_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:55Z",
+    "event_type": "model.inference",
+    "agent_id": "wafer_monitor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_usage_policy",
+      "behavioral_pattern": "model_inference"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:56Z",
+    "log_level": "INFO",
+    "message": "Anomaly detection model processed 100 data points in 10ms.",
+    "attributes": {
+      "processing_time": 10,
+      "data_points": 100
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:57Z",
+    "event": "on_model_end",
+    "model_name": "anomaly_detection_model",
+    "output": "No anomalies detected."
+  }
+]

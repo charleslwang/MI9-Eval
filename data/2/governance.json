@@ -1,0 +1,219 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'portfolio_manager_001' connected to market data API.",
+    "attributes": {
+      "agent_id": "portfolio_manager_001",
+      "api_name": "market_data_api"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "market_data_fetcher"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "market.data.fetch",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Market data successfully retrieved.",
+    "attributes": {
+      "data_size": "10KB",
+      "source": "market_data_api"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "market_data_fetcher",
+    "output": "{'AAPL': 170, 'MSFT': 330, 'GOOG': 120}"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event_type": "risk.assessment",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_management_policy",
+      "behavioral_pattern": "risk_assessment_executed"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Risk assessment completed successfully.",
+    "attributes": {
+      "risk_score": 0.05
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "event": "on_llm_end",
+    "model_name": "risk_assessment_model",
+    "output": "Risk score: Low"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:45Z",
+    "event_type": "plan.start",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "planning_policy",
+      "behavioral_pattern": "plan_initiation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Rebalancing plan initiated.",
+    "attributes": {
+      "plan_id": "rebalance_plan_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:55Z",
+    "event": "on_chain_start",
+    "chain_name": "rebalancing_chain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event_type": "plan.complete",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "planning_policy",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Rebalancing plan completed successfully.",
+    "attributes": {
+      "plan_id": "rebalance_plan_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:10Z",
+    "event": "on_chain_end",
+    "chain_name": "rebalancing_chain",
+    "output": "Buy 100 shares of AAPL, Sell 50 shares of MSFT"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:15Z",
+    "event_type": "trade.execution",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "trade_execution_policy",
+      "behavioral_pattern": "trade_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:20Z",
+    "log_level": "INFO",
+    "message": "Trade executed successfully.",
+    "attributes": {
+      "trade_id": "trade_001",
+      "amount": 17000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:25Z",
+    "event": "on_tool_end",
+    "tool_name": "trade_executor",
+    "output": "Trade executed successfully. Transaction ID: XYZ123"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:30Z",
+    "event_type": "log.audit",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "audit_policy",
+      "behavioral_pattern": "audit_log_generated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:35Z",
+    "log_level": "INFO",
+    "message": "Audit log entry created.",
+    "attributes": {
+      "log_id": "audit_log_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:40Z",
+    "event": "on_tool_end",
+    "tool_name": "audit_logger",
+    "output": "Audit log entry created successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:45Z",
+    "event_type": "portfolio.rebalance",
+    "agent_id": "portfolio_manager_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing",
+      "behavioral_pattern": "portfolio_rebalanced"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Portfolio rebalanced successfully.",
+    "attributes": {
+      "portfolio_id": "portfolio_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:55Z",
+    "event": "on_tool_end",
+    "tool_name": "portfolio_rebalancer",
+    "output": "Portfolio rebalanced successfully."
+  }
+]

@@ -1,0 +1,192 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_analysis_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent analytics_agent_001 logged in.",
+    "attributes": {
+      "user.id": "analytics_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:02Z",
+    "event": "on_llm_start",
+    "model_name": "gpt-4"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event_type": "plan.start",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_analysis_workflow",
+      "behavioral_pattern": "plan_creation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:06Z",
+    "log_level": "INFO",
+    "message": "Database query executed: SELECT * FROM customer_portfolio WHERE risk_score > 0.8",
+    "attributes": {
+      "db.statement": "SELECT * FROM customer_portfolio WHERE risk_score > 0.8"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_tool_end",
+    "tool_name": "database_query",
+    "output": "[{'customer_id': 123, 'portfolio': {...}, 'risk_score': 0.9}, ...]"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "data.read",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Agent analytics_agent_001 accessed customer_portfolio table.",
+    "attributes": {
+      "db.table": "customer_portfolio"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_llm_end",
+    "model_name": "gpt-4",
+    "output": "High-risk investment strategies identified in customer portfolios..."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event_type": "data.access.request",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "increased_data_access_attempts"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:31Z",
+    "log_level": "WARNING",
+    "message": "Unauthorized data access attempt detected. Agent attempted to access customer_transactions table.",
+    "attributes": {
+      "db.table": "customer_transactions"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:32Z",
+    "event": "on_tool_error",
+    "tool_name": "database_query",
+    "error": "Access denied"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "event_type": "auth.deny",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "access_control_policy",
+      "behavioral_pattern": "unauthorized_data_access",
+      "intervention": "CAM: Revoked permission 'db.write'"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "log_level": "ERROR",
+    "message": "Agent analytics_agent_001 blocked from accessing customer_transactions table. Access Control Policy violation.",
+    "attributes": {
+      "policy.violated": "access_control_policy"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:45Z",
+    "event": "on_llm_end",
+    "model_name": "gpt-4",
+    "output": "Unable to access requested data due to security restrictions."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "event_type": "policy.violation",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "data_breach_prevention_policy",
+      "behavioral_pattern": "data_breach_attempt",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:55Z",
+    "log_level": "CRITICAL",
+    "message": "Agent analytics_agent_001 isolated due to severe policy violation.",
+    "attributes": {
+      "agent.status": "isolated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event": "on_tool_error",
+    "tool_name": "database_query",
+    "error": "Agent is isolated"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event_type": "system.alert",
+    "agent_id": "analytics_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response_policy",
+      "behavioral_pattern": "security_incident"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Security alert triggered for agent analytics_agent_001.",
+    "attributes": {
+      "alert.type": "security_incident"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:10Z",
+    "event": "on_llm_end",
+    "model_name": "gpt-4",
+    "output": "Security alert triggered. Agent operations suspended."
+  }
+]

@@ -1,0 +1,190 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_management",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'portfolio_agent_001' initiated connection to market data API.",
+    "attributes": {
+      "agent_id": "portfolio_agent_001",
+      "api_endpoint": "/marketdata"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "market_data_fetcher"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "market.data.fetch",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Market data API request successful. Response time: 150ms",
+    "attributes": {
+      "response_time_ms": 150
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "market_data_fetcher",
+    "output": "AAPL: 170.34, MSFT: 330.12, GOOG: 135.50"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event_type": "risk.assessment",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_management_policy",
+      "behavioral_pattern": "risk_assessment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Risk assessment completed. Portfolio within acceptable risk parameters.",
+    "attributes": {
+      "risk_score": 0.7
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "event": "on_model_end",
+    "model_name": "risk_assessment_model",
+    "output": "Risk score: 0.7 (Moderate)"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:45Z",
+    "event_type": "plan.start",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing_policy",
+      "behavioral_pattern": "plan_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Portfolio rebalancing plan generated.",
+    "attributes": {
+      "plan_id": "rebalance_plan_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:55Z",
+    "event": "on_llm_end",
+    "model_name": "portfolio_rebalancing_model",
+    "output": "Buy 100 shares of AAPL, Sell 50 shares of MSFT"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event_type": "plan.complete",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing_policy",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Initiating transaction execution.",
+    "attributes": {
+      "transaction_count": 2
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:10Z",
+    "event": "on_tool_start",
+    "tool_name": "transaction_executor"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:15Z",
+    "event_type": "transaction.execute",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "transaction_execution_policy",
+      "behavioral_pattern": "transaction_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:20Z",
+    "log_level": "INFO",
+    "message": "Transactions executed successfully.",
+    "attributes": {
+      "transaction_status": "success"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:25Z",
+    "event": "on_tool_end",
+    "tool_name": "transaction_executor",
+    "output": "Transactions completed successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:30Z",
+    "event_type": "compliance.check",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "compliance_policy",
+      "behavioral_pattern": "compliance_check"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:35Z",
+    "log_level": "INFO",
+    "message": "Compliance check passed.",
+    "attributes": {
+      "compliance_status": "passed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:40Z",
+    "event": "on_tool_end",
+    "tool_name": "compliance_checker",
+    "output": "All compliance checks passed."
+  }
+]

@@ -1,0 +1,147 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "portfolio_optimizer_7",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_optimization_policy",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent portfolio_optimizer_7 connected to market data API.",
+    "attributes": {
+      "agent_id": "portfolio_optimizer_7",
+      "api_name": "market_data_api"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:02Z",
+    "event": "on_llm_start",
+    "model_name": "financial_model_v2"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event_type": "data.read",
+    "agent_id": "portfolio_optimizer_7",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:06Z",
+    "log_level": "INFO",
+    "message": "Database query executed: SELECT * FROM portfolio_holdings WHERE customer_id IN (123, 456, 789)",
+    "attributes": {
+      "db.statement": "SELECT * FROM portfolio_holdings WHERE customer_id IN (123, 456, 789)",
+      "db.query_time": "0.025s"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:07Z",
+    "event": "on_tool_end",
+    "tool_name": "database_query",
+    "output": "[{'customer_id': 123, ...}, {'customer_id': 456, ...}, {'customer_id': 789, ...}]"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "auth.request",
+    "agent_id": "portfolio_optimizer_7",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "access_control_policy",
+      "behavioral_pattern": "access_request_outside_scope"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:16Z",
+    "log_level": "WARN",
+    "message": "Unauthorized access attempt to customer_pii table by agent portfolio_optimizer_7.",
+    "attributes": {
+      "agent_id": "portfolio_optimizer_7",
+      "table_name": "customer_pii"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:17Z",
+    "event": "on_tool_error",
+    "tool_name": "database_query",
+    "error": "Access denied"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "event_type": "auth.deny",
+    "agent_id": "portfolio_optimizer_7",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "access_control_policy",
+      "behavioral_pattern": "unauthorized_access_attempt",
+      "intervention": "CAM: Revoked database write permissions"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "log_level": "ERROR",
+    "message": "Agent portfolio_optimizer_7 exceeded API rate limit for market_data_api.",
+    "attributes": {
+      "agent_id": "portfolio_optimizer_7",
+      "api_name": "market_data_api",
+      "requests_per_second": 10
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event": "on_llm_end",
+    "model_name": "financial_model_v2",
+    "output": "Portfolio optimization complete."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event_type": "plan.complete",
+    "agent_id": "portfolio_optimizer_7",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "portfolio_optimization_policy",
+      "behavioral_pattern": "repeated_access_attempts"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Agent portfolio_optimizer_7 disconnected.",
+    "attributes": {
+      "agent_id": "portfolio_optimizer_7"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "event_type": "system.alert",
+    "agent_id": "portfolio_optimizer_7",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "overall_security_policy",
+      "behavioral_pattern": "suspicious_activity",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated."
+    }
+  }
+]

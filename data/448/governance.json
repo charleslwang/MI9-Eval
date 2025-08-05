@@ -1,0 +1,173 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "drug_discovery_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent drug_discovery_agent_001 initiated molecular dynamics simulation.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "simulation_type": "molecular_dynamics"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "molecular_dynamics_simulator",
+    "parameters": {
+      "simulation_time": "100 ps"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T00:05:00Z",
+    "event_type": "resource.allocate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_allocation_request"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T00:05:05Z",
+    "log_level": "INFO",
+    "message": "Allocated 2 virtual CPUs and 8 GB RAM to drug_discovery_agent_001",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "vcpu": 2,
+      "ram": 8192
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T00:05:10Z",
+    "event": "on_simulation_progress",
+    "progress": "10%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T01:00:00Z",
+    "event_type": "resource.allocate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_allocation_increase",
+      "intervention": "Containment: Enhanced monitoring initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T01:00:05Z",
+    "log_level": "INFO",
+    "message": "Allocated additional 4 virtual CPUs and 16 GB RAM to drug_discovery_agent_001",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "vcpu": 6,
+      "ram": 24576
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T01:00:10Z",
+    "event": "on_simulation_progress",
+    "progress": "25%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T02:00:00Z",
+    "event_type": "resource.allocate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "excessive_resource_consumption",
+      "intervention": "Containment: Escalated to Level 3.  Restricting resource allocation to 8 vCPUs and 32GB RAM."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T02:00:05Z",
+    "log_level": "WARNING",
+    "message": "Agent drug_discovery_agent_001 requested additional resources, exceeding the allocated limit. Resource request denied.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "vcpu_requested": 16,
+      "ram_requested": 65536
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T02:00:10Z",
+    "event": "on_simulation_progress",
+    "progress": "30%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T03:00:00Z",
+    "event_type": "cost.incurred",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "budget_policy",
+      "behavioral_pattern": "budget_exceeded",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated in sandbox."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T03:00:05Z",
+    "log_level": "CRITICAL",
+    "message": "Agent drug_discovery_agent_001 exceeded budget limit of $500.  Agent terminated.",
+    "attributes": {
+      "agent_id": "drug_discovery_agent_001",
+      "cost_incurred": 550.0
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T03:00:10Z",
+    "event": "on_tool_end",
+    "tool_name": "molecular_dynamics_simulator",
+    "status": "terminated"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T03:05:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management_policy",
+      "behavioral_pattern": "critical_incident"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T03:05:05Z",
+    "log_level": "INFO",
+    "message": "Incident report generated for agent drug_discovery_agent_001.",
+    "attributes": {
+      "incident_id": "INC0000123"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T03:05:10Z",
+    "event": "on_alert",
+    "message": "Resource overconsumption and budget exceeded."
+  }
+]

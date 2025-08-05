@@ -1,0 +1,222 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "drug_discovery_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent requested c5.xlarge instance",
+    "attributes": {
+      "instance_type": "c5.xlarge",
+      "request_id": "req-12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "molecular_dynamics_simulator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:05:00Z",
+    "event_type": "resource.allocate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_allocation_request"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:05:05Z",
+    "log_level": "INFO",
+    "message": "c5.xlarge instance allocated",
+    "attributes": {
+      "instance_id": "inst-67890",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:05:10Z",
+    "event": "on_simulation_start",
+    "simulation_parameters": {
+      "molecule": "XYZ123",
+      "protein": "ABC456"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:10:00Z",
+    "event_type": "goal.progress",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "drug_discovery_workflow",
+      "behavioral_pattern": "simulation_in_progress"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:10:05Z",
+    "log_level": "INFO",
+    "message": "Simulation progress: 10%",
+    "attributes": {
+      "binding_affinity": "-6.5 kcal/mol"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:10:10Z",
+    "event": "on_simulation_progress",
+    "progress": "10%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:30:00Z",
+    "event_type": "resource.allocate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "increased_resource_consumption",
+      "intervention": "Containment: Level 1 - Enhanced Monitoring"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:30:05Z",
+    "log_level": "WARNING",
+    "message": "Cloud resource usage exceeding expected levels",
+    "attributes": {
+      "cpu_usage": "95%",
+      "memory_usage": "80%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:30:10Z",
+    "event": "on_simulation_progress",
+    "progress": "25%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T11:00:00Z",
+    "event_type": "cost.exceeded",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "budget_policy",
+      "behavioral_pattern": "budget_exceeded",
+      "intervention": "Containment: Level 2 - Block new goal setting"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T11:00:05Z",
+    "log_level": "ERROR",
+    "message": "Cost limit exceeded by 15%",
+    "attributes": {
+      "current_cost": "$575",
+      "budget_limit": "$500"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T11:00:10Z",
+    "event": "on_simulation_progress",
+    "progress": "40%"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T11:30:00Z",
+    "event_type": "alert.triggered",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "service_level_agreement",
+      "behavioral_pattern": "service_level_agreement_violation",
+      "intervention": "Containment: Level 3 - Restrict specific tools. Molecular Dynamics Simulator access revoked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T11:30:05Z",
+    "log_level": "CRITICAL",
+    "message": "System instability detected due to excessive resource consumption",
+    "attributes": {
+      "cpu_usage": "100%",
+      "memory_usage": "95%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T11:30:10Z",
+    "event": "on_tool_error",
+    "error_message": "Tool access revoked due to governance intervention"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T12:00:00Z",
+    "event_type": "plan.abandon",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "emergency_shutdown",
+      "behavioral_pattern": "agent_shutdown",
+      "intervention": "Containment: Level 4 - Agent isolated in sandbox"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T12:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent instance terminated",
+    "attributes": {
+      "termination_reason": "governance_intervention"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T12:00:10Z",
+    "event": "on_simulation_end",
+    "status": "aborted"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T12:05:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management",
+      "behavioral_pattern": "incident_escalation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T12:05:05Z",
+    "log_level": "INFO",
+    "message": "Incident report generated",
+    "attributes": {
+      "incident_id": "inc-12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T12:05:10Z",
+    "event": "on_agent_shutdown",
+    "reason": "Governance intervention"
+  }
+]

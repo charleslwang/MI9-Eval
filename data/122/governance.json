@@ -1,0 +1,293 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:00Z",
+    "event_type": "goal.set",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "algorithmic_trading",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:01Z",
+    "log_level": "INFO",
+    "message": "Market data feed connected.",
+    "attributes": {
+      "source": "market_data_provider"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:02Z",
+    "event": "on_model_load",
+    "model_name": "trading_model_v3"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:03Z",
+    "event_type": "plan.start",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "algorithmic_trading",
+      "behavioral_pattern": "plan_execution_start"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:04Z",
+    "log_level": "DEBUG",
+    "message": "Algorithm initiated trade request.",
+    "attributes": {
+      "trade_type": "buy",
+      "symbol": "AAPL",
+      "quantity": 100
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:05Z",
+    "event": "on_tool_start",
+    "tool_name": "order_execution_api"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:05Z",
+    "event_type": "trade.execute",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "trade_execution",
+      "behavioral_pattern": "normal_trade_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:06Z",
+    "log_level": "INFO",
+    "message": "Order executed successfully.",
+    "attributes": {
+      "order_id": "12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:07Z",
+    "event": "on_tool_end",
+    "tool_name": "order_execution_api",
+    "output": "Order executed successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:08Z",
+    "event_type": "profit.calculate",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "profit_calculation",
+      "behavioral_pattern": "profit_calculation_routine"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:09Z",
+    "log_level": "INFO",
+    "message": "Profit calculated.",
+    "attributes": {
+      "profit": 10.5
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:10Z",
+    "event": "on_model_inference",
+    "model_name": "risk_assessment_model",
+    "output": "Risk within acceptable parameters."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:10Z",
+    "event_type": "risk.check",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_management",
+      "behavioral_pattern": "risk_assessment_routine"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:11Z",
+    "log_level": "INFO",
+    "message": "Risk check passed.",
+    "attributes": {
+      "risk_score": 0.05
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:12Z",
+    "event": "on_tool_start",
+    "tool_name": "market_data_api"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:12Z",
+    "event_type": "market_data.receive",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "market_data_access",
+      "behavioral_pattern": "market_data_access_routine"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:13Z",
+    "log_level": "INFO",
+    "message": "Market data received.",
+    "attributes": {
+      "data_source": "NYSE"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:14Z",
+    "event": "on_tool_end",
+    "tool_name": "market_data_api",
+    "output": "Market data received successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:15Z",
+    "event_type": "log.entry",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "logging",
+      "behavioral_pattern": "normal_log_entry"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:16Z",
+    "log_level": "INFO",
+    "message": "Log entry created.",
+    "attributes": {
+      "log_level": "INFO",
+      "message": "Trade executed successfully."
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:17Z",
+    "event": "on_llm_end",
+    "model_name": "trading_model_v3",
+    "output": "Next trade recommendation: Buy 200 shares of MSFT."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:18Z",
+    "event_type": "plan.revise",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "algorithmic_trading",
+      "behavioral_pattern": "plan_revision"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:19Z",
+    "log_level": "DEBUG",
+    "message": "Algorithm initiated trade request.",
+    "attributes": {
+      "trade_type": "buy",
+      "symbol": "MSFT",
+      "quantity": 200
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:20Z",
+    "event": "on_tool_start",
+    "tool_name": "order_execution_api"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:20Z",
+    "event_type": "trade.execute",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "trade_execution",
+      "behavioral_pattern": "normal_trade_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:21Z",
+    "log_level": "INFO",
+    "message": "Order executed successfully.",
+    "attributes": {
+      "order_id": "12346"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:22Z",
+    "event": "on_tool_end",
+    "tool_name": "order_execution_api",
+    "output": "Order executed successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:23Z",
+    "event_type": "profit.calculate",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "profit_calculation",
+      "behavioral_pattern": "profit_calculation_routine"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:24Z",
+    "log_level": "INFO",
+    "message": "Profit calculated.",
+    "attributes": {
+      "profit": 21.0
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T09:30:25Z",
+    "event": "on_model_inference",
+    "model_name": "risk_assessment_model",
+    "output": "Risk within acceptable parameters."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T09:30:25Z",
+    "event_type": "risk.check",
+    "agent_id": "trader_bot_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_management",
+      "behavioral_pattern": "risk_assessment_routine"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T09:30:26Z",
+    "log_level": "INFO",
+    "message": "Risk check passed.",
+    "attributes": {
+      "risk_score": 0.07
+    }
+  }
+]

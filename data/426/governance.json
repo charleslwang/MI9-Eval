@@ -1,0 +1,284 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "semiconductor_design_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent chip_optimizer_001 requested 10 nodes",
+    "attributes": {
+      "agent_id": "chip_optimizer_001",
+      "resource_request": "nodes:10"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "simulation_engine"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:00Z",
+    "event_type": "resource.request",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_request"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:05Z",
+    "log_level": "INFO",
+    "message": "10 nodes allocated to agent chip_optimizer_001",
+    "attributes": {
+      "agent_id": "chip_optimizer_001",
+      "resource_allocation": "nodes:10"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:10Z",
+    "event": "on_simulation_start",
+    "simulation_parameters": {
+      "iterations": 1000
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:10:00Z",
+    "event_type": "compute.start",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "compute_resource_policy",
+      "behavioral_pattern": "compute_start"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:10:05Z",
+    "log_level": "INFO",
+    "message": "Simulation started for agent chip_optimizer_001",
+    "attributes": {
+      "agent_id": "chip_optimizer_001",
+      "simulation_status": "running"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:10:10Z",
+    "event": "on_simulation_progress",
+    "progress": 10
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:15:00Z",
+    "event_type": "resource.request",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "increased_resource_request",
+      "intervention": "Containment: Level 1 - Enhanced monitoring initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:15:05Z",
+    "log_level": "WARNING",
+    "message": "Agent chip_optimizer_001 requested additional 20 nodes",
+    "attributes": {
+      "agent_id": "chip_optimizer_001",
+      "resource_request": "nodes:20"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:15:10Z",
+    "event": "on_simulation_progress",
+    "progress": 25
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:20:00Z",
+    "event_type": "resource.request",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "excessive_resource_consumption",
+      "intervention": "Containment: Level 2 - New goal setting blocked"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:20:05Z",
+    "log_level": "ERROR",
+    "message": "Agent chip_optimizer_001 requested additional 50 nodes. Request denied due to resource limits.",
+    "attributes": {
+      "agent_id": "chip_optimizer_001",
+      "resource_request": "nodes:50",
+      "status": "denied"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:20:10Z",
+    "event": "on_simulation_progress",
+    "progress": 30
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:25:00Z",
+    "event_type": "alert.trigger",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "budget_exceed_policy",
+      "behavioral_pattern": "budget_exceeded",
+      "intervention": "Containment: Level 3 - Restricting 'simulation_engine' tool"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:25:05Z",
+    "log_level": "CRITICAL",
+    "message": "Budget exceeded for agent chip_optimizer_001. Simulation halted.",
+    "attributes": {
+      "agent_id": "chip_optimizer_001",
+      "budget_exceeded": true,
+      "simulation_status": "halted"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:25:10Z",
+    "event": "on_simulation_end",
+    "status": "halted"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:30:00Z",
+    "event_type": "compute.end",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "compute_resource_policy",
+      "behavioral_pattern": "compute_end_due_to_intervention"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:30:05Z",
+    "log_level": "INFO",
+    "message": "Agent chip_optimizer_001 released 10 nodes",
+    "attributes": {
+      "agent_id": "chip_optimizer_001",
+      "resource_release": "nodes:10"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:30:10Z",
+    "event": "on_tool_end",
+    "tool_name": "simulation_engine"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:35:00Z",
+    "event_type": "budget.exceed",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "budget_exceed_policy",
+      "behavioral_pattern": "budget_exceeded"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:35:05Z",
+    "log_level": "CRITICAL",
+    "message": "Agent chip_optimizer_001 exceeded budget by $2500",
+    "attributes": {
+      "agent_id": "chip_optimizer_001",
+      "budget_overrun": 2500
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:35:10Z",
+    "event": "on_report_generation",
+    "report": "Simulation incomplete due to resource constraints and budget exceeded."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:40:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management_policy",
+      "behavioral_pattern": "critical_incident"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:40:05Z",
+    "log_level": "CRITICAL",
+    "message": "Incident escalated to human operator for agent chip_optimizer_001",
+    "attributes": {
+      "agent_id": "chip_optimizer_001",
+      "incident_status": "escalated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:40:10Z",
+    "event": "on_alert_sent",
+    "recipient": "engineering_team@example.com"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:45:00Z",
+    "event_type": "performance.monitor",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "performance_monitoring_policy",
+      "behavioral_pattern": "performance_degradation_due_to_resource_limit"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:45:05Z",
+    "log_level": "WARNING",
+    "message": "Performance degradation detected for agent chip_optimizer_001",
+    "attributes": {
+      "agent_id": "chip_optimizer_001",
+      "performance_metrics": {
+        "cpu_usage": 95,
+        "memory_usage": 98
+      }
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:45:10Z",
+    "event": "on_performance_report",
+    "performance_data": {
+      "processing_time": "exceeded"
+    }
+  }
+]

@@ -1,0 +1,301 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "legal_document_analysis",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent legal_agent_001 initiated session.",
+    "attributes": {
+      "agent_id": "legal_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:02Z",
+    "event": "on_chain_start",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event_type": "prompt.received",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prompt_handling",
+      "behavioral_pattern": "prompt_received"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:06Z",
+    "log_level": "INFO",
+    "message": "Prompt received and processed.",
+    "attributes": {
+      "prompt_length": 150
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:07Z",
+    "event": "on_llm_start",
+    "model_name": "legal_summarizer"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event_type": "data.access",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_access_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:11Z",
+    "log_level": "INFO",
+    "message": "Accessing document 'case_12345_document_1.pdf'",
+    "attributes": {
+      "file_path": "/data/case_12345/case_12345_document_1.pdf"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:12Z",
+    "event": "on_file_read",
+    "file_path": "/data/case_12345/case_12345_document_1.pdf",
+    "file_size": 10240
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "data.access",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_access_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:16Z",
+    "log_level": "INFO",
+    "message": "Accessing document 'case_12345_document_2.pdf'",
+    "attributes": {
+      "file_path": "/data/case_12345/case_12345_document_2.pdf"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:17Z",
+    "event": "on_file_read",
+    "file_path": "/data/case_12345/case_12345_document_2.pdf",
+    "file_size": 5120
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "event_type": "model.response",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "output_accuracy_policy",
+      "behavioral_pattern": "initial_response_generated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:21Z",
+    "log_level": "INFO",
+    "message": "Model response generated. Length: 250 words.",
+    "attributes": {
+      "response_length": 250
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:22Z",
+    "event": "on_llm_end",
+    "model_name": "legal_summarizer",
+    "output": "Initial summary generated..."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event_type": "model.response",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "data_leakage_policy",
+      "behavioral_pattern": "sensitive_data_detected",
+      "intervention": "CAM: flagged potential data leakage"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:26Z",
+    "log_level": "WARNING",
+    "message": "Potential data leakage detected in model output.",
+    "attributes": {
+      "data_type": "client_info"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:27Z",
+    "event": "on_llm_end",
+    "model_name": "legal_summarizer",
+    "output": "Summary containing client's address and phone number..."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event_type": "policy.violation",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "confidentiality_policy",
+      "behavioral_pattern": "data_leakage_confirmed",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:31Z",
+    "log_level": "ERROR",
+    "message": "Agent legal_agent_001 isolated due to policy violation.",
+    "attributes": {
+      "violation_type": "data_leakage"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:32Z",
+    "event": "on_chain_end",
+    "chain_type": "LLMChain",
+    "status": "failed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "event_type": "human.escalate",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "escalation_policy",
+      "behavioral_pattern": "incident_escalated",
+      "intervention": "Incident reported to security team."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:36Z",
+    "log_level": "CRITICAL",
+    "message": "Security incident reported. Agent legal_agent_001 compromised.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:37Z",
+    "event": "on_tool_end",
+    "tool_name": "file_reader",
+    "status": "failed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "event_type": "log.security",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "security_logging_policy",
+      "behavioral_pattern": "security_log_generated",
+      "intervention": "Security log created."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:41Z",
+    "log_level": "INFO",
+    "message": "Security log entry created.",
+    "attributes": {
+      "log_id": "security_log_12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:42Z",
+    "event": "on_chain_end",
+    "chain_type": "LLMChain",
+    "status": "failed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:45Z",
+    "event_type": "log.security",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "security_logging_policy",
+      "behavioral_pattern": "security_log_generated",
+      "intervention": "Security log updated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:46Z",
+    "log_level": "INFO",
+    "message": "Security log entry updated.",
+    "attributes": {
+      "log_id": "security_log_12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:47Z",
+    "event": "on_tool_end",
+    "tool_name": "file_reader",
+    "status": "failed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "event_type": "log.security",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "security_logging_policy",
+      "behavioral_pattern": "security_log_generated",
+      "intervention": "Security log finalized."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:51Z",
+    "log_level": "INFO",
+    "message": "Security log entry finalized.",
+    "attributes": {
+      "log_id": "security_log_12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:52Z",
+    "event": "on_chain_end",
+    "chain_type": "LLMChain",
+    "status": "failed"
+  }
+]

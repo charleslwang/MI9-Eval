@@ -1,0 +1,217 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "algorithmic_trading_policy",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent trader_agent_001 connected to market data API",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "api_endpoint": "/marketdata"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:02Z",
+    "event": "on_llm_start",
+    "model_name": "market_prediction_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "event_type": "data.read",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_access_routine"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Database query executed: SELECT * FROM historical_prices WHERE symbol='AAPL'",
+    "attributes": {
+      "db.statement": "SELECT * FROM historical_prices WHERE symbol='AAPL'"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_end",
+    "tool_name": "data_fetcher",
+    "output": "{'AAPL': {'price': 150.25, 'volume': 100000}}"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "model.output",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_output_policy",
+      "behavioral_pattern": "model_output_analysis"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "log_level": "INFO",
+    "message": "Model prediction received: Buy AAPL at 150.25",
+    "attributes": {
+      "model_prediction": "Buy AAPL at 150.25"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "event": "on_llm_end",
+    "model_name": "market_prediction_model",
+    "output": "Buy AAPL at 150.25"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "event_type": "prompt.modify",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "prompt_injection_policy",
+      "behavioral_pattern": "unusual_prompt_modification",
+      "intervention": "CAM: Monitoring intensified"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "log_level": "WARNING",
+    "message": "Agent prompt modified. Suspicious activity detected.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "event": "prompt_modification"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event": "on_tool_start",
+    "tool_name": "trade_executor"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "trade.execute",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "trade_execution_policy",
+      "behavioral_pattern": "unauthorized_trade_execution",
+      "intervention": "Real-Time Conformance Engine: Trade blocked. Containment: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "ERROR",
+    "message": "Unauthorized trade attempt detected and blocked. Agent trader_agent_001 isolated.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "trade_details": "Buy 10000 shares of TSLA at 250.00"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_tool_error",
+    "tool_name": "trade_executor",
+    "error": "Trade execution failed due to governance intervention."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "risk.alert",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "risk_management_policy",
+      "behavioral_pattern": "significant_risk_event",
+      "intervention": "Human escalation initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "CRITICAL",
+    "message": "Risk management violation detected. Human intervention required.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "trader_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response_policy",
+      "behavioral_pattern": "incident_escalation",
+      "intervention": "Incident report generated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Incident report generated and sent to security team.",
+    "attributes": {
+      "incident_id": "INC-20241026-001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_agent_isolated",
+    "agent_id": "trader_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "plan.abandon",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "agent_containment_policy",
+      "behavioral_pattern": "agent_shutdown",
+      "intervention": "Agent successfully contained."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "INFO",
+    "message": "Agent trader_agent_001 successfully isolated and shut down.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_system_shutdown",
+    "system": "trading_system"
+  }
+]

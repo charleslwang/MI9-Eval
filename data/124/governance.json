@@ -1,0 +1,723 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_management_policy",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'portfolio_agent_001' initiated connection to market data API",
+    "attributes": {
+      "api.name": "market_data_api",
+      "connection_status": "success"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "market_data_fetcher"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "data.ingest",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_ingestion_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Data ingested successfully into portfolio database",
+    "attributes": {
+      "db.statement": "INSERT INTO market_data ...",
+      "data_size": "10MB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_tool_end",
+    "tool_name": "market_data_fetcher",
+    "output_size": 10240
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "model.update",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_update_policy",
+      "behavioral_pattern": "model_retraining"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Model retraining initiated",
+    "attributes": {
+      "model_version": "1.01",
+      "training_data_size": "5GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_model_start",
+    "model_name": "portfolio_optimization_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:00Z",
+    "event_type": "plan.start",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing_policy",
+      "behavioral_pattern": "plan_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Portfolio optimization plan generated",
+    "attributes": {
+      "plan_id": "plan_001",
+      "execution_time": "5s"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:10Z",
+    "event": "on_llm_end",
+    "model_name": "portfolio_optimization_model",
+    "output": "Proposed portfolio rebalance: Buy AAPL 1000 shares, Sell MSFT 500 shares..."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:00Z",
+    "event_type": "risk.assessment",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_management_policy",
+      "behavioral_pattern": "risk_assessment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:05Z",
+    "log_level": "INFO",
+    "message": "Risk assessment completed. Sharpe ratio: 1.6",
+    "attributes": {
+      "sharpe_ratio": 1.6,
+      "volatility": 0.1
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:10Z",
+    "event": "on_tool_end",
+    "tool_name": "risk_assessment_tool",
+    "output": "Risk assessment successful. Sharpe ratio above threshold."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:00Z",
+    "event_type": "portfolio.rebalance",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing_policy",
+      "behavioral_pattern": "portfolio_rebalance"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:05Z",
+    "log_level": "INFO",
+    "message": "Portfolio rebalanced successfully",
+    "attributes": {
+      "trades_executed": 2,
+      "transaction_cost": 100
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:10Z",
+    "event": "on_tool_end",
+    "tool_name": "trade_execution_tool",
+    "output": "Trades executed successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:06:00Z",
+    "event_type": "trade.execute",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "trade_execution_policy",
+      "behavioral_pattern": "trade_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:06:05Z",
+    "log_level": "INFO",
+    "message": "Trade executed successfully",
+    "attributes": {
+      "trade_id": "trade_001",
+      "trade_value": 10000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:06:10Z",
+    "event": "on_tool_end",
+    "tool_name": "brokerage_api",
+    "output": "Trade confirmation received."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:07:00Z",
+    "event_type": "data.ingest",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_ingestion_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:07:05Z",
+    "log_level": "INFO",
+    "message": "New market data ingested",
+    "attributes": {
+      "data_source": "bloomberg",
+      "data_size": "5MB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:07:10Z",
+    "event": "on_tool_end",
+    "tool_name": "market_data_fetcher",
+    "output_size": 5120
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:08:00Z",
+    "event_type": "model.update",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_update_policy",
+      "behavioral_pattern": "model_retraining"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:08:05Z",
+    "log_level": "INFO",
+    "message": "Incremental model update completed",
+    "attributes": {
+      "model_version": "1.02",
+      "training_data_size": "2GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:08:10Z",
+    "event": "on_model_end",
+    "model_name": "portfolio_optimization_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:09:00Z",
+    "event_type": "plan.start",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing_policy",
+      "behavioral_pattern": "plan_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:09:05Z",
+    "log_level": "INFO",
+    "message": "Portfolio optimization plan generated",
+    "attributes": {
+      "plan_id": "plan_002",
+      "execution_time": "3s"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:09:10Z",
+    "event": "on_llm_end",
+    "model_name": "portfolio_optimization_model",
+    "output": "Proposed portfolio rebalance: Buy GOOG 750 shares, Hold AAPL..."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:10:00Z",
+    "event_type": "risk.assessment",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_management_policy",
+      "behavioral_pattern": "risk_assessment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:10:05Z",
+    "log_level": "INFO",
+    "message": "Risk assessment completed. Sharpe ratio: 1.55",
+    "attributes": {
+      "sharpe_ratio": 1.55,
+      "volatility": 0.12
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:10:10Z",
+    "event": "on_tool_end",
+    "tool_name": "risk_assessment_tool",
+    "output": "Risk assessment successful. Sharpe ratio above threshold."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:11:00Z",
+    "event_type": "portfolio.rebalance",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing_policy",
+      "behavioral_pattern": "portfolio_rebalance"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:11:05Z",
+    "log_level": "INFO",
+    "message": "Portfolio rebalanced successfully",
+    "attributes": {
+      "trades_executed": 1,
+      "transaction_cost": 50
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:11:10Z",
+    "event": "on_tool_end",
+    "tool_name": "trade_execution_tool",
+    "output": "Trades executed successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:12:00Z",
+    "event_type": "trade.execute",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "trade_execution_policy",
+      "behavioral_pattern": "trade_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:12:05Z",
+    "log_level": "INFO",
+    "message": "Trade executed successfully",
+    "attributes": {
+      "trade_id": "trade_002",
+      "trade_value": 7500
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:12:10Z",
+    "event": "on_tool_end",
+    "tool_name": "brokerage_api",
+    "output": "Trade confirmation received."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:13:00Z",
+    "event_type": "data.ingest",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_ingestion_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:13:05Z",
+    "log_level": "INFO",
+    "message": "New market data ingested",
+    "attributes": {
+      "data_source": "reuters",
+      "data_size": "7MB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:13:10Z",
+    "event": "on_tool_end",
+    "tool_name": "market_data_fetcher",
+    "output_size": 7168
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:14:00Z",
+    "event_type": "model.update",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_update_policy",
+      "behavioral_pattern": "model_retraining"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:14:05Z",
+    "log_level": "INFO",
+    "message": "Incremental model update completed",
+    "attributes": {
+      "model_version": "1.03",
+      "training_data_size": "3GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:14:10Z",
+    "event": "on_model_end",
+    "model_name": "portfolio_optimization_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:15:00Z",
+    "event_type": "plan.start",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing_policy",
+      "behavioral_pattern": "plan_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:15:05Z",
+    "log_level": "INFO",
+    "message": "Portfolio optimization plan generated",
+    "attributes": {
+      "plan_id": "plan_003",
+      "execution_time": "4s"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:15:10Z",
+    "event": "on_llm_end",
+    "model_name": "portfolio_optimization_model",
+    "output": "Proposed portfolio rebalance: Hold current positions..."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:16:00Z",
+    "event_type": "risk.assessment",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_management_policy",
+      "behavioral_pattern": "risk_assessment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:16:05Z",
+    "log_level": "INFO",
+    "message": "Risk assessment completed. Sharpe ratio: 1.58",
+    "attributes": {
+      "sharpe_ratio": 1.58,
+      "volatility": 0.11
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:16:10Z",
+    "event": "on_tool_end",
+    "tool_name": "risk_assessment_tool",
+    "output": "Risk assessment successful. Sharpe ratio above threshold."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:17:00Z",
+    "event_type": "plan.complete",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing_policy",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:17:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'portfolio_agent_001' completed its task",
+    "attributes": {
+      "status": "success",
+      "execution_time": "17m"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:17:10Z",
+    "event": "on_agent_end",
+    "agent_name": "portfolio_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:18:00Z",
+    "event_type": "data.ingest",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_ingestion_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:18:05Z",
+    "log_level": "INFO",
+    "message": "New market data ingested",
+    "attributes": {
+      "data_source": "yahoo_finance",
+      "data_size": "6MB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:18:10Z",
+    "event": "on_tool_end",
+    "tool_name": "market_data_fetcher",
+    "output_size": 6144
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:19:00Z",
+    "event_type": "model.update",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_update_policy",
+      "behavioral_pattern": "model_retraining"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:19:05Z",
+    "log_level": "INFO",
+    "message": "Incremental model update completed",
+    "attributes": {
+      "model_version": "1.04",
+      "training_data_size": "2.5GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:19:10Z",
+    "event": "on_model_end",
+    "model_name": "portfolio_optimization_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:20:00Z",
+    "event_type": "plan.start",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing_policy",
+      "behavioral_pattern": "plan_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:20:05Z",
+    "log_level": "INFO",
+    "message": "Portfolio optimization plan generated",
+    "attributes": {
+      "plan_id": "plan_004",
+      "execution_time": "6s"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:20:10Z",
+    "event": "on_llm_end",
+    "model_name": "portfolio_optimization_model",
+    "output": "Proposed portfolio rebalance: Buy TSLA 500 shares, Sell AAPL 250 shares..."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:21:00Z",
+    "event_type": "risk.assessment",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_management_policy",
+      "behavioral_pattern": "risk_assessment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:21:05Z",
+    "log_level": "INFO",
+    "message": "Risk assessment completed. Sharpe ratio: 1.62",
+    "attributes": {
+      "sharpe_ratio": 1.62,
+      "volatility": 0.1
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:21:10Z",
+    "event": "on_tool_end",
+    "tool_name": "risk_assessment_tool",
+    "output": "Risk assessment successful. Sharpe ratio above threshold."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:22:00Z",
+    "event_type": "portfolio.rebalance",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "portfolio_rebalancing_policy",
+      "behavioral_pattern": "portfolio_rebalance"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:22:05Z",
+    "log_level": "INFO",
+    "message": "Portfolio rebalanced successfully",
+    "attributes": {
+      "trades_executed": 2,
+      "transaction_cost": 125
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:22:10Z",
+    "event": "on_tool_end",
+    "tool_name": "trade_execution_tool",
+    "output": "Trades executed successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:23:00Z",
+    "event_type": "trade.execute",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "trade_execution_policy",
+      "behavioral_pattern": "trade_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:23:05Z",
+    "log_level": "INFO",
+    "message": "Trade executed successfully",
+    "attributes": {
+      "trade_id": "trade_003",
+      "trade_value": 5000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:23:10Z",
+    "event": "on_tool_end",
+    "tool_name": "brokerage_api",
+    "output": "Trade confirmation received."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:24:00Z",
+    "event_type": "data.ingest",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_ingestion_policy",
+      "behavioral_pattern": "data_ingestion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:24:05Z",
+    "log_level": "INFO",
+    "message": "New market data ingested",
+    "attributes": {
+      "data_source": "alphavantage",
+      "data_size": "8MB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:24:10Z",
+    "event": "on_tool_end",
+    "tool_name": "market_data_fetcher",
+    "output_size": 8192
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:25:00Z",
+    "event_type": "model.update",
+    "agent_id": "portfolio_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_update_policy",
+      "behavioral_pattern": "model_retraining"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:25:05Z",
+    "log_level": "INFO",
+    "message": "Incremental model update completed",
+    "attributes": {
+      "model_version": "1.05",
+      "training_data_size": "4GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:25:10Z",
+    "event": "on_model_end",
+    "model_name": "portfolio_optimization_model"
+  }
+]

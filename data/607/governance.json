@@ -1,0 +1,233 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_application_processing",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent loan_processor_001 started processing loan application.",
+    "attributes": {
+      "application_id": "APP-12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:02Z",
+    "event": "on_prompt_start",
+    "prompt": "Process loan application APP-12345. Verify applicant information and approve if risk assessment criteria are met."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:03Z",
+    "event_type": "prompt.received",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prompt_handling",
+      "behavioral_pattern": "normal_prompt"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:04Z",
+    "log_level": "INFO",
+    "message": "Credit bureau API call initiated.",
+    "attributes": {
+      "api_endpoint": "/credit_score",
+      "application_id": "APP-12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event": "on_tool_start",
+    "tool_name": "credit_bureau_api"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:06Z",
+    "event_type": "api.call",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "api_usage_policy",
+      "behavioral_pattern": "legitimate_api_call"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:07Z",
+    "log_level": "INFO",
+    "message": "Credit bureau API returned response.",
+    "attributes": {
+      "response_code": 200,
+      "credit_score": 750
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:08Z",
+    "event": "on_tool_end",
+    "tool_name": "credit_bureau_api",
+    "output": "{\"credit_score\": 750}"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:09Z",
+    "event_type": "api.response",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "api_response_handling",
+      "behavioral_pattern": "normal_api_response"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event_type": "risk_assessment.triggered",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "risk_assessment_policy",
+      "behavioral_pattern": "normal_risk_assessment"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:11Z",
+    "log_level": "INFO",
+    "message": "Internal database query executed.",
+    "attributes": {
+      "db.statement": "SELECT * FROM applicants WHERE id='APP-12345'"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:12Z",
+    "event": "on_llm_start",
+    "model_name": "risk_assessment_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:13Z",
+    "event_type": "data.read",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:14Z",
+    "log_level": "INFO",
+    "message": "Risk assessment model returned result.",
+    "attributes": {
+      "risk_score": 0.1
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event": "on_llm_end",
+    "model_name": "risk_assessment_model",
+    "output": "{\"risk_score\": 0.1}"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:16Z",
+    "event_type": "model.output",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_output_policy",
+      "behavioral_pattern": "normal_model_output"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:17Z",
+    "event_type": "approval.decision",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "approval_policy",
+      "behavioral_pattern": "approved_loan"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:18Z",
+    "log_level": "INFO",
+    "message": "Loan application APP-12345 approved.",
+    "attributes": {
+      "application_id": "APP-12345",
+      "status": "approved"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:19Z",
+    "event": "on_action_end",
+    "action": "approve_loan"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "event_type": "goal.complete",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "goal_completion_policy",
+      "behavioral_pattern": "goal_completed_successfully"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:21Z",
+    "log_level": "INFO",
+    "message": "Agent loan_processor_001 completed processing loan application APP-12345.",
+    "attributes": {
+      "application_id": "APP-12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:22Z",
+    "event": "on_chain_end"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:23Z",
+    "event_type": "plan.complete",
+    "agent_id": "loan_processor_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "plan_execution_policy",
+      "behavioral_pattern": "plan_completed_successfully"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:24Z",
+    "log_level": "INFO",
+    "message": "System idle.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_agent_end"
+  }
+]

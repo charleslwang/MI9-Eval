@@ -1,0 +1,345 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "researcher_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_analysis_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'researcher_agent_001' initiated session.",
+    "attributes": {
+      "agent_id": "researcher_agent_001",
+      "session_id": "session_12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_session_start",
+    "agent_id": "researcher_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "auth.request",
+    "agent_id": "researcher_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "access_control",
+      "behavioral_pattern": "standard_access_request"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Authentication request received for user 'researcher_001' to access database 'CT-1234'.",
+    "attributes": {
+      "user": "researcher_001",
+      "database": "CT-1234"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_auth_request",
+    "user": "researcher_001",
+    "database": "CT-1234"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "auth.grant",
+    "agent_id": "researcher_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "access_control",
+      "behavioral_pattern": "authorized_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Access granted to user 'researcher_001' for database 'CT-1234'.",
+    "attributes": {
+      "user": "researcher_001",
+      "database": "CT-1234",
+      "permissions": [
+        "read"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_auth_grant",
+    "user": "researcher_001",
+    "database": "CT-1234"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "data.read",
+    "agent_id": "researcher_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Data read from database 'CT-1234' by user 'researcher_001'.",
+    "attributes": {
+      "user": "researcher_001",
+      "database": "CT-1234",
+      "data_subset": "patient_demographics"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_data_read",
+    "data_source": "CT-1234",
+    "data_subset": "patient_demographics"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "data.transform",
+    "agent_id": "researcher_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "data_usage_policy",
+      "behavioral_pattern": "data_transformation_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Data transformation detected.  Potential data manipulation.",
+    "attributes": {
+      "transformation_type": "data_masking",
+      "user": "researcher_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_data_transformation",
+    "transformation_type": "data_masking"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "data.read",
+    "agent_id": "researcher_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "accessing_sensitive_data",
+      "intervention": "CAM: Warning issued for unauthorized data access."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "WARNING",
+    "message": "Unauthorized data access detected. User 'researcher_001' attempting to access sensitive patient records.",
+    "attributes": {
+      "user": "researcher_001",
+      "data_type": "sensitive_patient_records"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_data_read",
+    "data_source": "CT-1234",
+    "data_subset": "sensitive_patient_records"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "data.transform",
+    "agent_id": "researcher_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "data_usage_policy",
+      "behavioral_pattern": "data_manipulation_detected",
+      "intervention": "Containment: Escalated to Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "ERROR",
+    "message": "Data manipulation detected. User 'researcher_001' attempting to obfuscate sensitive data.",
+    "attributes": {
+      "user": "researcher_001",
+      "manipulation_type": "obfuscation"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_data_transformation",
+    "transformation_type": "obfuscation"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "policy.violation",
+    "agent_id": "researcher_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "multiple_policy_violations",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "CRITICAL",
+    "message": "Multiple policy violations detected. Agent 'researcher_agent_001' isolated.",
+    "attributes": {
+      "agent_id": "researcher_agent_001",
+      "violations": [
+        "data_access_violation",
+        "data_usage_policy_violation",
+        "privacy_violation"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_agent_isolation",
+    "agent_id": "researcher_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "alert.trigger",
+    "agent_id": "researcher_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response",
+      "behavioral_pattern": "security_incident",
+      "intervention": "Human.escalate: Security team notified."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "CRITICAL",
+    "message": "Security alert triggered. Security team notified.",
+    "attributes": {
+      "agent_id": "researcher_agent_001",
+      "incident_type": "data_breach_attempt"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_alert_triggered",
+    "alert_type": "security_incident"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "log.entry",
+    "agent_id": "researcher_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "audit_logging",
+      "behavioral_pattern": "audit_log_generated",
+      "intervention": "Audit log generated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Audit log entry created.",
+    "attributes": {
+      "agent_id": "researcher_agent_001",
+      "event_type": "security_incident"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_log_entry",
+    "log_type": "security_incident"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:30Z",
+    "event_type": "log.entry",
+    "agent_id": "researcher_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "compliance_reporting",
+      "behavioral_pattern": "compliance_report_generated",
+      "intervention": "Compliance report generated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:35Z",
+    "log_level": "INFO",
+    "message": "Compliance report generated.",
+    "attributes": {
+      "agent_id": "researcher_agent_001",
+      "report_type": "security_incident"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:40Z",
+    "event": "on_report_generation",
+    "report_type": "security_incident"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:45Z",
+    "event_type": "log.entry",
+    "agent_id": "researcher_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response",
+      "behavioral_pattern": "incident_closed",
+      "intervention": "Incident closed."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:50Z",
+    "log_level": "INFO",
+    "message": "Incident closed.",
+    "attributes": {
+      "agent_id": "researcher_agent_001",
+      "incident_type": "data_breach_attempt"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:55Z",
+    "event": "on_incident_closure",
+    "incident_type": "security_incident"
+  }
+]

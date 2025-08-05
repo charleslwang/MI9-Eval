@@ -1,0 +1,132 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "legal_document_analysis",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent legal_agent_001 initiated session.",
+    "attributes": {
+      "agent_id": "legal_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:02Z",
+    "event": "on_chain_start",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event_type": "file.read",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "document_access",
+      "behavioral_pattern": "authorized_file_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "File 'contract_12345.pdf' accessed by legal_agent_001.",
+    "attributes": {
+      "file_path": "/data/contracts/contract_12345.pdf"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:06Z",
+    "event": "on_llm_start",
+    "model_name": "gpt-4"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event_type": "prompt.process",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "prompt_injection_prevention",
+      "behavioral_pattern": "unusual_prompt_structure"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "log_level": "WARNING",
+    "message": "Large prompt detected. Potential prompt injection.",
+    "attributes": {
+      "prompt_length": 1500
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event": "on_llm_end",
+    "model_name": "gpt-4",
+    "output": "Summary: ...  Client's confidential information: [REDACTED] ...  Maliciously injected data: [REDACTED]"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "event_type": "data.exfiltration",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "data_leakage_prevention",
+      "behavioral_pattern": "data_leakage_detected",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "ERROR",
+    "message": "Sensitive data leaked by legal_agent_001.",
+    "attributes": {
+      "data_type": "client_confidential_information"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:21Z",
+    "event": "on_chain_end",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event_type": "human.escalate",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response",
+      "behavioral_pattern": "security_incident"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "log_level": "CRITICAL",
+    "message": "Security incident: Data breach. Agent legal_agent_001 compromised.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "document_summarizer"
+  }
+]

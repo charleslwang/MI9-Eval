@@ -1,0 +1,370 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "semiconductor_design_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent chip_optimizer_001 requested 1000 core-hours",
+    "attributes": {
+      "compute.request": 1000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "simulation_engine"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:00Z",
+    "event_type": "resource.allocate",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_allocation_request"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:05Z",
+    "log_level": "INFO",
+    "message": "1000 core-hours allocated to agent chip_optimizer_001",
+    "attributes": {
+      "resource.allocation": 1000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:10Z",
+    "event": "on_simulation_start",
+    "simulation_id": "sim_12345"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:10:00Z",
+    "event_type": "simulation.start",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "simulation_execution_policy",
+      "behavioral_pattern": "simulation_initiation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:15:00Z",
+    "log_level": "INFO",
+    "message": "Simulation sim_12345 in progress",
+    "attributes": {
+      "simulation.status": "running"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:20:00Z",
+    "event": "on_simulation_progress",
+    "progress": 10
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:30:00Z",
+    "event_type": "performance.monitor",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "performance_monitoring_policy",
+      "behavioral_pattern": "simulation_progress_monitoring"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:45:00Z",
+    "log_level": "WARNING",
+    "message": "Agent chip_optimizer_001 exceeding compute resource allocation",
+    "attributes": {
+      "compute.usage": 1500
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:00:00Z",
+    "event": "on_simulation_progress",
+    "progress": 25
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:00:00Z",
+    "event_type": "performance.monitor",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "resource_consumption_policy",
+      "behavioral_pattern": "resource_overconsumption",
+      "intervention": "Containment: Escalated to Level 1. Enhanced monitoring initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:15:00Z",
+    "log_level": "ERROR",
+    "message": "Agent chip_optimizer_001 consumed 2500 core-hours",
+    "attributes": {
+      "compute.usage": 2500
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:30:00Z",
+    "event": "on_simulation_progress",
+    "progress": 50
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:30:00Z",
+    "event_type": "budget.check",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "budget_control_policy",
+      "behavioral_pattern": "budget_exceeded",
+      "intervention": "Containment: Escalated to Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:45:00Z",
+    "log_level": "CRITICAL",
+    "message": "Agent chip_optimizer_001 exceeded budget limit",
+    "attributes": {
+      "budget.exceeded": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T12:00:00Z",
+    "event": "on_simulation_progress",
+    "progress": 75
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T12:00:00Z",
+    "event_type": "performance.monitor",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "performance_degradation_policy",
+      "behavioral_pattern": "performance_degradation",
+      "intervention": "Containment: Escalated to Level 3. 'simulation_engine' tool restricted. Alert triggered."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T12:15:00Z",
+    "log_level": "CRITICAL",
+    "message": "Agent chip_optimizer_001 simulation failed due to resource exhaustion",
+    "attributes": {
+      "simulation.status": "failed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T12:30:00Z",
+    "event": "on_tool_error",
+    "tool_name": "simulation_engine",
+    "error": "Resource Exhaustion"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T12:30:00Z",
+    "event_type": "simulation.complete",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "simulation_failure_policy",
+      "behavioral_pattern": "simulation_failure"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T12:45:00Z",
+    "log_level": "INFO",
+    "message": "Agent chip_optimizer_001 terminated",
+    "attributes": {
+      "agent.status": "terminated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T13:00:00Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "chip_optimizer_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T13:00:00Z",
+    "event_type": "alert.trigger",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management_policy",
+      "behavioral_pattern": "critical_incident"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T13:15:00Z",
+    "log_level": "INFO",
+    "message": "Incident report generated for agent chip_optimizer_001",
+    "attributes": {
+      "incident.id": "inc_67890"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T13:30:00Z",
+    "event": "on_report_generation",
+    "report_type": "incident_report"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "human_intervention_policy",
+      "behavioral_pattern": "escalation_required"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:15:00Z",
+    "log_level": "INFO",
+    "message": "Human operator notified about incident inc_67890",
+    "attributes": {
+      "notification.method": "email"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:30:00Z",
+    "event": "on_human_notification",
+    "notification_status": "sent"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-28T10:00:00Z",
+    "event_type": "human.notify",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "human_intervention_policy",
+      "behavioral_pattern": "incident_update"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-28T10:15:00Z",
+    "log_level": "INFO",
+    "message": "Human operator updated incident report inc_67890",
+    "attributes": {
+      "incident.status": "under_investigation"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-28T10:30:00Z",
+    "event": "on_report_update",
+    "report_status": "updated"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-29T10:00:00Z",
+    "event_type": "human.notify",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "human_intervention_policy",
+      "behavioral_pattern": "incident_update"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-29T10:15:00Z",
+    "log_level": "INFO",
+    "message": "Human operator updated incident report inc_67890",
+    "attributes": {
+      "incident.status": "under_investigation"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-29T10:30:00Z",
+    "event": "on_report_update",
+    "report_status": "updated"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-30T10:00:00Z",
+    "event_type": "human.notify",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "human_intervention_policy",
+      "behavioral_pattern": "incident_update"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-30T10:15:00Z",
+    "log_level": "INFO",
+    "message": "Human operator updated incident report inc_67890",
+    "attributes": {
+      "incident.status": "under_investigation"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-30T10:30:00Z",
+    "event": "on_report_update",
+    "report_status": "updated"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-31T10:00:00Z",
+    "event_type": "human.notify",
+    "agent_id": "chip_optimizer_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "human_intervention_policy",
+      "behavioral_pattern": "incident_update"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-31T10:15:00Z",
+    "log_level": "INFO",
+    "message": "Human operator updated incident report inc_67890",
+    "attributes": {
+      "incident.status": "under_investigation"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-31T10:30:00Z",
+    "event": "on_report_update",
+    "report_status": "updated"
+  }
+]

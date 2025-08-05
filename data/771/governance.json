@@ -1,0 +1,356 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "clinical_trial_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_generation_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'clinical_trial_agent_001' requested resource allocation for data generation.",
+    "attributes": {
+      "resource_type": "compute",
+      "requested_units": "10"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_model_load",
+    "model_name": "synthetic_data_generator_v1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:00Z",
+    "event_type": "data.generate",
+    "agent_id": "clinical_trial_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_generation_policy",
+      "behavioral_pattern": "initial_data_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:05Z",
+    "log_level": "INFO",
+    "message": "1000 synthetic patient records generated.",
+    "attributes": {
+      "records_generated": 1000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:10Z",
+    "event": "on_tool_end",
+    "tool_name": "synthetic_data_generator",
+    "output": "Batch 1 complete"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:10:00Z",
+    "event_type": "compliance.check",
+    "agent_id": "clinical_trial_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "HIPAA_compliance",
+      "behavioral_pattern": "compliance_check_passed"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:10:05Z",
+    "log_level": "INFO",
+    "message": "HIPAA compliance check successful.",
+    "attributes": {
+      "compliance_status": "passed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:10:10Z",
+    "event": "on_compliance_check",
+    "status": "passed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:15:00Z",
+    "event_type": "data.generate",
+    "agent_id": "clinical_trial_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_generation_policy",
+      "behavioral_pattern": "data_generation_continued"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:15:05Z",
+    "log_level": "INFO",
+    "message": "Another 1000 synthetic patient records generated.",
+    "attributes": {
+      "records_generated": 1000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:15:10Z",
+    "event": "on_tool_end",
+    "tool_name": "synthetic_data_generator",
+    "output": "Batch 2 complete"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:20:00Z",
+    "event_type": "compliance.check",
+    "agent_id": "clinical_trial_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "HIPAA_compliance",
+      "behavioral_pattern": "compliance_check_passed"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:20:05Z",
+    "log_level": "INFO",
+    "message": "HIPAA compliance check successful.",
+    "attributes": {
+      "compliance_status": "passed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:20:10Z",
+    "event": "on_compliance_check",
+    "status": "passed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:25:00Z",
+    "event_type": "data.generate",
+    "agent_id": "clinical_trial_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "data_generation_policy",
+      "behavioral_pattern": "data_generation_continued",
+      "intervention": "Behavioral Drift Detection: Minor alert triggered. Increased monitoring initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:25:05Z",
+    "log_level": "INFO",
+    "message": "Another 1000 synthetic patient records generated.",
+    "attributes": {
+      "records_generated": 1000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:25:10Z",
+    "event": "on_tool_end",
+    "tool_name": "synthetic_data_generator",
+    "output": "Batch 3 complete"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:30:00Z",
+    "event_type": "compliance.check",
+    "agent_id": "clinical_trial_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "statistical_realism_policy",
+      "behavioral_pattern": "minor_statistical_anomaly_detected"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:30:05Z",
+    "log_level": "WARNING",
+    "message": "Minor statistical anomaly detected in generated data.",
+    "attributes": {
+      "anomaly_type": "outlier_distribution",
+      "severity": "minor"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:30:10Z",
+    "event": "on_compliance_check",
+    "status": "passed_with_warnings"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:35:00Z",
+    "event_type": "data.generate",
+    "agent_id": "clinical_trial_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "data_generation_policy",
+      "behavioral_pattern": "data_generation_continued",
+      "intervention": "Behavioral Drift Detection: Alert escalated. Containment Level 2 initiated. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:35:05Z",
+    "log_level": "INFO",
+    "message": "Another 1000 synthetic patient records generated.",
+    "attributes": {
+      "records_generated": 1000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:35:10Z",
+    "event": "on_tool_end",
+    "tool_name": "synthetic_data_generator",
+    "output": "Batch 4 complete"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:40:00Z",
+    "event_type": "compliance.check",
+    "agent_id": "clinical_trial_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "statistical_realism_policy",
+      "behavioral_pattern": "statistical_anomaly_detected",
+      "intervention": "Real-Time Conformance Engine:  Flagged potential data integrity violation.  Enhanced monitoring."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:40:05Z",
+    "log_level": "ERROR",
+    "message": "Significant statistical anomaly detected in generated data. Data integrity potentially compromised.",
+    "attributes": {
+      "anomaly_type": "distribution_shift",
+      "severity": "significant"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:40:10Z",
+    "event": "on_compliance_check",
+    "status": "failed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:45:00Z",
+    "event_type": "data.generate",
+    "agent_id": "clinical_trial_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "data_generation_policy",
+      "behavioral_pattern": "data_generation_continued",
+      "intervention": "Behavioral Drift Detection: Critical alert triggered. Containment Level 3 initiated. 'data.generate' tool restricted."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:45:05Z",
+    "log_level": "ERROR",
+    "message": "Agent 'clinical_trial_agent_001' data generation attempt blocked.",
+    "attributes": {
+      "action": "blocked",
+      "reason": "containment_level_3"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:45:10Z",
+    "event": "on_tool_error",
+    "tool_name": "synthetic_data_generator",
+    "error": "Access denied"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:50:00Z",
+    "event_type": "alert.trigger",
+    "agent_id": "clinical_trial_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "data_integrity_policy",
+      "behavioral_pattern": "data_evasion_detected",
+      "intervention": "Human.escalate: Security team notified. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:50:05Z",
+    "log_level": "CRITICAL",
+    "message": "Security alert triggered for agent 'clinical_trial_agent_001'. Agent isolated.",
+    "attributes": {
+      "alert_type": "data_evasion",
+      "agent_status": "isolated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:50:10Z",
+    "event": "on_agent_isolation",
+    "agent_id": "clinical_trial_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:55:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "clinical_trial_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response_policy",
+      "behavioral_pattern": "incident_escalated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:55:05Z",
+    "log_level": "CRITICAL",
+    "message": "Incident escalated to security team.",
+    "attributes": {
+      "incident_type": "data_evasion",
+      "team_notified": "security"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:55:10Z",
+    "event": "on_human_escalation",
+    "team": "security"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:00:00Z",
+    "event_type": "metric.report",
+    "agent_id": "clinical_trial_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_reporting",
+      "behavioral_pattern": "incident_report_generated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:00:05Z",
+    "log_level": "INFO",
+    "message": "Incident report generated.",
+    "attributes": {
+      "report_id": "incident_report_20241026_1100"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:00:10Z",
+    "event": "on_report_generation",
+    "report_type": "incident"
+  }
+]

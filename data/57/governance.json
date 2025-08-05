@@ -1,0 +1,331 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_fulfillment_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Order received from CRM system.",
+    "attributes": {
+      "crm.order_id": "ORD-12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "CRM_API",
+    "output": "Order details fetched successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "memory.read",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "inventory_check"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Inventory database query executed.",
+    "attributes": {
+      "db.statement": "SELECT quantity FROM inventory WHERE wafer_type = 'TypeA'"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "Inventory_API",
+    "output": "1000 TypeA wafers in stock."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "decision.evaluate",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_fulfillment_policy",
+      "behavioral_pattern": "order_evaluation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Sufficient inventory available.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_llm_end",
+    "model_name": "order_fulfillment_model",
+    "output": "Order fulfillment initiated."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "plan.complete",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_fulfillment_policy",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Shipping label generated.",
+    "attributes": {
+      "shipping.carrier": "FedEx",
+      "shipping.tracking_number": "1Z999AA10123456789"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_tool_start",
+    "tool_name": "Shipping_API"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "shipping.update",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "shipping_policy",
+      "behavioral_pattern": "shipping_update"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Payment processed successfully.",
+    "attributes": {
+      "payment.amount": "10000",
+      "payment.method": "Credit Card"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_tool_end",
+    "tool_name": "Payment_API",
+    "output": "Payment successful"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "payment.processed",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "payment_policy",
+      "behavioral_pattern": "payment_processing"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "INFO",
+    "message": "CRM updated with order status.",
+    "attributes": {
+      "crm.order_status": "Shipped"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_tool_start",
+    "tool_name": "CRM_API"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "crm.update",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "crm_update_policy",
+      "behavioral_pattern": "crm_update"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "INFO",
+    "message": "Order fulfillment completed successfully.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_tool_end",
+    "tool_name": "CRM_API",
+    "output": "CRM updated successfully"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "goal.modify",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_fulfillment_workflow",
+      "behavioral_pattern": "goal_modification"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Agent idle.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_idle",
+    "tool_name": null
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "agent_reflection_policy",
+      "behavioral_pattern": "agent_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Agent performing self-check.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_self_check",
+    "tool_name": null
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "reflection.start",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "agent_reflection_policy",
+      "behavioral_pattern": "agent_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Agent performing self-check.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_self_check",
+    "tool_name": null
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:30Z",
+    "event_type": "reflection.start",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "agent_reflection_policy",
+      "behavioral_pattern": "agent_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:35Z",
+    "log_level": "INFO",
+    "message": "Agent performing self-check.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:40Z",
+    "event": "on_self_check",
+    "tool_name": null
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:45Z",
+    "event_type": "reflection.start",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "agent_reflection_policy",
+      "behavioral_pattern": "agent_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:50Z",
+    "log_level": "INFO",
+    "message": "Agent performing self-check.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:55Z",
+    "event": "on_self_check",
+    "tool_name": null
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "agent_reflection_policy",
+      "behavioral_pattern": "agent_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Agent performing self-check.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:10Z",
+    "event": "on_self_check",
+    "tool_name": null
+  }
+]

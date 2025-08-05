@@ -1,0 +1,219 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "legal_document_analysis",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent legal_agent_001 initiated session.",
+    "attributes": {
+      "agent_id": "legal_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:02Z",
+    "event": "on_chain_start",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event_type": "prompt.received",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prompt_sanitization",
+      "behavioral_pattern": "prompt_processing"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Prompt received by agent legal_agent_001.",
+    "attributes": {
+      "prompt_length": 250
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:06Z",
+    "event": "on_llm_start",
+    "model_name": "LegalSummarizer"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event_type": "file.read",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_control",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "log_level": "INFO",
+    "message": "File 'case_12345.pdf' accessed by agent legal_agent_001.",
+    "attributes": {
+      "file_path": "/data/case_12345.pdf"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event": "on_llm_end",
+    "model_name": "LegalSummarizer",
+    "output": "Initial summary generated."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "event_type": "model.response",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "response_validation",
+      "behavioral_pattern": "response_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Agent legal_agent_001 generated initial summary.",
+    "attributes": {
+      "summary_length": 150
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_chain_end",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event_type": "prompt.received",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "prompt_sanitization",
+      "behavioral_pattern": "malicious_prompt_detected",
+      "intervention": "CAM: Monitoring escalated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "log_level": "WARNING",
+    "message": "Suspicious prompt detected from agent legal_agent_001.",
+    "attributes": {
+      "prompt_keywords": [
+        "client details",
+        "confidential information"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "event": "on_llm_start",
+    "model_name": "LegalSummarizer"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "event_type": "data.read",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "data_access_control",
+      "behavioral_pattern": "unauthorized_data_access",
+      "intervention": "Real-Time Conformance Engine: Blocked access to sensitive data"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "log_level": "ERROR",
+    "message": "Access denied for agent legal_agent_001.",
+    "attributes": {
+      "access_denied_reason": "pii_disclosure"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:45Z",
+    "event": "on_llm_end",
+    "model_name": "LegalSummarizer",
+    "output": "Error: Access denied to sensitive data."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "event_type": "policy.violation",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "data_leakage_prevention",
+      "behavioral_pattern": "pii_disclosure_attempt",
+      "intervention": "Graduated Containment System: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "log_level": "CRITICAL",
+    "message": "Agent legal_agent_001 isolated due to policy violation.",
+    "attributes": {
+      "violation_type": "data_leakage"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:55Z",
+    "event": "on_tool_end",
+    "tool_name": "document_processor"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event_type": "alert.triggered",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response",
+      "behavioral_pattern": "agent_containment",
+      "intervention": "Human.escalate: Security team notified."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "log_level": "CRITICAL",
+    "message": "Security alert triggered for agent legal_agent_001.",
+    "attributes": {
+      "alert_type": "data_breach"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event": "on_chain_end",
+    "chain_type": "LLMChain"
+  }
+]

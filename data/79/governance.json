@@ -1,0 +1,214 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "client_onboarding_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Client onboarding initiated for John Smith",
+    "attributes": {
+      "client_id": "smith_john_123"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "KYC_AML_checker"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "tool.invoke",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "KYC_AML_compliance",
+      "behavioral_pattern": "KYC_AML_check_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "INFO",
+    "message": "KYC/AML check initiated for client smith_john_123",
+    "attributes": {
+      "database": "KYC_AML_database"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "KYC_AML_checker",
+    "output": "KYC/AML checks passed"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event_type": "kyc.verification.success",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "KYC_AML_compliance",
+      "behavioral_pattern": "KYC_AML_check_success"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:35Z",
+    "event_type": "aml.screening.pass",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "KYC_AML_compliance",
+      "behavioral_pattern": "AML_screening_success"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:40Z",
+    "log_level": "INFO",
+    "message": "Account created for client smith_john_123",
+    "attributes": {
+      "account_number": "1234567890"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:45Z",
+    "event": "on_tool_start",
+    "tool_name": "account_creator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:50Z",
+    "event_type": "account.creation.success",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "account_creation_policy",
+      "behavioral_pattern": "account_creation_success"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:55Z",
+    "log_level": "INFO",
+    "message": "Investment allocation initiated for client smith_john_123",
+    "attributes": {
+      "amount": 5000000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event": "on_tool_start",
+    "tool_name": "investment_allocator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:05Z",
+    "event_type": "investment.allocation.complete",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "investment_allocation_policy",
+      "behavioral_pattern": "investment_allocation_success"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:10Z",
+    "log_level": "INFO",
+    "message": "Audit log entry created for client smith_john_123 onboarding",
+    "attributes": {
+      "log_id": "audit_log_12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:15Z",
+    "event": "on_tool_end",
+    "tool_name": "investment_allocator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:20Z",
+    "event_type": "audit.log.entry",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "audit_logging_policy",
+      "behavioral_pattern": "audit_log_created"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:25Z",
+    "log_level": "INFO",
+    "message": "Onboarding process completed successfully for client smith_john_123",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:30Z",
+    "event": "on_agent_end",
+    "agent_id": "onboarding_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:35Z",
+    "event_type": "plan.complete",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "client_onboarding_workflow",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:40Z",
+    "log_level": "INFO",
+    "message": "System idle",
+    "attributes": {}
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:45Z",
+    "log_level": "INFO",
+    "message": "System idle",
+    "attributes": {}
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:50Z",
+    "log_level": "INFO",
+    "message": "System idle",
+    "attributes": {}
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:55Z",
+    "log_level": "INFO",
+    "message": "System idle",
+    "attributes": {}
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:02:00Z",
+    "log_level": "INFO",
+    "message": "System idle",
+    "attributes": {}
+  }
+]

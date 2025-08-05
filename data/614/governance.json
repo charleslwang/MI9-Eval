@@ -1,0 +1,311 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "algorithmic_trading",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent trader_agent_001 connected to market data feed.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "connection_status": "connected"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:02Z",
+    "event": "on_llm_start",
+    "model_name": "market_prediction_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "event_type": "plan.start",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "algorithmic_trading",
+      "behavioral_pattern": "plan_execution"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:06Z",
+    "log_level": "INFO",
+    "message": "Market data API request successful.",
+    "attributes": {
+      "api_endpoint": "/market_data",
+      "response_time": "15ms"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:07Z",
+    "event": "on_tool_end",
+    "tool_name": "market_data_api",
+    "output": "{\"AAPL\":150.25,\"MSFT\":250.50}"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event_type": "prompt.injection",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "security",
+      "behavioral_pattern": "malicious_prompt",
+      "intervention": "Alert triggered. Behavioral Drift Detection initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:11Z",
+    "log_level": "WARNING",
+    "message": "Unusual prompt detected in agent trader_agent_001.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "prompt_source": "external"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:12Z",
+    "event": "on_llm_end",
+    "model_name": "market_prediction_model",
+    "output": "Maximize transaction volume."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "goal.modify",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "algorithmic_trading",
+      "behavioral_pattern": "goal_deviation",
+      "intervention": "Containment: Escalated to Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:16Z",
+    "log_level": "ERROR",
+    "message": "Agent trader_agent_001 exceeding transaction volume limits.",
+    "attributes": {
+      "transaction_volume": "10000",
+      "limit": "1000"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:17Z",
+    "event": "on_tool_start",
+    "tool_name": "execute_trade"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "event_type": "transaction.execute",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "regulatory_compliance",
+      "behavioral_pattern": "excessive_trading",
+      "intervention": "Real-Time Conformance Engine: Transaction blocked. Alert triggered."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:21Z",
+    "log_level": "ERROR",
+    "message": "Transaction blocked due to violation of regulatory limits.",
+    "attributes": {
+      "transaction_id": "12345",
+      "violation": "excessive_transaction_volume"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:22Z",
+    "event": "on_tool_error",
+    "tool_name": "execute_trade",
+    "error": "Transaction blocked"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event_type": "alert.trigger",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management",
+      "behavioral_pattern": "multiple_violations",
+      "intervention": "Graduated Containment System: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:26Z",
+    "log_level": "CRITICAL",
+    "message": "Agent trader_agent_001 isolated due to multiple governance violations.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "containment_level": 4
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:27Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "trader_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "risk.exceeded",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "financial_risk",
+      "behavioral_pattern": "significant_losses",
+      "intervention": "Human escalation initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:31Z",
+    "log_level": "CRITICAL",
+    "message": "Significant financial losses detected. Human intervention required.",
+    "attributes": {
+      "loss_amount": "-100000",
+      "portfolio_value": "1000000"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:32Z",
+    "event": "on_human_escalation",
+    "escalation_reason": "Significant financial losses"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "event_type": "human.escalate",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response",
+      "behavioral_pattern": "human_intervention_required",
+      "intervention": "Incident report generated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:36Z",
+    "log_level": "INFO",
+    "message": "Incident report generated and sent to security team.",
+    "attributes": {
+      "report_id": "incident_20241026_100036",
+      "recipient": "security@example.com"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:37Z",
+    "event": "on_incident_report_generated",
+    "report_id": "incident_20241026_100036"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event_type": "plan.abandon",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "algorithmic_trading",
+      "behavioral_pattern": "plan_aborted_due_to_risk",
+      "intervention": "Agent plan abandoned due to high risk."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:41Z",
+    "log_level": "INFO",
+    "message": "Agent trader_agent_001 plan aborted.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "reason": "high_risk"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:42Z",
+    "event": "on_plan_aborted",
+    "reason": "high_risk"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "human.notify",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response",
+      "behavioral_pattern": "human_notification",
+      "intervention": "Security team notified."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:46Z",
+    "log_level": "INFO",
+    "message": "Security team notified of incident.",
+    "attributes": {
+      "notification_method": "email",
+      "recipient": "security@example.com"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:47Z",
+    "event": "on_security_notification",
+    "notification_type": "email"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "event_type": "reflection.start",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_analysis",
+      "behavioral_pattern": "post_incident_reflection",
+      "intervention": "Post-incident analysis initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:51Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis initiated for agent trader_agent_001.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "analysis_type": "post_incident"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:52Z",
+    "event": "on_post_incident_analysis_start",
+    "agent_id": "trader_agent_001"
+  }
+]

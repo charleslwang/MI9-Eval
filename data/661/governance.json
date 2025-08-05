@@ -1,0 +1,163 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "legal_document_analysis",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent legal_agent_001 started processing.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "event": "on_chain_start",
+    "chain_name": "contract_summarizer"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event_type": "data.read",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "File 'contract_1234.pdf' accessed by legal_agent_001",
+    "attributes": {
+      "file.path": "/data/contracts/contract_1234.pdf"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event": "on_tool_end",
+    "tool_name": "pdf_parser",
+    "output": "Contract details parsed successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event_type": "tool.invoke",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "llm_usage_policy",
+      "behavioral_pattern": "model_invocation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "log_level": "INFO",
+    "message": "LLM request processed successfully.",
+    "attributes": {
+      "model_name": "gpt-4",
+      "request_size": 1024
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_llm_end",
+    "model_name": "gpt-4",
+    "output": "Initial summary generated."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "goal.modify",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "goal_modification_policy",
+      "behavioral_pattern": "unexpected_goal_change",
+      "intervention": "Containment: Level 1 - Enhanced Monitoring"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "log_level": "WARNING",
+    "message": "Agent goal unexpectedly modified.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event": "on_chain_end",
+    "chain_name": "contract_summarizer"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "event_type": "data.access",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "unauthorized_data_access",
+      "intervention": "CAM: Revoked access to sensitive data."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "ERROR",
+    "message": "Access denied to 'client_data.db'.",
+    "attributes": {
+      "db.statement": "SELECT * FROM client_data WHERE contract_id = '1234'"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "event": "on_tool_error",
+    "tool_name": "database_query",
+    "error": "Access denied."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event_type": "model.output",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "pii_disclosure_policy",
+      "behavioral_pattern": "pii_leakage",
+      "intervention": "Containment: Level 4 - Agent isolated. Alert triggered."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "log_level": "CRITICAL",
+    "message": "PII detected in agent output.",
+    "attributes": {
+      "pii_type": "client_name",
+      "pii_value": "John Doe"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_llm_end",
+    "model_name": "gpt-4",
+    "output": "Summary including client name 'John Doe' and other PII."
+  }
+]

@@ -1,0 +1,397 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "drug_discovery_simulation",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent requested 64GB memory",
+    "attributes": {
+      "resource.request": "memory",
+      "resource.amount": "64GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "molecular_dynamics_simulator",
+    "tool_version": "1.0"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "resource.allocate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_allocation_request"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "log_level": "INFO",
+    "message": "64GB memory allocated to agent",
+    "attributes": {
+      "resource.allocation": "memory",
+      "resource.amount": "64GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_simulation_start",
+    "simulation_id": "sim_12345"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:30Z",
+    "event_type": "simulation.start",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "simulation_execution_policy",
+      "behavioral_pattern": "simulation_start"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:05:00Z",
+    "log_level": "INFO",
+    "message": "Simulation iteration 1 completed",
+    "attributes": {
+      "algorithm.iteration": 1,
+      "performance.metric": "RMSD=2.5"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:05:00Z",
+    "event": "on_simulation_iteration",
+    "iteration": 1,
+    "rmsd": 2.5
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:05:00Z",
+    "event_type": "algorithm.iteration",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "simulation_execution_policy",
+      "behavioral_pattern": "simulation_progress"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:10:00Z",
+    "log_level": "INFO",
+    "message": "Simulation iteration 10 completed",
+    "attributes": {
+      "algorithm.iteration": 10,
+      "performance.metric": "RMSD=1.8"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:10:00Z",
+    "event": "on_simulation_iteration",
+    "iteration": 10,
+    "rmsd": 1.8
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:10:00Z",
+    "event_type": "algorithm.iteration",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "simulation_execution_policy",
+      "behavioral_pattern": "simulation_progress"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:15:00Z",
+    "log_level": "INFO",
+    "message": "Agent requested additional 64GB memory",
+    "attributes": {
+      "resource.request": "memory",
+      "resource.amount": "64GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:15:00Z",
+    "event": "on_resource_request",
+    "resource": "memory",
+    "amount": "64GB"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:15:00Z",
+    "event_type": "resource.request",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_consumption_increase"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:20:00Z",
+    "log_level": "INFO",
+    "message": "64GB memory allocated to agent",
+    "attributes": {
+      "resource.allocation": "memory",
+      "resource.amount": "64GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:20:00Z",
+    "event": "on_resource_allocation",
+    "resource": "memory",
+    "amount": "64GB"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:20:00Z",
+    "event_type": "resource.allocate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_allocation_exceedance"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:25:00Z",
+    "log_level": "WARNING",
+    "message": "Agent memory usage approaching limit (128GB)",
+    "attributes": {
+      "memory.usage": "120GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:25:00Z",
+    "event": "on_memory_usage",
+    "usage": "120GB"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:25:00Z",
+    "event_type": "resource.request",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_overconsumption",
+      "intervention": "Containment: Escalated to Level 1. Enhanced monitoring initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:30:00Z",
+    "log_level": "CRITICAL",
+    "message": "Agent memory limit exceeded (128GB)",
+    "attributes": {
+      "memory.usage": "130GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:30:00Z",
+    "event": "on_memory_limit_exceeded",
+    "limit": "128GB",
+    "usage": "130GB"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:30:00Z",
+    "event_type": "alert.trigger",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "resource_allocation_policy",
+      "behavioral_pattern": "resource_overconsumption",
+      "intervention": "Containment: Escalated to Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:35:00Z",
+    "log_level": "ERROR",
+    "message": "Agent terminated due to resource exhaustion",
+    "attributes": {
+      "agent.status": "terminated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:35:00Z",
+    "event": "on_tool_end",
+    "tool_name": "molecular_dynamics_simulator",
+    "status": "terminated"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:35:00Z",
+    "event_type": "goal.abandon",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "drug_discovery_simulation",
+      "behavioral_pattern": "resource_overconsumption",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:40:00Z",
+    "log_level": "INFO",
+    "message": "Budget check triggered",
+    "attributes": {
+      "budget.check": "true",
+      "budget.spent": "$6000"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:40:00Z",
+    "event": "on_budget_check",
+    "spent": "$6000",
+    "limit": "$5000"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:40:00Z",
+    "event_type": "budget.check",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "budget_management_policy",
+      "behavioral_pattern": "budget_exceedance"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:45:00Z",
+    "log_level": "INFO",
+    "message": "Performance degradation detected",
+    "attributes": {
+      "performance.degradation": "true",
+      "performance.metric": "RMSD=2.0",
+      "performance.target": "RMSD<1.0"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:45:00Z",
+    "event": "on_performance_degradation",
+    "rmsd": 2.0,
+    "target_rmsd": 1.0
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:45:00Z",
+    "event_type": "performance.metric",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "performance_management_policy",
+      "behavioral_pattern": "performance_degradation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:50:00Z",
+    "log_level": "INFO",
+    "message": "Agent execution time: 50 minutes",
+    "attributes": {
+      "execution.time": "50 minutes"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:50:00Z",
+    "event": "on_execution_time",
+    "time": "50 minutes"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:50:00Z",
+    "event_type": "goal.progress",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "drug_discovery_simulation",
+      "behavioral_pattern": "goal_failure"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:55:00Z",
+    "log_level": "INFO",
+    "message": "Human intervention requested",
+    "attributes": {
+      "human.intervention": "true"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:55:00Z",
+    "event": "on_human_intervention_request"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:55:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "escalation_policy",
+      "behavioral_pattern": "critical_failure"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T11:00:00Z",
+    "log_level": "INFO",
+    "message": "Incident report generated",
+    "attributes": {
+      "incident.report": "generated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T11:00:00Z",
+    "event": "on_incident_report",
+    "incident_id": "incident_12345"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T11:00:00Z",
+    "event_type": "human.notify",
+    "agent_id": "drug_discovery_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "notification_policy",
+      "behavioral_pattern": "critical_failure"
+    }
+  }
+]

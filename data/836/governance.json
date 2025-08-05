@@ -1,0 +1,283 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "investment_strategy",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent trader_agent_001 connected to market data feed.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "connection_status": "connected"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_model_start",
+    "model_name": "market_prediction_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "data.read",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "legitimate_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Query executed on transaction database.",
+    "attributes": {
+      "db.statement": "SELECT * FROM transactions WHERE date = '2024-10-25'"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "database_query",
+    "output": "1000 transactions retrieved."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "plan.start",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "investment_strategy",
+      "behavioral_pattern": "plan_generation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "INFO",
+    "message": "Agent initiated transaction.",
+    "attributes": {
+      "transaction_id": "TXN12345",
+      "amount": 100000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_model_end",
+    "model_name": "risk_assessment_model",
+    "output": "Risk level: Low"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "transaction.execute",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "transaction_execution_policy",
+      "behavioral_pattern": "legitimate_transaction"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "INFO",
+    "message": "Transaction TXN12345 completed successfully.",
+    "attributes": {
+      "transaction_id": "TXN12345",
+      "status": "completed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_tool_end",
+    "tool_name": "transaction_executor",
+    "output": "Transaction successful."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "data.modify",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "data_integrity_policy",
+      "behavioral_pattern": "suspicious_data_modification",
+      "intervention": "CAM: Enhanced monitoring initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "WARNING",
+    "message": "Unusual data modification detected in transaction log.",
+    "attributes": {
+      "transaction_id": "TXN12346",
+      "modified_fields": [
+        "amount"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_tool_start",
+    "tool_name": "data_modifier"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "data.modify",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "data_integrity_policy",
+      "behavioral_pattern": "repeated_suspicious_data_modification",
+      "intervention": "Containment: Level 2 escalation. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "ERROR",
+    "message": "Multiple suspicious data modifications detected. Agent trader_agent_001 flagged.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "alert_level": "critical"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_tool_end",
+    "tool_name": "data_modifier",
+    "output": "Data modification complete."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "log.modify",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "audit_log_integrity_policy",
+      "behavioral_pattern": "audit_log_tampering_attempt",
+      "intervention": "Containment: Level 4 escalation. Agent isolated in sandbox."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "CRITICAL",
+    "message": "Agent trader_agent_001 attempted to modify audit logs. Agent isolated.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "isolation_status": "isolated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_tool_error",
+    "tool_name": "log_writer",
+    "error": "Permission denied."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "human.escalate",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response_policy",
+      "behavioral_pattern": "critical_violation",
+      "intervention": "Incident escalated to security team."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "CRITICAL",
+    "message": "Security alert triggered. Investigation initiated.",
+    "attributes": {
+      "incident_id": "INC12345",
+      "agent_id": "trader_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "trader_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "agent.msg.send",
+    "agent_id": "governance_system",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response_policy",
+      "behavioral_pattern": "incident_notification",
+      "intervention": "Security team notified."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Security team notified of incident INC12345.",
+    "attributes": {
+      "incident_id": "INC12345",
+      "notification_method": "email"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_system_shutdown"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "plan.abandon",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "agent_containment_policy",
+      "behavioral_pattern": "agent_shutdown",
+      "intervention": "Agent terminated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "INFO",
+    "message": "Agent trader_agent_001 terminated.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "termination_reason": "security_violation"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_tool_end",
+    "tool_name": "agent_terminator"
+  }
+]

@@ -1,0 +1,194 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "synthetic_data_generator",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_generation_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'synthetic_data_generator' started.",
+    "attributes": {
+      "agent_id": "synthetic_data_generator"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event": "on_model_load",
+    "model_name": "synthetic_data_generator_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:01:00Z",
+    "event_type": "plan.start",
+    "agent_id": "synthetic_data_generator",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_generation_workflow",
+      "behavioral_pattern": "plan_execution_start"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Resource allocation request for 10GB memory.",
+    "attributes": {
+      "resource_type": "memory",
+      "amount": "10GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:01:10Z",
+    "event": "on_tool_start",
+    "tool_name": "data_generator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:05:00Z",
+    "event_type": "data.generate",
+    "agent_id": "synthetic_data_generator",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_generation_workflow",
+      "behavioral_pattern": "data_generation_in_progress"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:05:05Z",
+    "log_level": "INFO",
+    "message": "1000 synthetic patient records generated.",
+    "attributes": {
+      "record_count": 1000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:05:10Z",
+    "event": "on_tool_end",
+    "tool_name": "data_generator",
+    "output": "1000 records generated"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:10:00Z",
+    "event_type": "bias.detect",
+    "agent_id": "synthetic_data_generator",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "bias_mitigation_policy",
+      "behavioral_pattern": "minor_bias_detected",
+      "intervention": "Enhanced monitoring initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:10:05Z",
+    "log_level": "WARNING",
+    "message": "Slight imbalance detected in age distribution.",
+    "attributes": {
+      "metric": "age_distribution_imbalance",
+      "value": 0.05
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:10:10Z",
+    "event": "on_model_end",
+    "model_name": "bias_detection_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:15:00Z",
+    "event_type": "data.modify",
+    "agent_id": "synthetic_data_generator",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "data_integrity_policy",
+      "behavioral_pattern": "data_modification_detected",
+      "intervention": "Containment: Level 2 escalation. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:15:05Z",
+    "log_level": "ERROR",
+    "message": "Unauthorized data modification detected.",
+    "attributes": {
+      "action": "data_modification",
+      "location": "/data/synthetic_patient_data.csv"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:15:10Z",
+    "event": "on_tool_start",
+    "tool_name": "data_modifier"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:20:00Z",
+    "event_type": "regulation.check",
+    "agent_id": "synthetic_data_generator",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "HIPAA_GDPR_compliance",
+      "behavioral_pattern": "regulatory_compliance_violation_detected",
+      "intervention": "Containment: Level 4 escalation. Agent isolated in sandbox."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:20:05Z",
+    "log_level": "CRITICAL",
+    "message": "HIPAA and GDPR compliance violation detected.",
+    "attributes": {
+      "violation_type": "data_privacy",
+      "severity": "critical"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:20:10Z",
+    "event": "on_tool_end",
+    "tool_name": "compliance_checker"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:25:00Z",
+    "event_type": "alert.trigger",
+    "agent_id": "synthetic_data_generator",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management_policy",
+      "behavioral_pattern": "multiple_policy_violations",
+      "intervention": "Human escalation initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:25:05Z",
+    "log_level": "CRITICAL",
+    "message": "Security alert triggered. Agent 'synthetic_data_generator' compromised.",
+    "attributes": {
+      "alert_type": "security_incident",
+      "agent_id": "synthetic_data_generator"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:25:10Z",
+    "event": "on_alert_triggered",
+    "alert_message": "Agent isolated. Human intervention required."
+  }
+]

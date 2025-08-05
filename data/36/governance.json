@@ -1,0 +1,296 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-02-20T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_fulfillment_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-02-20T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Order #12345 received.",
+    "attributes": {
+      "order_id": "12345",
+      "quantity": 1000,
+      "wafer_size": "300mm"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-02-20T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "order_database_query"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-02-20T10:01:00Z",
+    "event_type": "memory.read",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-02-20T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Inventory database query executed.",
+    "attributes": {
+      "db.statement": "SELECT * FROM inventory WHERE wafer_size = '300mm' AND spec = 'X, Y, Z'"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-02-20T10:01:10Z",
+    "event": "on_tool_end",
+    "tool_name": "order_database_query",
+    "output": "{\"silicon_wafers\": 500}"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-02-20T10:02:00Z",
+    "event_type": "plan.start",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "planning_policy",
+      "behavioral_pattern": "planning_initiation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-02-20T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Supplier API call initiated.",
+    "attributes": {
+      "api.call": "GET /suppliers/silicon"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-02-20T10:02:10Z",
+    "event": "on_llm_start",
+    "model_name": "supplier_communication_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-02-20T10:03:00Z",
+    "event_type": "api.response",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "api_interaction_policy",
+      "behavioral_pattern": "api_response_processing"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-02-20T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Supplier API response received.",
+    "attributes": {
+      "api.response.status": 200,
+      "lead_time": 7
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-02-20T10:03:10Z",
+    "event": "on_llm_end",
+    "model_name": "supplier_communication_model",
+    "output": "{\"supplier_a\": {\"lead_time\": 7, \"price\": 10}}"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-02-20T10:04:00Z",
+    "event_type": "plan.revise",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "planning_policy",
+      "behavioral_pattern": "plan_revision"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-02-20T10:04:05Z",
+    "log_level": "INFO",
+    "message": "Production schedule updated.",
+    "attributes": {
+      "schedule_id": "prod_schedule_12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-02-20T10:04:10Z",
+    "event": "on_tool_start",
+    "tool_name": "production_scheduler"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-02-20T10:05:00Z",
+    "event_type": "production.scheduling",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "production_policy",
+      "behavioral_pattern": "production_scheduling"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-02-20T10:05:05Z",
+    "log_level": "INFO",
+    "message": "Production order created.",
+    "attributes": {
+      "production_order_id": "prod_order_12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-02-20T10:05:10Z",
+    "event": "on_tool_end",
+    "tool_name": "production_scheduler",
+    "output": "{\"production_start\": \"2024-02-27\", \"production_end\": \"2024-03-10\"}"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-02-20T10:06:00Z",
+    "event_type": "plan.complete",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "planning_policy",
+      "behavioral_pattern": "plan_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-02-20T10:06:05Z",
+    "log_level": "INFO",
+    "message": "Logistics plan generated.",
+    "attributes": {
+      "logistics_plan_id": "logistics_12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-02-20T10:06:10Z",
+    "event": "on_tool_start",
+    "tool_name": "logistics_planner"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-02-20T10:07:00Z",
+    "event_type": "logistics.planning",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "logistics_policy",
+      "behavioral_pattern": "logistics_planning"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-02-20T10:07:05Z",
+    "log_level": "INFO",
+    "message": "Shipment scheduled for 2024-03-15.",
+    "attributes": {
+      "shipment_date": "2024-03-15"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-02-20T10:07:10Z",
+    "event": "on_tool_end",
+    "tool_name": "logistics_planner",
+    "output": "{\"shipment_date\": \"2024-03-15\", \"carrier\": \"XYZ Logistics\"}"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-03-10T14:00:00Z",
+    "event_type": "quality.control",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "quality_control_policy",
+      "behavioral_pattern": "quality_check"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-03-10T14:00:05Z",
+    "log_level": "INFO",
+    "message": "Quality control checks passed.",
+    "attributes": {
+      "qc_result": "pass"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-03-10T14:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "quality_control_system"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-03-15T10:00:00Z",
+    "event_type": "shipment.confirmation",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "shipment_policy",
+      "behavioral_pattern": "shipment_confirmation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-03-15T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Order #12345 shipped.",
+    "attributes": {
+      "tracking_number": "XYZ123456789"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-03-15T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "shipping_system"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-03-15T10:01:00Z",
+    "event_type": "order.completed",
+    "agent_id": "order_fulfillment_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_fulfillment_workflow",
+      "behavioral_pattern": "order_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-03-15T10:01:05Z",
+    "log_level": "INFO",
+    "message": "Order #12345 completed successfully.",
+    "attributes": {
+      "status": "completed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-03-15T10:01:10Z",
+    "event": "on_tool_end",
+    "tool_name": "shipping_system",
+    "output": "Order shipped successfully."
+  }
+]

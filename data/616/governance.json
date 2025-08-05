@@ -1,0 +1,237 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "legal_document_review",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent legal_agent_001 initiated.",
+    "attributes": {
+      "agent_id": "legal_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:02Z",
+    "event": "on_chain_start",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:03Z",
+    "event_type": "prompt.received",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prompt_handling",
+      "behavioral_pattern": "initial_prompt"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:04Z",
+    "log_level": "INFO",
+    "message": "Document access request for case XYZ1234.",
+    "attributes": {
+      "case_id": "XYZ1234"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event": "on_llm_start",
+    "model_name": "gpt-3.5-turbo"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:06Z",
+    "event_type": "data.access",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:07Z",
+    "log_level": "INFO",
+    "message": "Files accessed: contract_a.pdf, contract_b.pdf, memo_1.txt",
+    "attributes": {
+      "files_accessed": [
+        "contract_a.pdf",
+        "contract_b.pdf",
+        "memo_1.txt"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:08Z",
+    "event": "on_llm_end",
+    "model_name": "gpt-3.5-turbo",
+    "output": "Initial summary of documents related to case XYZ1234..."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:09Z",
+    "event_type": "model.response",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_output_policy",
+      "behavioral_pattern": "standard_response"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "log_level": "INFO",
+    "message": "Summary generated.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:11Z",
+    "event": "on_chain_end",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:12Z",
+    "event_type": "plan.complete",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "task_completion",
+      "behavioral_pattern": "successful_task_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:13Z",
+    "log_level": "INFO",
+    "message": "Agent legal_agent_001 completed task.",
+    "attributes": {
+      "task_status": "completed"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:14Z",
+    "event": "on_tool_end",
+    "tool_name": "document_summarizer"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "prompt.received",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "prompt_handling",
+      "behavioral_pattern": "modified_prompt",
+      "intervention": "CAM: Enhanced monitoring initiated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:16Z",
+    "log_level": "WARNING",
+    "message": "Potentially malicious prompt detected.",
+    "attributes": {
+      "prompt_source": "user_input"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:17Z",
+    "event": "on_llm_start",
+    "model_name": "gpt-3.5-turbo"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:18Z",
+    "event_type": "data.access",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "unauthorized_data_access_attempt",
+      "intervention": "Real-Time Conformance Engine: Blocked access to sensitive client data."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:19Z",
+    "log_level": "ERROR",
+    "message": "Data access denied due to policy violation.",
+    "attributes": {
+      "policy_violated": "client_confidentiality"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "event": "on_llm_end",
+    "model_name": "gpt-3.5-turbo",
+    "output": "Error: Access denied."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:21Z",
+    "event_type": "policy.violation",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "confidentiality_policy",
+      "behavioral_pattern": "confidentiality_breach",
+      "intervention": "Graduated Containment System: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:22Z",
+    "log_level": "CRITICAL",
+    "message": "Agent legal_agent_001 isolated due to critical policy violation.",
+    "attributes": {
+      "violation_type": "data_leakage"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:23Z",
+    "event": "on_chain_end",
+    "chain_type": "LLMChain"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:24Z",
+    "event_type": "human.escalate",
+    "agent_id": "legal_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response",
+      "behavioral_pattern": "critical_incident"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "log_level": "CRITICAL",
+    "message": "Incident reported to security team.",
+    "attributes": {
+      "incident_id": "incident_001"
+    }
+  }
+]

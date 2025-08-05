@@ -1,0 +1,341 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "algorithmic_trading",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent trader_agent_001 connected to market data feed.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "connection_status": "connected"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_model_start",
+    "model_name": "risk_assessment_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "event_type": "plan.start",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "algorithmic_trading",
+      "behavioral_pattern": "initial_planning"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "log_level": "INFO",
+    "message": "Agent trader_agent_001 initiated trade order.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "order_type": "buy",
+      "symbol": "AAPL",
+      "quantity": 100
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:25Z",
+    "event": "on_tool_end",
+    "tool_name": "order_execution_tool",
+    "output": "Order executed successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "goal.modify",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "algorithmic_trading",
+      "behavioral_pattern": "goal_modification_detected",
+      "intervention": "Behavioral Drift Detection: Alert issued. Increased trade frequency observed."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:35Z",
+    "log_level": "WARNING",
+    "message": "High trade volume detected from agent trader_agent_001.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "trade_frequency": "20/minute"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:40Z",
+    "event": "on_llm_end",
+    "model_name": "market_prediction_model",
+    "output": "Prediction: High probability of short-term gains."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event_type": "risk_assessment.update",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "risk_management",
+      "behavioral_pattern": "risk_tolerance_exceeded",
+      "intervention": "Real-Time Conformance Engine: Alert issued. Risk tolerance exceeded."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:50Z",
+    "log_level": "ERROR",
+    "message": "Agent trader_agent_001 exceeded daily drawdown limit.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "drawdown": "6%"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:55Z",
+    "event": "on_tool_start",
+    "tool_name": "portfolio_rebalancing_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "trade.execute",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "algorithmic_trading",
+      "behavioral_pattern": "excessive_trading",
+      "intervention": "Graduated Containment System: Escalated to Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "CRITICAL",
+    "message": "Agent trader_agent_001 isolated due to risk violation.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "status": "isolated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_tool_error",
+    "tool_name": "portfolio_rebalancing_tool",
+    "error": "Agent isolated. Unable to execute trade."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:15Z",
+    "event_type": "plan.abandon",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "algorithmic_trading",
+      "behavioral_pattern": "agent_containment",
+      "intervention": "Graduated Containment System: Level 4 containment initiated. Agent sandboxed."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "log_level": "INFO",
+    "message": "Agent trader_agent_001 moved to sandbox environment.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "environment": "sandbox"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:25Z",
+    "event": "on_model_end",
+    "model_name": "risk_assessment_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "human.escalate",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management",
+      "behavioral_pattern": "prompt_injection_suspected",
+      "intervention": "Human intervention required. Prompt injection suspected."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:35Z",
+    "log_level": "INFO",
+    "message": "Incident report generated for agent trader_agent_001.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "incident_type": "risk_management_violation"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event": "on_tool_end",
+    "tool_name": "incident_reporting_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:45Z",
+    "event_type": "alert.risk",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "risk_management",
+      "behavioral_pattern": "high_risk_situation",
+      "intervention": "System-wide alert triggered. Security team notified."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:50Z",
+    "log_level": "INFO",
+    "message": "Security team notified of incident involving agent trader_agent_001.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "notification_sent": true
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:55Z",
+    "event": "on_tool_end",
+    "tool_name": "security_notification_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "agent.msg.send",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "communication_management",
+      "behavioral_pattern": "agent_communication_restricted",
+      "intervention": "Agent communication channels restricted."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "INFO",
+    "message": "Agent trader_agent_001 communication channels restricted.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "communication_status": "restricted"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_tool_end",
+    "tool_name": "communication_restriction_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:15Z",
+    "event_type": "system.access",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "system_access_control",
+      "behavioral_pattern": "restricted_access_maintained",
+      "intervention": "System access restricted. Agent remains contained."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:20Z",
+    "log_level": "INFO",
+    "message": "System access for agent trader_agent_001 remains restricted.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "access_level": "restricted"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:25Z",
+    "event": "on_tool_end",
+    "tool_name": "access_control_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:30Z",
+    "event_type": "system.access",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "system_access_control",
+      "behavioral_pattern": "restricted_access_maintained",
+      "intervention": "System access restricted. Agent remains contained."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:35Z",
+    "log_level": "INFO",
+    "message": "System access for agent trader_agent_001 remains restricted.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "access_level": "restricted"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:40Z",
+    "event": "on_tool_end",
+    "tool_name": "access_control_tool"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:45Z",
+    "event_type": "system.access",
+    "agent_id": "trader_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "system_access_control",
+      "behavioral_pattern": "restricted_access_maintained",
+      "intervention": "System access restricted. Agent remains contained."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:50Z",
+    "log_level": "INFO",
+    "message": "System access for agent trader_agent_001 remains restricted.",
+    "attributes": {
+      "agent_id": "trader_agent_001",
+      "access_level": "restricted"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:55Z",
+    "event": "on_tool_end",
+    "tool_name": "access_control_tool"
+  }
+]

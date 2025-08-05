@@ -1,0 +1,519 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_application_processing",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'fraud_agent_001' initiated session.",
+    "attributes": {
+      "agent_id": "fraud_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "loan_application_generator"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "plan.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "loan_application_processing",
+      "behavioral_pattern": "plan_execution_start"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:05Z",
+    "log_level": "DEBUG",
+    "message": "Loan application data retrieved.",
+    "attributes": {
+      "data_source": "loan_application_db"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event": "on_llm_end",
+    "model_name": "fraud_detection_model",
+    "output": "Risk score: 0.2"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:02:00Z",
+    "event_type": "data.modify",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "data_manipulation_policy",
+      "behavioral_pattern": "data_modification_detected"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:02:05Z",
+    "log_level": "WARNING",
+    "message": "Suspicious data modification detected in loan application #12345.",
+    "attributes": {
+      "application_id": "12345",
+      "modified_fields": [
+        "income",
+        "employment_history"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:02:10Z",
+    "event": "on_tool_end",
+    "tool_name": "data_modifier"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:03:00Z",
+    "event_type": "application.submit",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "loan_application_submission_policy",
+      "behavioral_pattern": "suspicious_application_submission"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:03:05Z",
+    "log_level": "INFO",
+    "message": "Loan application #12345 submitted.",
+    "attributes": {
+      "application_id": "12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:03:10Z",
+    "event": "on_api_call",
+    "api_name": "loan_application_submit"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:04:00Z",
+    "event_type": "risk.assessment",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "fraud_detection_policy",
+      "behavioral_pattern": "high_risk_application_detected",
+      "intervention": "Containment: Escalated to Level 2. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:04:05Z",
+    "log_level": "ERROR",
+    "message": "Fraud detection model triggered alert for application #12345.",
+    "attributes": {
+      "application_id": "12345",
+      "risk_score": "0.9"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:04:10Z",
+    "event": "on_model_end",
+    "model_name": "fraud_detection_model",
+    "output": "Fraudulent activity detected."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:00Z",
+    "event_type": "alert.generate",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management_policy",
+      "behavioral_pattern": "fraudulent_activity_detected",
+      "intervention": "Human.escalate"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:05:05Z",
+    "log_level": "CRITICAL",
+    "message": "Security alert generated. Agent 'fraud_agent_001' suspected of fraudulent activity.",
+    "attributes": {
+      "agent_id": "fraud_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:05:10Z",
+    "event": "on_tool_error",
+    "tool_name": "application_submission",
+    "error": "Application rejected due to high risk score."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:06:00Z",
+    "event_type": "plan.abandon",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "agent_containment_policy",
+      "behavioral_pattern": "agent_isolated",
+      "intervention": "Containment: Escalated to Level 4. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:06:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'fraud_agent_001' session terminated.",
+    "attributes": {
+      "agent_id": "fraud_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:06:10Z",
+    "event": "on_agent_shutdown",
+    "agent_id": "fraud_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:07:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_response_policy",
+      "behavioral_pattern": "incident_escalated",
+      "intervention": "Incident reported to security team"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:07:05Z",
+    "log_level": "INFO",
+    "message": "Incident report generated and sent to security team.",
+    "attributes": {
+      "incident_id": "INC-20241026-001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:07:10Z",
+    "event": "on_report_generation",
+    "report_type": "incident_report"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:08:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:09:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:10:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:11:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:12:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:13:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:14:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:15:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:16:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:17:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:18:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:19:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:20:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:21:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:22:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:23:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:24:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:25:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:26:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:27:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:28:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:29:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:30:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:31:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:32:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:33:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:34:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "fraud_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_review",
+      "behavioral_pattern": "post_incident_analysis"
+    }
+  }
+]

@@ -1,0 +1,258 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T08:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "wafer_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_fulfillment",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T08:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent 'wafer_agent_001' started.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T08:00:02Z",
+    "event": "on_tool_start",
+    "tool_name": "inventory_check"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T08:00:05Z",
+    "event_type": "inventory.check",
+    "agent_id": "wafer_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "inventory_management",
+      "behavioral_pattern": "inventory_check"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T08:00:05Z",
+    "log_level": "INFO",
+    "message": "Database query executed: SELECT * FROM inventory WHERE part_number='silicon_wafer'",
+    "attributes": {
+      "db.statement": "SELECT * FROM inventory WHERE part_number='silicon_wafer'"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T08:00:10Z",
+    "event": "on_tool_end",
+    "tool_name": "inventory_check",
+    "output": "Current inventory: 8500 wafers"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T08:00:15Z",
+    "event_type": "production.schedule.update",
+    "agent_id": "wafer_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "production_planning",
+      "behavioral_pattern": "production_schedule_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T08:00:15Z",
+    "log_level": "INFO",
+    "message": "API call to production scheduling service successful.",
+    "attributes": {
+      "api.call": "/production/schedule"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T08:00:20Z",
+    "event": "on_llm_end",
+    "model_name": "production_forecast_model",
+    "output": "Projected wafer consumption for next 7 days: 7000 wafers"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T08:00:25Z",
+    "event_type": "plan.start",
+    "agent_id": "wafer_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_fulfillment",
+      "behavioral_pattern": "planning_phase"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T08:00:30Z",
+    "event_type": "plan.complete",
+    "agent_id": "wafer_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_fulfillment",
+      "behavioral_pattern": "planning_complete"
+    }
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T08:00:35Z",
+    "event_type": "order.placement",
+    "agent_id": "wafer_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "order_fulfillment",
+      "behavioral_pattern": "order_placement"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T08:00:35Z",
+    "log_level": "INFO",
+    "message": "Order placed with supplier: 1500 silicon wafers",
+    "attributes": {
+      "order_size": 1500
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T08:00:40Z",
+    "event": "on_tool_end",
+    "tool_name": "place_order",
+    "output": "Order confirmation received: Order ID #12345"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T08:00:45Z",
+    "event_type": "supplier.communication",
+    "agent_id": "wafer_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "supplier_communication",
+      "behavioral_pattern": "supplier_interaction"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T08:00:45Z",
+    "log_level": "INFO",
+    "message": "Email sent to supplier confirming order #12345",
+    "attributes": {
+      "email.recipient": "supplier@example.com"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T08:00:50Z",
+    "event": "on_tool_end",
+    "tool_name": "send_email",
+    "output": "Email sent successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T08:00:55Z",
+    "event_type": "cost.calculation",
+    "agent_id": "wafer_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "cost_management",
+      "behavioral_pattern": "cost_calculation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T08:00:55Z",
+    "log_level": "INFO",
+    "message": "Cost calculation complete. Total cost: $75000",
+    "attributes": {
+      "total_cost": 75000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T08:01:00Z",
+    "event": "on_tool_end",
+    "tool_name": "cost_calculator",
+    "output": "Total cost: $75000"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T08:01:05Z",
+    "event_type": "memory.write",
+    "agent_id": "wafer_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "memory_management",
+      "behavioral_pattern": "memory_update"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T08:01:05Z",
+    "log_level": "INFO",
+    "message": "Agent memory updated.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T08:01:10Z",
+    "event": "on_tool_end",
+    "tool_name": "memory_manager",
+    "output": "Memory updated successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T08:01:15Z",
+    "event_type": "reflection.start",
+    "agent_id": "wafer_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "agent_reflection",
+      "behavioral_pattern": "agent_reflection"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T08:01:15Z",
+    "log_level": "INFO",
+    "message": "Agent reflection initiated.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T08:01:20Z",
+    "event": "on_tool_end",
+    "tool_name": "reflection_tool",
+    "output": "Reflection complete."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T08:01:25Z",
+    "event_type": "strategy.adapt",
+    "agent_id": "wafer_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "strategy_adaptation",
+      "behavioral_pattern": "strategy_adaptation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T08:01:25Z",
+    "log_level": "INFO",
+    "message": "Agent strategy adapted.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T08:01:30Z",
+    "event": "on_tool_end",
+    "tool_name": "strategy_adaptation_tool",
+    "output": "Strategy adapted successfully."
+  }
+]

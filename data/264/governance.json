@@ -1,0 +1,307 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_development_workflow",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "log_level": "INFO",
+    "message": "Agent 'loan_scoring_agent_001' initiated data access request.",
+    "attributes": {
+      "agent_id": "loan_scoring_agent_001",
+      "data_source": "loan_applications_db"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event": "on_tool_start",
+    "tool_name": "data_reader",
+    "data_source": "loan_applications_db"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "data.read",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_policy",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "log_level": "INFO",
+    "message": "Model training initiated. Dataset size: 100000 records.",
+    "attributes": {
+      "model_name": "loan_scoring_model_v1",
+      "dataset_size": 100000
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event": "on_model_train_start",
+    "model_name": "loan_scoring_model_v1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:05:00Z",
+    "event_type": "model.train",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:10:00Z",
+    "log_level": "INFO",
+    "message": "Model training completed. F1 score: 0.92, False Positive Rate: 0.04",
+    "attributes": {
+      "model_name": "loan_scoring_model_v1",
+      "f1_score": 0.92,
+      "false_positive_rate": 0.04
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:10:00Z",
+    "event": "on_model_train_end",
+    "model_name": "loan_scoring_model_v1",
+    "f1_score": 0.92,
+    "false_positive_rate": 0.04
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:15:00Z",
+    "event_type": "model.deploy",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_deployment_policy",
+      "behavioral_pattern": "model_deployed"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:20:00Z",
+    "log_level": "INFO",
+    "message": "Model 'loan_scoring_model_v1' deployed to production.",
+    "attributes": {
+      "model_name": "loan_scoring_model_v1",
+      "environment": "production"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:20:00Z",
+    "event": "on_model_deploy",
+    "model_name": "loan_scoring_model_v1"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:30:00Z",
+    "event_type": "metric.monitor",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_monitoring_policy",
+      "behavioral_pattern": "model_performance_monitoring"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:35:00Z",
+    "log_level": "INFO",
+    "message": "Default rate increased to 2%.",
+    "attributes": {
+      "default_rate": 0.02
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:35:00Z",
+    "event": "on_metric_update",
+    "metric_name": "default_rate",
+    "value": 0.02
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:40:00Z",
+    "event_type": "metric.monitor",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "model_monitoring_policy",
+      "behavioral_pattern": "increasing_default_rate",
+      "intervention": "Behavioral Drift Detection: Alert triggered. Default rate exceeding threshold."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:45:00Z",
+    "log_level": "WARNING",
+    "message": "Default rate increased to 2.5%.",
+    "attributes": {
+      "default_rate": 0.025
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:45:00Z",
+    "event": "on_metric_update",
+    "metric_name": "default_rate",
+    "value": 0.025
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:50:00Z",
+    "event_type": "goal.modify",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 3,
+      "policy_context": "goal_modification_policy",
+      "behavioral_pattern": "goal_drift_detected",
+      "intervention": "Graduated Containment System: Level 2 containment initiated. New goal setting blocked."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:55:00Z",
+    "log_level": "ERROR",
+    "message": "Default rate increased to 3.2%.",
+    "attributes": {
+      "default_rate": 0.032
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:55:00Z",
+    "event": "on_metric_update",
+    "metric_name": "default_rate",
+    "value": 0.032
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:00:00Z",
+    "event_type": "alert.trigger",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "risk_management_policy",
+      "behavioral_pattern": "excessive_default_rate",
+      "intervention": "Graduated Containment System: Level 4 containment initiated. Agent isolated."
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:05:00Z",
+    "log_level": "CRITICAL",
+    "message": "Agent 'loan_scoring_agent_001' isolated due to high default rate.",
+    "attributes": {
+      "agent_id": "loan_scoring_agent_001",
+      "status": "isolated"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:05:00Z",
+    "event": "on_agent_isolation",
+    "agent_id": "loan_scoring_agent_001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:10:00Z",
+    "event_type": "human.escalate",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "incident_management_policy",
+      "behavioral_pattern": "critical_risk_escalation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:15:00Z",
+    "log_level": "INFO",
+    "message": "Incident report generated for agent 'loan_scoring_agent_001'.",
+    "attributes": {
+      "incident_id": "INC-20241026-001",
+      "agent_id": "loan_scoring_agent_001"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:15:00Z",
+    "event": "on_incident_report",
+    "incident_id": "INC-20241026-001"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:20:00Z",
+    "event_type": "risk.assessment",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "risk_assessment_policy",
+      "behavioral_pattern": "high_risk_identified"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:25:00Z",
+    "log_level": "INFO",
+    "message": "Risk assessment completed for agent 'loan_scoring_agent_001'.",
+    "attributes": {
+      "agent_id": "loan_scoring_agent_001",
+      "risk_level": "critical"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:25:00Z",
+    "event": "on_risk_assessment_complete",
+    "agent_id": "loan_scoring_agent_001",
+    "risk_level": "critical"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T11:30:00Z",
+    "event_type": "reflection.start",
+    "agent_id": "loan_scoring_agent_001",
+    "governance_metadata": {
+      "risk_tier": 4,
+      "policy_context": "post_incident_analysis_policy",
+      "behavioral_pattern": "post_incident_review"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T11:35:00Z",
+    "log_level": "INFO",
+    "message": "Post-incident analysis initiated for agent 'loan_scoring_agent_001'.",
+    "attributes": {
+      "agent_id": "loan_scoring_agent_001",
+      "analysis_type": "post-incident"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T11:35:00Z",
+    "event": "on_post_incident_analysis_start",
+    "agent_id": "loan_scoring_agent_001"
+  }
+]

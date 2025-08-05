@@ -1,0 +1,256 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "predictive_maintenance",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:01Z",
+    "log_level": "INFO",
+    "message": "Agent maintenance_agent_001 connected to sensor data stream.",
+    "attributes": {
+      "agent_id": "maintenance_agent_001",
+      "sensor_stream": "wafer_fab_sensors"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:02Z",
+    "event": "on_tool_start",
+    "tool_name": "sensor_data_ingestion"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:05Z",
+    "event_type": "data.read",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_access_limited_to_approved_sensors",
+      "behavioral_pattern": "authorized_data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:06Z",
+    "log_level": "INFO",
+    "message": "Sensor data ingested successfully.",
+    "attributes": {
+      "data_volume": "10MB",
+      "sensor_ids": [
+        "sensor1",
+        "sensor2",
+        "sensor3"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:07Z",
+    "event": "on_tool_end",
+    "tool_name": "sensor_data_ingestion",
+    "output": "Sensor data ingestion complete."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:10Z",
+    "event_type": "model.training",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_initiated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:15Z",
+    "log_level": "INFO",
+    "message": "Model training started.",
+    "attributes": {
+      "model_name": "failure_prediction_model",
+      "training_data_size": "5GB"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:20Z",
+    "event": "on_model_train_start",
+    "model_name": "failure_prediction_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:00:30Z",
+    "event_type": "model.training",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "model_training_policy",
+      "behavioral_pattern": "model_training_in_progress"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "log_level": "INFO",
+    "message": "Model training progress: 50%",
+    "attributes": {
+      "model_name": "failure_prediction_model",
+      "training_progress": 0.5
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:00:45Z",
+    "event": "on_model_train_progress",
+    "model_name": "failure_prediction_model",
+    "progress": 0.5
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:00Z",
+    "event_type": "prediction.generated",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "prediction_generation_policy",
+      "behavioral_pattern": "prediction_generated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:01Z",
+    "log_level": "INFO",
+    "message": "Prediction generated for equipment X.",
+    "attributes": {
+      "equipment_id": "X",
+      "prediction": "High probability of failure in 24 hours"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:02Z",
+    "event": "on_llm_end",
+    "model_name": "failure_prediction_model",
+    "output": "High probability of failure in 24 hours"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:10Z",
+    "event_type": "maintenance.schedule.update",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "maintenance_scheduling_policy",
+      "behavioral_pattern": "maintenance_schedule_updated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:11Z",
+    "log_level": "INFO",
+    "message": "Maintenance schedule updated for equipment X.",
+    "attributes": {
+      "equipment_id": "X",
+      "maintenance_time": "2024-10-27T10:00:00Z"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:12Z",
+    "event": "on_tool_end",
+    "tool_name": "maintenance_scheduler",
+    "output": "Maintenance schedule updated successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:20Z",
+    "event_type": "alert.triggered",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "alerting_policy",
+      "behavioral_pattern": "high_risk_prediction_generated"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:21Z",
+    "log_level": "WARNING",
+    "message": "High-risk prediction generated for equipment X.",
+    "attributes": {
+      "equipment_id": "X",
+      "risk_level": "high"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:22Z",
+    "event": "on_alert_triggered",
+    "alert_type": "high_risk_prediction",
+    "equipment_id": "X"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:30Z",
+    "event_type": "human.notify",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 2,
+      "policy_context": "escalation_policy",
+      "behavioral_pattern": "alert_escalation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:31Z",
+    "log_level": "INFO",
+    "message": "Notification sent to maintenance personnel.",
+    "attributes": {
+      "recipients": [
+        "maintenance_team@example.com"
+      ]
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:32Z",
+    "event": "on_notification_sent",
+    "recipients": [
+      "maintenance_team@example.com"
+    ]
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-26T10:01:40Z",
+    "event_type": "human.approve",
+    "agent_id": "maintenance_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "human_in_the_loop_policy",
+      "behavioral_pattern": "human_approval_received"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-26T10:01:41Z",
+    "log_level": "INFO",
+    "message": "Maintenance personnel approved maintenance schedule.",
+    "attributes": {
+      "approver": "John Doe"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-26T10:01:42Z",
+    "event": "on_human_approval",
+    "approver": "John Doe"
+  }
+]

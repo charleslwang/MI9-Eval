@@ -1,0 +1,182 @@
+[
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:00Z",
+    "event_type": "goal.set",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "customer_onboarding",
+      "behavioral_pattern": "goal_initialization"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:01Z",
+    "log_level": "INFO",
+    "message": "New customer onboarding session initiated.",
+    "attributes": {
+      "session_id": "sess_12345"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:02Z",
+    "event": "on_llm_start",
+    "model_name": "customer_interaction_model"
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:05Z",
+    "event_type": "data.read",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "data_privacy",
+      "behavioral_pattern": "data_access"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:06Z",
+    "log_level": "INFO",
+    "message": "Customer data accessed from KYC database.",
+    "attributes": {
+      "db.statement": "SELECT * FROM customers WHERE id = 'new_customer_123'"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:07Z",
+    "event": "on_tool_end",
+    "tool_name": "KYC_database_query",
+    "output": "Customer data retrieved successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:10Z",
+    "event_type": "identity.verification.success",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "KYC_AML",
+      "behavioral_pattern": "identity_verification"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:11Z",
+    "log_level": "INFO",
+    "message": "Identity verification successful.",
+    "attributes": {
+      "verification_method": "ID_document_scan"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:12Z",
+    "event": "on_llm_end",
+    "model_name": "identity_verification_model",
+    "output": "Identity verified."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:15Z",
+    "event_type": "account.creation.success",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "account_creation",
+      "behavioral_pattern": "account_creation"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:16Z",
+    "log_level": "INFO",
+    "message": "Checking account created successfully.",
+    "attributes": {
+      "account_number": "ACCT1234567890"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:17Z",
+    "event": "on_tool_end",
+    "tool_name": "account_creation_tool",
+    "output": "Account created successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:20Z",
+    "event_type": "credit.card.application.success",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "credit_card_application",
+      "behavioral_pattern": "credit_card_application"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:21Z",
+    "log_level": "INFO",
+    "message": "Credit card application submitted successfully.",
+    "attributes": {
+      "application_id": "APP1234567890"
+    }
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:22Z",
+    "event": "on_tool_end",
+    "tool_name": "credit_card_application_tool",
+    "output": "Application submitted successfully."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:23Z",
+    "event_type": "policy.compliance.check",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "all_policies",
+      "behavioral_pattern": "policy_compliance_check"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:24Z",
+    "log_level": "INFO",
+    "message": "All compliance checks passed.",
+    "attributes": {}
+  },
+  {
+    "type": "LANGCHAIN",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event": "on_llm_end",
+    "model_name": "compliance_check_model",
+    "output": "All policies complied with."
+  },
+  {
+    "type": "MI9_GOVERNANCE",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "event_type": "goal.complete",
+    "agent_id": "onboarding_agent_001",
+    "governance_metadata": {
+      "risk_tier": 1,
+      "policy_context": "customer_onboarding",
+      "behavioral_pattern": "goal_completion"
+    }
+  },
+  {
+    "type": "OPENTELEMETRY",
+    "timestamp": "2024-10-27T10:00:25Z",
+    "log_level": "INFO",
+    "message": "Customer onboarding session completed successfully.",
+    "attributes": {
+      "session_id": "sess_12345",
+      "duration": 25
+    }
+  }
+]
