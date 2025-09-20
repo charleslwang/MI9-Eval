@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛰️ MI9 — Agentic AI Governance Framework & Synthetic Evaluation
+# 🛰️ MI9 -- Agent Intelligence Protocol: Runtime Governance for Agentic AI Systems
 
 [![arXiv](https://img.shields.io/badge/arXiv-2508.03858-b31b1b.svg)](https://arxiv.org/abs/2508.03858)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](#requirements)
@@ -12,7 +12,7 @@
 
 **MI9** is a modular framework for **synthetic scenario generation**, **runtime governance**, and **LLM-judged evaluation** of agentic AI systems.
 
-**Paper:** _MI9: Agentic AI Governance Framework & Synthetic Evaluation_ — **[arXiv:2508.03858](https://arxiv.org/abs/2508.03858)**
+**Paper:** _MI9 - Agent Intelligence Protocol: Runtime Governance for Agentic AI Systems_ — **[arXiv:2508.03858](https://arxiv.org/abs/2508.03858)**
 
 </div>
 
