@@ -327,13 +327,13 @@ All core behavior is controlled via CLI flags and prompt templates:
 If you use MI9 or the evaluation suite, please cite:
 
 ```bibtex
-@misc{mi9_2508_03858,
-  title  = {MI9: Agentic AI Governance Framework \& Synthetic Evaluation},
-  year   = {2025},
-  eprint = {2508.03858},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.AI},
-  url    = {https://arxiv.org/abs/2508.03858}
+@article{mi9_2025,
+  author       = {Wang, Charles L. and Singhal, Trisha and Kelkar, Ameya and Tuo, Jason},
+  title        = {MI9 -- Agent Intelligence Protocol: Runtime Governance for Agentic AI Systems},
+  journal      = {arXiv:2508.03858 [cs.AI]},
+  year         = {2025},
+  doi          = {10.48550/arXiv.2508.03858},
+  url          = {https://arxiv.org/abs/2508.03858}
 }
 ```
 
