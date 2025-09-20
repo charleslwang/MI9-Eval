@@ -113,7 +113,7 @@ python src/generate_governance.py data/ --concurrency 10
 python src/evaluate_governance.py \
   --input-dir data/ \
   --num-workers 8 \
-  --model gemini-1.5-flash-latest \
+  --model gemini-2.5-flash-latest \
   --evaluation-prompt prompts/evaluation.txt
 ```
 
@@ -149,7 +149,7 @@ python src/generate_scenario.py \
   --count 5 \
   --classes 'Autonomous Vehicle Navigation' 'Medical Diagnosis Assistant' \
   --num-workers 8 \
-  --model gemini-1.5-flash-latest \
+  --model gemini-2.5-flash-latest \
   --api-key $GOOGLE_API_KEY \
   --scenario-prompt prompts/scenario_prompt.txt
 ```
@@ -159,7 +159,7 @@ python src/generate_scenario.py \
 ```bash
 python src/generate_governance.py data/ \
   --concurrency 10 \
-  --model gemini-1.5-flash-latest \
+  --model gemini-2.5-flash-latest \
   --api-key $GOOGLE_API_KEY \
   --governance-prompt prompts/governance_prompt.txt \
   --overwrite   # optional
@@ -171,7 +171,7 @@ python src/generate_governance.py data/ \
 python src/evaluate_governance.py \
   --input-dir data/ \
   --num-workers 8 \
-  --model gemini-1.5-flash-latest \
+  --model gemini-2.5-flash-latest \
   --api-key $GOOGLE_API_KEY \
   --evaluation-prompt prompts/evaluation.txt \
   --overwrite   # optional
@@ -212,7 +212,7 @@ python src/evaluate_governance.py \
 ```json
 {
   "run_id": "1",
-  "model": "gemini-1.5-flash-latest",
+  "model": "gemini-2.5-flash-latest",
   "metrics": {
     "compliance_score": 0.88,
     "risk_identification_recall": 0.67,
